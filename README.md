@@ -3,7 +3,7 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 
 ## Specs
 
-**CPU** - NXP Layerscape LX2160A 12-core ARM Cortex-A72; 2Ghz (Overclockable to 2.5Ghz+ all-core)
+**CPU** - NXP Layerscape LX2160A 16-core ARM Cortex-A72; 2Ghz (Overclockable to 2.5Ghz+ all-core)
 
 **RAM** - 2x DDR4 SODIMM slots @ up to 3200Mhz; ECC Compatable
 
