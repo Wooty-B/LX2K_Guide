@@ -15,7 +15,7 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 
 **USB** - 2x USB3 ports; 1x USB3 header (2 ports); 1x USB2 header (2 ports)
 
-**Interface** - 1x micro USB-OTG Console port; 1x micro USB-OTG Management port; 1x JTAG port
+**Interface** - 1x micro USB-OTG Console port; 1x micro USB-OTG Management port; 1x JTAG header
 
 **Form Factor** - Mini ITX
 
