@@ -67,13 +67,13 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 
 ## Configuring LX2K
 
-1. Assuming your board has USB Ethernet adaptor, RAM, Storage, PSU and GPU (optional) installed, head here on your build computer [https://images.solid-run.com/LX2k] to download the Tianocore EDKII UEFI firmware.
+* 1. Assuming your board has USB Ethernet adaptor, RAM, Storage, PSU and GPU (optional) installed, head here on your build computer [https://images.solid-run.com/LX2k] to download the Tianocore EDKII UEFI firmware.
 
-2. On the images page, click the link "lx2160a_uefi" and select the appropriate image file.
+* 2. On the images page, click the link "lx2160a_uefi" and select the appropriate image file.
 
-NOTE (2a): There are three parts of the filename to focus on: "2000" = CPU Speed, "xx00" = RAM Speed, "sd/flexspi" = Target Install. All have the same CPU speed, so make sure you grab the file with correct RAM speed and "sd" for MicroSD card.
+* NOTE (2a): There are three parts of the filename to focus on: "2000" = CPU Speed, "xx00" = RAM Speed, "sd/flexspi" = Target Install. All have the same CPU speed, so make sure you grab the file with correct RAM speed and "sd" for MicroSD card.
 
-NOTE (2b): flexspi_nor can be used to install to internal SPI Flash. [Haven't tested]
+* NOTE (2b): flexspi_nor can be used to install to internal SPI Flash. [Haven't tested]
 
 NOTE (2c): This image can be built from scratch and is explained at the bottom of this guide.
 
