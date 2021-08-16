@@ -98,8 +98,8 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 		GRUB_CMDLINE_LINUX_DEFAULT="amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=0"
 	NOTE (10): The former fixes issues with crashing on boot, the latter prevents crashing in GL apps like Minecraft
 	11. Now run the following: "apt update && apt upgrade && apt install linux-firmware tasksel"
-	NOTE (11): "linux-firmware" installs the correct firmware for amdgpu and should not be skipped.
-	12. Optional but recommended: Set up your user with "adduser", then "usermod -a -G username sudo", then log out and back in with the new user account.
+	NOTE (11a): "linux-firmware" installs the correct firmware for amdgpu and should not be skipped.
+	NOTE (11b): If you are installing Debian, set up your user with "adduser", then "usermod -a -G username sudo". Logout and back in.
 	13. Run "sudo tasksel" and select Ubuntu Desktop, and any additional packages as well.
 	14. Once completed, do a full system reboot/poweroff and then boot back into your new system.
 	15. You should now be logged into your new aarch64 Ubuntu install with full GPU acceleration! You rock!
