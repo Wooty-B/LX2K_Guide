@@ -160,7 +160,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 	 	
 	 Running Steam
 	 
-	  - With Box86 installed, this should allow Steam to launch and run like Raspberry Pi's have been tweaked to do so. I am able to launch steam, install updates, and log in, however after logging in the application dies with possible vulkan related binary issues. Will try to keep researching, otherwise poke me if you have ideas or have this working!
+	  - YES! Steam launches and runs Source titles!!! I followed a few guides to get this running over the weekend and it involves setting up a 32-bit armhf chroot and installing Box86 there; multilib Box86 is apparently not the way to go at time of writing. Steam has to be launched with "steam -no-browser" due to it being in a pure 32-bit environment, which is why I hope a multilib solution arises that can handle vulkan lib wrapping. All Valve titles run, however games like HITMAN won't due to it needing 64bit libs. Again, with Box64 here under multilib we could work around these issues, maybe one day...
 
 	
 ## BIOS Navigation
