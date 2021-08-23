@@ -158,29 +158,29 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 	
 ## H. Post-Install Recommendations
 
-	Possbile Crash on Sleep/Suspend
+Possbile Crash on Sleep/Suspend
 	
 	 - If the system crashes constantly on sleep/suspend event, use this command to disable:
 	 	"sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
 	 	
-	Install Newer Mesa, Improve GPU Performance/Issues
+Install Newer Mesa, Improve GPU Performance/Issues
 	
 	 - Over the course of this boards life its recieved various Mesa patches to help fix quirks related to GPU/PCIe issues. Ubuntu and most systems Mesa packages are a little out of date for stability reasons. I use Oibaf's repository which contains up to date aarch64 builds, and can be added by doing the following:
 	 	"sudo add-apt-repository ppa:oibaf/graphics-drivers && sudo apt update"
 	 
-	Install Pi-Apps (Minecraft Java, Box86 & Box64 setup)
+Install Pi-Apps (Minecraft Java, Box86 & Box64 setup)
 	
 	 - Pi-Apps contains a few games such as full Minecraft Java, and some quality of life apps like Box86/64. I recommend this route to save time manually installing and figuring out the quirks. Pi-Apps can be installed from Github or by using:
 	  	"wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash"
 
-	Enable x86_32 and x86_64 Compatability
+Enable x86_32 and x86_64 Compatability
 	
 	 - As mentioned above, Pi-Apps can automatically set up Box64 and Box86 (with auto armhf chroot). This means just enabling these will allow you to execute many x86 based linux programs, including Wine. A few things to note:
 	 	1. Running Wine should work for many passive apps such as Notepad++ or DosBox, but because it's translating AND emulating don't expect any miracles.
 	 	2. I recommend installing just Box86, then installing Box64 if needed. I have run into issues where, for example, launching AssaultCube with Box64 installed hangs when trying to connect to GL. Uninstalling Box64 let AssaultCube load 32bit libraries under Box86, booting the game properly.
 	 	3. If you have any x86 applications scripted to run natively on aarch64. Box86 may try and take over, possibly breaking things.
 	 	
-	 Running Steam
+Running Steam
 	 
 	  - YES! Steam launches and runs Source titles!!! I followed a few guides to get this running over the weekend and it involves setting up a 32-bit armhf chroot and installing Box86 there; multilib Box86 is apparently not the way to go at time of writing. Steam has to be launched with "steam -no-browser" due to it being in a pure 32-bit environment, which is why I hope a multilib solution arises that can handle vulkan lib wrapping. All Valve titles run, however games like HITMAN won't due to it needing 64bit libs. Again, with Box64 here under multilib we could work around these issues, maybe one day...
 
