@@ -2,15 +2,25 @@
 A guide for fully setting up the SolidRun LX2K with novice users in mind.
 
 ## Table of Contents:
+
 A. Specs
+
 B. Introduction
+
 C. Important Notes
+
 D. Prerequisites
+
 E. Console Connection
+
 F. Configuring LX2K
+
 G. Installing Ubuntu/Debian
+
 H. Post-Install Recommendations
+
 I. BIOS Navigation
+
 J. Overclocking & Timings
 
 ## A. Specs
