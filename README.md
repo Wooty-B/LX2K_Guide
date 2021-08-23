@@ -1,7 +1,19 @@
 # Using HoneyComb LX2K as a Desktop; Gaming on ARM
 A guide for fully setting up the SolidRun LX2K with novice users in mind.
 
-## Specs
+## Table of Contents:
+A. Specs
+B. Introduction
+C. Important Notes
+D. Prerequisites
+E. Console Connection
+F. Configuring LX2K
+G. Installing Ubuntu/Debian
+H. Post-Install Recommendations
+I. BIOS Navigation
+J. Overclocking & Timings
+
+## A. Specs
 
 **CPU** - NXP Layerscape LX2160A 16-core ARM Cortex-A72; 2Ghz (Overclockable to 2.5Ghz+ all-core)
 
@@ -19,7 +31,7 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 
 **Form Factor** - Mini ITX
 
-## Introduction
+## B. Introduction
 
 The SolidRun HoneyComb LX2K (ClearFog) is a MiniITX form-factor ARM64 development board used for enterprise networking, security, server applications, and as a developer workstation. Over the last year there has been much development to bring a stable desktop experience with AMD GPU support and it has finally reached a point where it is now viable as an ARM64 Desktop. Over the last few months the bugs have settled down, so I trashed my cobbled together Debian install and started fresh with Ubuntu 21.04. 
 	
@@ -28,7 +40,7 @@ Using a Radeon WX 4100, many applications such as Blender, OpenMW, Minecraft Jav
 The guide below is a WIP, and I greatly appreciate any comments regarding how I can improve this page, and will try to answer any questions thrown my way. Let the ARMs race begin!
 
 
-## Important Notes
+## C. Important Notes
 
  - Onboard Gigabit Ethernet does not work out-of-the-box, must apply kernel patches or use USB Ethernet adaptor.
  - nVidia GPU's only support framebuffer at time of writing (no hardware acceleration)
@@ -41,7 +53,7 @@ The guide below is a WIP, and I greatly appreciate any comments regarding how I 
  - Use Wayland over X11 if at all possible, X has much more bugs with GPU acceleration and Wayland has the ability to launch X windows anyways.
  
  
-## Preparation
+## D. Prerequisites
 
 You will need the following items
  - 512MB+ MicroSD card
@@ -53,7 +65,7 @@ You will need the following items
  - (recommended) Standard USB Keyboard (i.e.: No fancy gaming keyboard!)
 
 
-## Console Connection
+## E. Console Connection
 
  - Serial (COM#)
  - Speed: 115200
@@ -65,7 +77,7 @@ You will need the following items
 NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT (congratulations...) port.
 
 
-## Configuring LX2K
+## F. Configuring LX2K
 
 1. Assuming your board has USB Ethernet adaptor, RAM, Storage, PSU and GPU (optional) installed, head here on your build computer [https://images.solid-run.com/LX2k] to download the Tianocore EDKII UEFI firmware.
 
@@ -84,7 +96,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 *NOTE (4): At this point you may begin using the board, you may now also connect over console via Micro USB. Using the Micro USB cable is useful for controlling BIOS over serial, troubleshooting boot issues, and installing some OS' that only work in console mode.*
 
 
-## Installing Ubuntu/Debian
+## G. Installing Ubuntu/Debian
 
 *NOTE: For simplicity I will be focusing/referencing Ubuntu 21.04, however this can be easily applied to Debian 10 & 11 installs. Ubuntu was chosen for newer kernel, package repositories, and beginner friendliness.*
 
@@ -134,7 +146,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 15. You should now be logged into your new aarch64 Ubuntu install with full GPU acceleration! You rock!
 	
 	
-## Post-Install Recommendations
+## H. Post-Install Recommendations
 
 	Possbile Crash on Sleep/Suspend
 	
@@ -163,7 +175,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 	  - YES! Steam launches and runs Source titles!!! I followed a few guides to get this running over the weekend and it involves setting up a 32-bit armhf chroot and installing Box86 there; multilib Box86 is apparently not the way to go at time of writing. Steam has to be launched with "steam -no-browser" due to it being in a pure 32-bit environment, which is why I hope a multilib solution arises that can handle vulkan lib wrapping. All Valve titles run, however games like HITMAN won't due to it needing 64bit libs. Again, with Box64 here under multilib we could work around these issues, maybe one day...
 
 	
-## BIOS Navigation
+## I. BIOS Navigation
 
 	NOTE: Upon powering up, press ESC at the splash to enter the BIOS menu.
 
@@ -214,7 +226,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 		- Immediately reboot the system
 
 
-## Overclocking & Timings
+## J. Overclocking & Timings
 
 	1. Insert your MicroSD card into your build PC or LX2K.
 	2. Run "sudo apt install device-tree-compiler acpica-tools" to install the dtc dependency we will need for building our BIOS.
