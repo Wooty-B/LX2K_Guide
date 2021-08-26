@@ -1,3 +1,4 @@
+NOTE: XMP Profile may not be working as I haven't played with it, I know in the past it was buggy but I may attempt someday.
 # Using HoneyComb LX2K as a Desktop
 A guide for fully setting up the SolidRun LX2K with novice users in mind.
 
@@ -133,6 +134,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 8. Once completed, reboot the machine and boot into your new Ubuntu install.
 
 *NOTE (8a): You may need to power off device completely, wait a few seconds, and boot again.*
+NOTE: XMP Profile may not be working as I haven't played with it, I know in the past it was buggy but I may attempt someday.
 
 *NOTE (8b): If using this guide to install other distro's, note you may need Micro USB to access Linux in console mode if it doesn't bring up any framebuffer device; common AMD GPU quirk on ARM.*
 
@@ -258,6 +260,5 @@ Running Steam
 		d. There will be a newly created "images" folder in your current directory, open it to find an img file ready to flash!
 		e. Simply flash the image with dd or BalenaEtcher to a MicroSD card of your choice, and insert it into the LX2K.
 		f. Boot and test!
-	NOTE: XMP Profile may not be working as I haven't played with it, I know in the past it was buggy but I may attempt someday.
 	
 	
