@@ -28,11 +28,15 @@ NOTE (8b): If using this guide to install other distro's, note you may need Micr
 
    9. You should now be logged in and sitting at the terminal. Make sure Ethernet is active and set up "/etc/resolv.conf" if needed. (i.e. for me: nameserver 8.8.8.8)
 
-  10. First open "/etc/default/grub" with a text editor and make sure GRUB_CMDLINE_LINUX_DEFAULT has these values: GRUB_CMDLINE_LINUX_DEFAULT="amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=0"
+  10. First open "/etc/default/grub" with a text editor and make sure GRUB_CMDLINE_LINUX_DEFAULT has these values:
+  
+            GRUB_CMDLINE_LINUX_DEFAULT="amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=0"
 
 NOTE (10): The former fixes issues with crashing on boot, the latter prevents crashing in GL apps like Minecraft
 
-  11. Now run the following: "apt update && apt upgrade && apt install linux-firmware tasksel"
+  11. Now run the following:
+  
+            apt update && apt upgrade && apt install linux-firmware tasksel
 
 NOTE (11a): "linux-firmware" installs the correct firmware for amdgpu and should not be skipped.
 
