@@ -34,14 +34,14 @@
       
     sudo nano /srv/chroot/ubuntu-armhf/var/lib/dpkg/statoverride
 	    
-      root root 2755 /usr/bin/crontab
-	    root messagebus 4754 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
+   	   root root 2755 /usr/bin/crontab
+    	   root messagebus 4754 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
 
     sudo schroot -c ubuntu-armhf
     apt install nano
     nano /etc/apt/sources.list
 	    
-      deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute main restricted universe multiverse
+   	    deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute main restricted universe multiverse
 	    deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute-updates main restricted universe multiverse
 	    deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute-backports main restricted universe multiverse
 	    deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute-security main restricted universe multiverse
@@ -49,10 +49,10 @@
     apt update && apt upgrade
     nano ~/.bashrc
 	    
-      export LANGUAGE="C"
+   	    export LANGUAGE="C"
 	    export LC_ALL="C"
 	    export DISPLAY=:0
-	  export CPU_MHZ=2000
+	    export CPU_MHZ=2000
 
     adduser <username>
     passwd <username>
@@ -60,7 +60,7 @@
     su - <username>
     nano ~/.bashrc
 	
-      export LANGUAGE="C"
+    	    export LANGUAGE="C"
 	    export LC_ALL="C"
 	    export DISPLAY=:0
 	    export CPU_MHZ=2000
@@ -91,7 +91,7 @@
     sudo dpkg -i steam.deb
     sudo nano /etc/profile.d/steam.sh
 	
-      export STEAMOS=1
+      	    export STEAMOS=1
 	    export STEAM_RUNTIME=1
       
     sudo apt install mesa-va-drivers mesa-vulkan-drivers mesa-common-dev libglx-mesa0 libglu1-mesa linux-firmware
