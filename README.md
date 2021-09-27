@@ -16,7 +16,7 @@ E. Console Connection
 
 F. Configuring LX2K
 
-G. Installing Ubuntu/Debian
+G. Installing an Operating System
 
 H. Post-Install Recommendations
 
