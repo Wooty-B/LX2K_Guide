@@ -110,7 +110,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 
 ## G. Installing an Operating System
 
-1. [Debian/Ubuntu](Install-Ubuntu)
+1. [Debian/Ubuntu](Install-Ubuntu.md)
 
 2. [Arch Linux](Install-ArchLinux.md)
 
