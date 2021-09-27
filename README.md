@@ -112,7 +112,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 
 1. [Debian/Ubuntu](Install-Ubuntu)
 
-2. [Arch Linux](Install-ArchLinux)
+2. [Arch Linux](Install-ArchLinux.md)
 
 3. [Windows 10/QEMU](Install-Windows-Qemu.md)
 	
