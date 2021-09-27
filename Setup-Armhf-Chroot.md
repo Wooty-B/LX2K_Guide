@@ -84,15 +84,15 @@
   
   3. Install Box86 & Steam
     
-    pi-apps
-    [Install Box86]
-    cd ~
-    wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
-    sudo dpkg -i steam.deb
-    sudo nano /etc/profile.d/steam.sh
+         pi-apps
+    	 [Install Box86]
+    	 cd ~
+    	 wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
+    	 sudo dpkg -i steam.deb
+    	 sudo nano /etc/profile.d/steam.sh
 	
-		export STEAMOS=1
-		export STEAM_RUNTIME=1
+	       export STEAMOS=1
+	       export STEAM_RUNTIME=1
       
     sudo apt install mesa-va-drivers mesa-vulkan-drivers mesa-common-dev libglx-mesa0 libglu1-mesa linux-firmware
     steam -no-browser
