@@ -1,3 +1,5 @@
+# Installing Pi-Apps, Box86, and Steam
+
 1. The following commands will setup a 32-Bit ARM Chroot Environment:
     
     	sudo apt install schroot debootstrap
