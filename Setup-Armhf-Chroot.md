@@ -6,31 +6,31 @@
     	sudo chroot "/srv/chroot/ubuntu-armhf" /debootstrap/debootstrap --second-stage
     	sudo nano /etc/schroot/chroot.d/ubuntu-armhf.conf
     
-	    [ubuntu-armhf]
-	    description=Ubuntu Armhf 32-Bit chroot
-	    aliases=ubuntu-armhf
-	    type=directory
-	    directory=/srv/chroot/ubuntu-armhf
-	    profile=desktop
-	    personality=linux
-	    preserve-environment=true
-	    root-users=<username>
-	    users=<username>
+	    	[ubuntu-armhf]
+	    	description=Ubuntu Armhf 32-Bit chroot
+	    	aliases=ubuntu-armhf
+	    	type=directory
+	    	directory=/srv/chroot/ubuntu-armhf
+	    	profile=desktop
+	    	personality=linux
+	    	preserve-environment=true
+	    	root-users=<username>
+	    	users=<username>
       
     	sudo nano /etc/schroot/desktop/nssdatabases
     
-	    # System databases to copy into the chroot from the host system.
-	    #
-	    # <database name>
-	    #passwd
-	    shadow
-	    #group
-	    gshadow
-	    services
-	    protocols
-	    #networks
-	    #hosts
-	    #user
+	    	# System databases to copy into the chroot from the host system.
+	    	#
+	    	# <database name>
+	    	#passwd
+	    	shadow
+	    	#group
+	    	gshadow
+	    	services
+	    	protocols
+	    	#networks
+	    	#hosts
+	    	#user
       
     	sudo nano /srv/chroot/ubuntu-armhf/var/lib/dpkg/statoverride
 	    
@@ -41,18 +41,18 @@
     	apt install nano
     	nano /etc/apt/sources.list
 	    
-   	    deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute main restricted universe multiverse
-	    deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute-updates main restricted universe multiverse
-	    deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute-backports main restricted universe multiverse
-	    deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute-security main restricted universe multiverse
+   	    	deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute main restricted universe multiverse
+	    	deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute-updates main restricted universe multiverse
+	    	deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute-backports main restricted universe multiverse
+	    	deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute-security main restricted universe multiverse
     
     	apt update && apt upgrade
     	nano ~/.bashrc
 	    
-   	    export LANGUAGE="C"
-	    export LC_ALL="C"
-	    export DISPLAY=:0
-	    export CPU_MHZ=2000
+   	    	export LANGUAGE="C"
+	    	export LC_ALL="C"
+	    	export DISPLAY=:0
+	    	export CPU_MHZ=2000
 
     	adduser <username>
     	passwd <username>
@@ -60,10 +60,10 @@
     	su - <username>
     	nano ~/.bashrc
 	
-    	    export LANGUAGE="C"
-	    export LC_ALL="C"
-	    export DISPLAY=:0
-	    export CPU_MHZ=2000
+    	    	export LANGUAGE="C"
+	    	export LC_ALL="C"
+	    	export DISPLAY=:0
+	    	export CPU_MHZ=2000
   
     	exit
     	exit
@@ -79,8 +79,8 @@
     	mv ~/pi-apps/ ~/pi-apps.32
     	sudo nano /usr/local/bin/pi-apps 
 	
-  	    #!/bin/bash
-	    /home/wooty/pi-apps.32/gui "$@"
+  	    	#!/bin/bash
+	    	/home/wooty/pi-apps.32/gui "$@"
   
   3. Install Box86 & Steam
     
@@ -91,11 +91,10 @@
     sudo dpkg -i steam.deb
     sudo nano /etc/profile.d/steam.sh
 	
-      	    export STEAMOS=1
-	    export STEAM_RUNTIME=1
+      	    	export STEAMOS=1
+	    	export STEAM_RUNTIME=1
       
     sudo apt install mesa-va-drivers mesa-vulkan-drivers mesa-common-dev libglx-mesa0 libglu1-mesa linux-firmware
     steam -no-browser
     
-   NOTE: I am currently troubleshooting required packages and specifics to get a stablke chroot working for Steam. Running the above on a fresh install usually works,
-    howerber after a while it breaks for me and I cannot figure out if it is a dependancy or related to my chroot. Usually it pertains to gl or vulkan.
+   NOTE: I am currently troubleshooting required packages and specifics to get a stablke chroot working for Steam. Running the above on a fresh install usually works, howerver after a while it breaks for me and I cannot figure out if it is a dependancy or related to my chroot. Usually it pertains to gl or vulkan.
