@@ -1,4 +1,3 @@
-NOTE: XMP Profile may not be working as I haven't played with it, I know in the past it was buggy but I may attempt someday.
 # Using HoneyComb LX2K as a Desktop
 A guide for fully setting up the SolidRun LX2K with novice users in mind.
 
