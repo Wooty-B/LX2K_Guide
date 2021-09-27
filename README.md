@@ -45,7 +45,7 @@ J. Overclocking & Timings
 
 The SolidRun HoneyComb LX2K (ClearFog) is a MiniITX form-factor ARM64 development board used for enterprise networking, security, autimotive, server applications, and as a developer workstation. Over the last year there has been much development to bring a stable desktop experience with AMD GPU support and it has finally reached a point where it is now viable as an ARM64 Desktop. Over the last few months the bugs have settled down, so I trashed my cobbled together Debian install and started fresh with Ubuntu 21.04. 
 	
-Using a Radeon WX 4100, many applications such as Blender, RBDOOM-3, Portal 2 and console emulators run laps around my Raspberry Pi 4. Many games run at 3440x1440 @ 60fps as long as you aren't going ham on the render options, Minecraft running close to 60fps @ 12-16 chunks, and OpenMW running @ 60fps with everything turned to max, and double render distance! And to top it off, many x86 games run at almost native speed. (*Using Box86)
+Using a Radeon WX 4100, many applications such as Blender, RBDOOM-3, Portal 2 and console emulators run laps around the Raspberry Pi 4, RockPro64, and Odroid XU-4. Many games run at 3440x1440 @ 60fps as long as you aren't going ham on the render options, Minecraft running close to 60fps @ 12-16 chunks, and OpenMW running @ 60fps with everything turned to max, and double render distance! And to top it off, many x86 games run at almost native speed. (*Using Box86)
 	
 The guide below is a WIP, and I greatly appreciate any comments regarding how I can improve this page, and will try to answer any questions thrown my way. Let the ARMs race begin!
 
