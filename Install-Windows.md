@@ -1,4 +1,4 @@
-# Installing Windows 10
+# Installing Windows 10 Insider Preview
 
 1. Visit "https://uupdump.net/" and search for "Windows 21286 arm64" using the field at the top.
 
