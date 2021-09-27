@@ -114,7 +114,9 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 
 2. [Arch Linux](Install-ArchLinux.md)
 
-3. [Windows 10/QEMU](Install-Windows-Qemu.md)
+3. [Windows 10](Install-Windows.md)
+
+4. [Windows 10/QEMU](Install-Windows-Qemu.md)
 	
 	
 ## H. Post-Install Recommendations
