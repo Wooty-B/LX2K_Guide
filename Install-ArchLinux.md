@@ -1,4 +1,4 @@
-  #Installing Arch Linux ARM
+  # Installing Arch Linux ARM
   
   1. Download the Arch Linux ARM tarball:
   
