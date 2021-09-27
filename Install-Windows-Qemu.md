@@ -45,7 +45,7 @@ NOTE: THIS IS A WIP. Information here is being updated and currently only contai
    
         Official: "wget http://snapshots.linaro.org/components/kernel/leg-virt-tianocore-edk2-upstream/latest/QEMU-AARCH64/RELEASE_GCC5/QEMU_EFI.fd"
    
-        Wooty 1090p Framebuffer: <Link>
+        Wooty 1080p Framebuffer: <Link>
     
    14. Download VirtIO Drivers:
             
