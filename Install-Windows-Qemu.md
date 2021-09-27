@@ -5,6 +5,7 @@ NOTE: THIS IS A WIP. Information here is being updated and currently only contai
         "sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils"
     
    2. Create and navigate to directory for downloading Windows ISO:
+   
         Ex. "mkdir -p ~/Downloads/iso/windows_10"
             "cd ~/Downloads/iso/windows_10"
     
@@ -21,13 +22,13 @@ NOTE: THIS IS A WIP. Information here is being updated and currently only contai
    8. Once downloaded, extract the zip into the directory we created earlier.
     
    9. Run the following in the root of the extracted files:
-   10. 
+   
         "chmod +x uup_download_linux.sh"
         "sudo apt install aria2 cabextract wimtools genisoimage"
         "./uup_download_linux.sh"
     
    10. The download may take a while, once completed, you will have an image file located in your current directory:
-   11. 
+   
         "<VERSION>_MULTI_ARM64_<REGION>.ISO"
     
    11. Create and navigate to directory where your VM will run:
