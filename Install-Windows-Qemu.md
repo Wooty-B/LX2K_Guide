@@ -2,13 +2,13 @@ NOTE: THIS IS A WIP. Information here is being updated and currently only contai
 
    1. Run the following commands:
    
-            "sudo apt update && sudo apt upgrade"
-            "sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils"
+            sudo apt update && sudo apt upgrade
+            sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
     
    2. Create and navigate to directory for downloading Windows ISO:
    
-            "mkdir -p ~/Downloads/iso/windows_10"
-            "cd ~/Downloads/iso/windows_10"
+            mkdir -p ~/Downloads/iso/windows_10
+            cd ~/Downloads/iso/windows_10
     
    3. Visit "https://uupdump.net/" and search for "Windows arm64" using the field at the top.
     
@@ -24,40 +24,40 @@ NOTE: THIS IS A WIP. Information here is being updated and currently only contai
     
    9. Run the following in the root of the extracted files:
    
-            "chmod +x uup_download_linux.sh"
-            "sudo apt install aria2 cabextract wimtools genisoimage"
-            "./uup_download_linux.sh"
+            chmod +x uup_download_linux.sh
+            sudo apt install aria2 cabextract wimtools genisoimage
+            ./uup_download_linux.sh
     
    10. The download may take a while, once completed, you will have an image file located in your current directory:
    
-            "<VERSION>_MULTI_ARM64_<REGION>.ISO"
+            <VERSION>_MULTI_ARM64_<REGION>.ISO
     
    11. Create and navigate to directory where your VM will run:
    
-            "mkdir -p ~/.local/share/qemu/vm/windows_10"
-            "cd ~/.local/share/qemu/vm/windows_10"
+            mkdir -p ~/.local/share/qemu/vm/windows_10
+            cd ~/.local/share/qemu/vm/windows_10
    
    12. Copy and rename Windows 10 ISO into your VM directory:
    
-            "cp ~/Downloads/iso/windows_10/<VERSION>_MULTI_ARM64_<REGION>.ISO ~/.local/share/qemu/vm/windows_10/install.iso"
+            cp ~/Downloads/iso/windows_10/<VERSION>_MULTI_ARM64_<REGION>.ISO ~/.local/share/qemu/vm/windows_10/install.iso
     
    13. Download official QEMU ARM64 UEFI BIOS or use my 1080p modified one:
    
-        Official: "wget http://snapshots.linaro.org/components/kernel/leg-virt-tianocore-edk2-upstream/latest/QEMU-AARCH64/RELEASE_GCC5/QEMU_EFI.fd"
+        Official: wget http://snapshots.linaro.org/components/kernel/leg-virt-tianocore-edk2-upstream/latest/QEMU-AARCH64/RELEASE_GCC5/QEMU_EFI.fd
    
-        Wooty 1080p Framebuffer: <Link>
+        Wooty 1080p Framebuffer: wget https://github.com/Wooty-B/LX2K_Guide/edit/main/QEMU_EFI.fd
     
    14. Download VirtIO Drivers:
             
-            "wget https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.204-1/virtio-win-0.1.204.iso" 
+            wget https://fedorapeople.org/groups/virt/virtio-win/direct-downloads/archive-virtio/virtio-win-0.1.204-1/virtio-win-0.1.204.iso
     
    15. Create a 30GB+ disk image:
    
-            "qemu-img create -f qcow2 system.img 40G"
+            qemu-img create -f qcow2 system.img 40G
     
    16. Create a script in your current directory named "run.sh":
   
-            "nano run.sh"
+            nano run.sh
    
           qemu-system-aarch64 \
           -cpu host \
@@ -78,11 +78,11 @@ NOTE: THIS IS A WIP. Information here is being updated and currently only contai
     
    17. Run the following to make the script executable:
    
-            "chmod +x run.sh"
+            chmod +x run.sh
     
    18. Run the script to launch your VM:
    
-            "./run.sh"
+            ./run.sh
     
    19. Press Space whenever prompted to launch the Windows 10 Installer.
     
@@ -90,13 +90,13 @@ NOTE: THIS IS A WIP. Information here is being updated and currently only contai
     
    21. When at the disk install screen, choose "Load Drivers" and load the following directory:
    
-            "virtio-win-0.1.204>viostor-w10>ARM64"
+            virtio-win-0.1.204>viostor-w10>ARM64
     
    22. Install the RedHat VirtIO driver, it will bring you back to the Disk Select screen.
     
    23. Chose "Load Drivers" again and load the following directory:
    
-            "virtio-win-0.1.204>NetKVM>w10>ARM64"
+            virtio-win-0.1.204>NetKVM>w10>ARM64
     
    24. Install the RedHat VirtIO driver, it will bring you back to the Disk Select screen.
     
@@ -113,7 +113,7 @@ NOTE: THIS IS A WIP. Information here is being updated and currently only contai
     
    1. Install Samba using the following command:
    
-            "sudo apt install samba"
+            sudo apt install samba
     
    2. Add the following to your "run.sh" script:
    
@@ -126,7 +126,7 @@ NOTE: THIS IS A WIP. Information here is being updated and currently only contai
     
    5. Select a drive letter of your choice and use the following as the folder:
    
-            "\\10.0.2.4\qemu"
+            \\10.0.2.4\qemu
     
    6. Name your drive and click Finish.
     
