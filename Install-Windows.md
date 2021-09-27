@@ -35,7 +35,7 @@
 13. Setup Windows 10 normally, and boot into your now Windows 10 system!
 
 
-NOTES:
+    NOTES:
 
 1. There are no Windows ARM64 AMD GPU drivers.
 
