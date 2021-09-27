@@ -32,7 +32,7 @@
 
 12. Once the installe reboots, you may need to select the SATA drive to continue on to Windows 10.
 
-13. Setup Windows 10 normally, and boot into your now Windows 10 system!
+13. Setup Windows 10 normally, and boot into your new Windows 10 system!
 
 
 
