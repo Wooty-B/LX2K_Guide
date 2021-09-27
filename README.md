@@ -72,7 +72,7 @@ You will need the following items
  - Build computer/SBC with an SD slot or adaptor
  - (recommended) Micro USB cable
  - (recommended) Radeon GCN 5th Gen or lower
- - (recommended) Standard USB Keyboard (i.e.: No fancy gaming keyboard!)
+ - (recommended) Standard USB Keyboard (i.e.: A cheap usb keyboard)
 
 
 ## E. Console Connection
