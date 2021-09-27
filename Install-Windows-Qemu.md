@@ -90,7 +90,7 @@ NOTE: THIS IS A WIP. Information here is being updated and currently only contai
     
    19. Press Space whenever prompted to launch the Windows 10 Installer.
     
-   20. Start the installer as usually, skipt the key activation, and choose custom.
+   20. Start the installer as usual, skip the key activation, and choose custom.
     
    21. When at the disk install screen, choose "Load Drivers" and load the following directory:
    
