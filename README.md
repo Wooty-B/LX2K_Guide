@@ -56,7 +56,7 @@ The guide below is a WIP, and I greatly appreciate any comments regarding how I 
  - nVidia GPU's only support framebuffer at time of writing (no hardware acceleration)
  - SolidRun images can be downloaded as lx2160a_uefi (UEFI BIOS) -OR- lx2160a_build (U-Boot BIOS (like Rasperry Pi and SBC's))
  - The EDKII UEFI BIOS will sometimes hang at splash under certain reboot conditions; simply wait a few seconds and boot again
- - If you experience frequent crashing, no wake from sleep, etc., make sure "fixes" have been applied
+ - If you experience frequent crashing, no wake from sleep, etc., make sure GRUB Linux Defaults are set as well as disabling sleep/hybernate systemctl services.
  - At time of writing there appears to be minor window boarder and text artifacting on occasion; shouldn't affect overall experience
  - Try using a generic/stock kernel of 5.10 or higer; alternatively you can install an older kernel with SolidRun patches from the SolidRun GitHub page. [https://github.com/SolidRun/linux-stable]
  - Booting with some RGB Gaming keyboards may not register during POST and will not responmmd to input. Once booted into Linux drivers will pick up any non-standard keyboards. I.e.: You may need a 2nd generic USB keyboard to highlight BIOS options.
