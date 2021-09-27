@@ -1,3 +1,5 @@
+  #Installing Arch Linux ARM
+  
   1. Download the Arch Linux ARM tarball:
   
           wget http://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
