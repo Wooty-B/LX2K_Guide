@@ -129,7 +129,8 @@ Install Newer Mesa, Improve GPU Performance/Issues
 Install Pi-Apps (Minecraft Java, Box86 & Box64 setup)
 	
 - Pi-Apps contains a few games such as full Minecraft Java, and some quality of life apps like Box86/64. I recommend this route to save time manually installing and figuring out the quirks. Pi-Apps can be installed from Github or by using:
-	  	"wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash"
+ 
+	"wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash"
 
 Enable x86_32 and x86_64 Compatability
 	
