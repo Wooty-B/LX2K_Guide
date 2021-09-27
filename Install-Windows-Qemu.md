@@ -8,6 +8,7 @@ NOTE: THIS IS A WIP. Information here is being updated and currently only contai
    2. Create and navigate to directory for downloading Windows ISO:
    
         Ex. "mkdir -p ~/Downloads/iso/windows_10"
+        
             "cd ~/Downloads/iso/windows_10"
     
    3. Visit "https://uupdump.net/" and search for "Windows arm64" using the field at the top.
@@ -25,7 +26,9 @@ NOTE: THIS IS A WIP. Information here is being updated and currently only contai
    9. Run the following in the root of the extracted files:
    
         "chmod +x uup_download_linux.sh"
+        
         "sudo apt install aria2 cabextract wimtools genisoimage"
+        
         "./uup_download_linux.sh"
     
    10. The download may take a while, once completed, you will have an image file located in your current directory:
@@ -35,6 +38,7 @@ NOTE: THIS IS A WIP. Information here is being updated and currently only contai
    11. Create and navigate to directory where your VM will run:
    
         Ex. "mkdir -p ~/.local/share/qemu/vm/windows_10"
+   
             "cd ~/.local/share/qemu/vm/windows_10"
    
    12. Copy and rename Windows 10 ISO into your VM directory:
@@ -44,6 +48,7 @@ NOTE: THIS IS A WIP. Information here is being updated and currently only contai
    13. Download official QEMU ARM64 UEFI BIOS or use my 1080p modified one:
    
         Official: "wget http://snapshots.linaro.org/components/kernel/leg-virt-tianocore-edk2-upstream/latest/QEMU-AARCH64/RELEASE_GCC5/QEMU_EFI.fd"
+   
         Wooty 1090p Framebuffer: <Link>
     
    14. Download VirtIO Drivers:
