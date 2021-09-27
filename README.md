@@ -19,9 +19,11 @@ G. Installing an Operating System
 
 H. Post-Install Recommendations
 
-I. BIOS Navigation
+I. Steam Install
 
-J. Overclocking & Timings
+J. BIOS Navigation
+
+K. Overclocking & Timings
 
 ## A. Specs
 
@@ -138,12 +140,11 @@ Enable x86_32 and x86_64 Compatability
 	 	2. I recommend installing just Box86, then installing Box64 if needed. I have run into issues where, for example, launching AssaultCube with Box64 installed hangs when trying to connect to GL. Uninstalling Box64 let AssaultCube load 32bit libraries under Box86, booting the game properly.
 	 	3. If you have any x86 applications scripted to run natively on aarch64. Box86 may try and take over, possibly breaking things.
 	 	
-Running Steam
-	 
-- YES! Steam launches and runs Source titles!!! I followed a few guides to get this running over the weekend and it involves setting up a 32-bit armhf chroot and installing Box86 there; multilib Box86 is apparently not the way to go at time of writing. Steam has to be launched with "steam -no-browser" due to it being in a pure 32-bit environment, which is why I hope a multilib solution arises that can handle vulkan lib wrapping. All Valve titles run, however games like HITMAN won't due to it needing 64bit libs. Again, with Box64 here under multilib we could work around these issues, maybe one day...
-
+## I. Install Steam
 	
-## I. BIOS Navigation
+	[Setup Pi-Apps, Box86, and Steam](Install-Armhf-Chroot)
+	
+## J. BIOS Navigation
 
 	NOTE: Upon powering up, press ESC at the splash to enter the BIOS menu.
 
@@ -194,7 +195,7 @@ Running Steam
 		- Immediately reboot the system
 
 
-## J. Overclocking & Timings
+## K. Overclocking & Timings
 
 	1. Insert your MicroSD card into your build PC or LX2K.
 	2. Run "sudo apt install device-tree-compiler acpica-tools" to install the dtc dependency we will need for building our BIOS.
