@@ -142,7 +142,7 @@ Enable x86_32 and x86_64 Compatability
 	 	
 ## I. Install Steam
 	
-	[Setup Pi-Apps, Box86, and Steam](Install-Armhf-Chroot)
+[Setup Pi-Apps, Box86, and Steam](Install-Armhf-Chroot)
 	
 ## J. BIOS Navigation
 
