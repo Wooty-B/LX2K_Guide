@@ -99,4 +99,4 @@
     sudo apt install mesa-va-drivers mesa-vulkan-drivers mesa-common-dev libglx-mesa0 libglu1-mesa linux-firmware
     steam -no-browser
     
-   NOTE: I am currently troubleshooting required packages and specifics to get a stablke chroot working for Steam. Running the above on a fresh install usually works, howerver after a while it breaks for me and I cannot figure out if it is a dependancy or related to my chroot. Usually it pertains to gl or vulkan.
+   NOTE: I am currently troubleshooting required packages and specifics to get a stable chroot working for Steam. Running the above on a fresh install usually works, howerver after a while it breaks for me and I cannot figure out if it is a dependancy or related to my chroot. Usually pertains to gl or vulkan.
