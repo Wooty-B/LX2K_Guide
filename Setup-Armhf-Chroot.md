@@ -34,8 +34,8 @@
       
     	sudo nano /srv/chroot/ubuntu-armhf/var/lib/dpkg/statoverride
 	    
-   	   root root 2755 /usr/bin/crontab
-    	   root messagebus 4754 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
+   	   	root root 2755 /usr/bin/crontab
+    	   	root messagebus 4754 /usr/lib/dbus-1.0/dbus-daemon-launch-helper
 
     	sudo schroot -c ubuntu-armhf
     	apt install nano
