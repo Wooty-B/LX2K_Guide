@@ -47,7 +47,7 @@ The SolidRun HoneyComb LX2K (ClearFog) is a MiniITX form-factor ARM64 developmen
 	
 Using a Radeon WX 4100, many applications such as Blender, RBDOOM-3, Portal 2 and console emulators run laps around the Raspberry Pi 4, RockPro64, and Odroid XU-4. Many games run at 3440x1440 @ 60fps as long as you aren't going ham on the render options, Minecraft running close to 60fps @ 12-16 chunks, and OpenMW running @ 60fps with everything turned to max. And with Box86, there are many applications that run smoothly with Box86.
 	
-The guide below is a WIP, and I greatly appreciate any comments regarding how I can improve this page, and will try to answer any questions thrown my way. Let the ARMs race begin!
+The guide below is a WIP, and I greatly appreciate any comments regarding how I can improve this page, and will try to answer any questions thrown my way.
 
 
 ## C. Important Notes
