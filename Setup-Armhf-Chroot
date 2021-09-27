@@ -79,7 +79,7 @@
     mv ~/pi-apps/ ~/pi-apps.32
     sudo nano /usr/local/bin/pi-apps 
 	
-      #!/bin/bash
+  	    #!/bin/bash
 	    /home/wooty/pi-apps.32/gui "$@"
   
   3. Install Box86 & Steam
