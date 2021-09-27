@@ -48,10 +48,10 @@
       
           nano .config
       
-      CONFIG_LOCALVERSION="-1-ARCH"
-      #CONFIG_MODULE_SIG_KEY=""
-      #CONFIG_SYSTEM_TRUSTED_KEYS=""
-      #CONFIG_CRYPTO_AEGIS128
+          CONFIG_LOCALVERSION="-1-ARCH"
+          #CONFIG_MODULE_SIG_KEY=""
+          #CONFIG_SYSTEM_TRUSTED_KEYS=""
+          #CONFIG_CRYPTO_AEGIS128
       
  10. Run the build:
  
