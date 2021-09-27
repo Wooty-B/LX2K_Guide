@@ -99,3 +99,7 @@
  
           pacman -Sy gnome-desktop
           sytemctl enable gdm
+ 
+ NOTES:
+ 
+ 1. If Terminal doesnt launch under Gnome, install Terminator, it works fine. Currently troubleshooting.
