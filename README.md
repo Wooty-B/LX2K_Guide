@@ -59,7 +59,7 @@ The guide below is a WIP, and I greatly appreciate any comments regarding how I 
  - If you experience frequent crashing, no wake from sleep, etc., make sure GRUB Linux Defaults are set as well as disabling sleep/hybernate services.
  - At time of writing there appears to be minor window boarder and text artifacting on occasion; shouldn't affect overall experience
  - Try using a generic/stock kernel of 5.10 or higer; alternatively you can install an older kernel with SolidRun patches from the SolidRun GitHub page. [https://github.com/SolidRun/linux-stable]
- - Booting with some RGB Gaming keyboards may not register during POST and will not responmmd to input. Once booted into Linux drivers will pick up any non-standard keyboards. I.e.: You may need a 2nd generic USB keyboard to highlight BIOS options.
+ - Booting with some RGB Gaming keyboards may not register during POST and will not respond to input. Once booted into Linux drivers will pick up any non-standard keyboards. I.e.: You may need a 2nd generic USB keyboard to highlight BIOS options.
  - Use Wayland over X11 if at all possible, X has much more bugs with GPU acceleration and Wayland has the ability to launch X windows anyways.
  
  
