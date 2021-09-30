@@ -1,5 +1,6 @@
 # Installing Windows 10 for QEMU/KVM
 
+
    1. Run the following commands:
    
             sudo apt update && sudo apt upgrade
