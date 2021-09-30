@@ -48,7 +48,7 @@
             
             wget http://snapshots.linaro.org/components/kernel/leg-virt-tianocore-edk2-upstream/latest/QEMU-AARCH64/RELEASE_GCC5/QEMU_EFI.fd
    
-        Wooty 1080p Framebuffer:
+        Modified 1080p Framebuffer:
         
             wget https://github.com/Wooty-B/LX2K_Guide/edit/main/QEMU_EFI.fd
     
