@@ -31,7 +31,7 @@ K. [Overclocking & Timings](#timings)
 
 **CPU** - NXP Layerscape LX2160A 16-core ARM Cortex-A72; 2Ghz (Overclockable to 2.5Ghz+ all-core)
 
-**RAM** - 2x DDR4 SODIMM slots @ up to 3200Mhz; ECC Compatable; Up to 64GB supported
+**RAM** - 2x DDR4 SODIMM slots @ up to 3200Mhz; ECC Compatable; Up to 64GB supported ; The LX2160a CEX7 module only supports 1.2V RAM
 
 **Storage** - 1x PCIe Gen. 3 x4 m.2; 4x SATA III ports; 1x 64GB Onboard eMMC; 1x SPI Flash, 1x UHS-1 MicroSD Slot
 
