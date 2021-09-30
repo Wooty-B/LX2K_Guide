@@ -3,27 +3,17 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 
 ## Table of Contents:
 
-A. [Specs](#specs)
-
-B. [Introduction](#intro)
-
-C. [Important Notes](#notes)
-
-D. [Prerequisites](#prereq)
-
-E. [Console Connection](#console)
-
-F. [Configuring LX2K](#config)
-
-G. [Installing an Operating System](#os)
-
-H. [Post-Install Recommendations](#reccomend)
-
-I. [Steam Install](#steam)
-
-J. [BIOS Navigation](#bios)
-
-K. [Overclocking & Timings](#timings)
+1. [Specifications](#specs)
+1. [Introduction](#intro)
+1. [Important Notes](#notes)
+1. [Prerequisites](#prereq)
+1. [Console Connection](#console)
+1. [Configuring LX2K](#config)
+1. [Installing an Operating System](#os)
+1. [Post-Install Recommendations](#reccomend)
+1. [Steam Install](#steam)
+1. [BIOS Navigation](#bios)
+1. [Overclocking & Timings](#timings)
 
 <a name="specs"/>
 
