@@ -85,7 +85,7 @@
           chmod 755 /bin
           chmod 755 /lib
       
- 16. Reboot LX2K and boot intoyour new install using the BIOS.
+ 16. Reboot LX2K and boot into your new install using the BIOS.
  17. Log into your new install with root/root.
  18. Set new root password:
  
