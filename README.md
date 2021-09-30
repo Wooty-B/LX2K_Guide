@@ -99,7 +99,7 @@ You will need the following items
  - Parity: NONE
  - Flow Control: XON/XOFF
 
-NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT (congratulations...) port.
+NOTE: Make sure to connect Micro USB cable to the Console port (the one closer to 1GbE connector).
 
 <a name="config"/>
 
