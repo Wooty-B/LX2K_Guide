@@ -119,16 +119,15 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 
 ## G. Installing an Operating System
 
+1.[Debian/Ubuntu](Install-Ubuntu.md)
 
-1. [Debian/Ubuntu](Install-Ubuntu.md)
+2.[Arch Linux](Install-ArchLinux.md)
 
-2. [Arch Linux](Install-ArchLinux.md)
+3.[Void Linux](Install-Void-glibc.md)
 
-3. [Void Linux](Install-Void-glibc.md)
+4.[Windows 10](Install-Windows.md)
 
-4. [Windows 10](Install-Windows.md)
-
-5. [Windows 10/QEMU](Install-Windows-Qemu.md)
+5.[Windows 10/QEMU](Install-Windows-Qemu.md)
 	
 <a name="reccomend"/>
 
@@ -159,8 +158,7 @@ As mentioned above, Pi-Apps can automatically set up Box64 and Box86 (with auto 
    1. Running Wine should work for many passive apps such as Notepad++ or DosBox, but because it's translating AND emulating don't expect any miracles.
 	 	
    2. I recommend installing just Box86, then installing Box64 if needed. I have run into issues where, for example, launching AssaultCube with Box64 installed hangs when trying to connect to GL. Uninstalling Box64 let AssaultCube load 32bit libraries under Box86, booting the game properly.
-	 	
-   3. If you have any x86 applications scripted to run natively on aarch64. Box86 may try and take over, possibly breaking things.
+	 
 
 <a name="steam"/>
 
