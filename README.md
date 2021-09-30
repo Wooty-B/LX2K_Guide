@@ -5,7 +5,7 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 
 A. [Specs](#specs)
 
-B. [Introduction](#introduction)
+B. [Introduction](#intro)
 
 C. [Important Notes](#notes)
 
@@ -45,6 +45,8 @@ K. [Overclocking & Timings](#timings)
 
 **Form Factor** - Mini ITX
 
+<a name="intro"/>
+
 ## B. Introduction
 
 The SolidRun HoneyComb LX2K (ClearFog) is a MiniITX form-factor ARM64 development board used for enterprise networking, security, automotive, server applications, and as a developer workstation. Over the last year there has been much development to bring a stable desktop experience with AMD GPU support and it has finally reached a point where it is now viable as an ARM64 Desktop. Over the last few months the bugs have settled down, so I decided to write up some guides on how to get this set up for various use cases.
@@ -53,6 +55,7 @@ Using a Radeon WX 4100, many applications such as Blender, RBDOOM-3, Portal 2 an
 	
 The guide below is a WIP, and I greatly appreciate any comments regarding how I can improve this page, and will try to answer any questions thrown my way.
 
+<a name="notes"/>
 
 ## C. Important Notes
 
@@ -66,6 +69,7 @@ The guide below is a WIP, and I greatly appreciate any comments regarding how I 
  - Booting with some RGB Gaming keyboards may not register during POST and will not respond to input. Once booted into Linux drivers will pick up any non-standard keyboards. I.e.: You may need a 2nd generic USB keyboard to highlight BIOS options.
  - Use Wayland over X11 if at all possible, X has much more bugs with GPU acceleration and Wayland has the ability to launch X windows anyways.
  
+ <a name="prereq"/>
  
 ## D. Prerequisites
 
@@ -78,6 +82,7 @@ You will need the following items
  - (recommended) Radeon GCN 5th Gen or lower
  - (recommended) Standard USB Keyboard (i.e.: A cheap usb keyboard)
 
+<a name="console"/>
 
 ## E. Console Connection
 
@@ -90,6 +95,7 @@ You will need the following items
 
 NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT (congratulations...) port.
 
+<a name="config"/>
 
 ## F. Configuring LX2K
 
@@ -109,6 +115,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 
 *NOTE (4): At this point you may begin using the board, you may now also connect over console via Micro USB. Using the Micro USB cable is useful for controlling BIOS over serial, troubleshooting boot issues, and installing some OS' that only work in console mode.*
 
+<a name="os"/>
 
 ## G. Installing an Operating System
 
@@ -122,7 +129,8 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 
 4. [Windows 10/QEMU](Install-Windows-Qemu.md)
 	
-	
+<a name="reccomend"/>
+
 ## H. Post-Install Recommendations
 
 Possbile Crash on Sleep/Suspend
@@ -147,11 +155,15 @@ Enable x86_32 and x86_64 Compatability
 	 	1. Running Wine should work for many passive apps such as Notepad++ or DosBox, but because it's translating AND emulating don't expect any miracles.
 	 	2. I recommend installing just Box86, then installing Box64 if needed. I have run into issues where, for example, launching AssaultCube with Box64 installed hangs when trying to connect to GL. Uninstalling Box64 let AssaultCube load 32bit libraries under Box86, booting the game properly.
 	 	3. If you have any x86 applications scripted to run natively on aarch64. Box86 may try and take over, possibly breaking things.
-	 	
+
+<a name="steam"/>
+
 ## I. Install Steam
 	
 [Setup Pi-Apps, Box86, and Steam](Setup-Armhf-Chroot.md)
-	
+
+<a name="bios"/>
+
 ## J. BIOS Navigation
 
 	NOTE: Upon powering up, press ESC at the splash to enter the BIOS menu.
@@ -202,6 +214,7 @@ Enable x86_32 and x86_64 Compatability
 	F. Reset
 		- Immediately reboot the system
 
+<a name="timings"/>
 
 ## K. Overclocking & Timings
 
