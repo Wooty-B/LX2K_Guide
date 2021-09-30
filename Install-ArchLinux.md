@@ -73,29 +73,35 @@
           grub-install --target=arm64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
           grub-mkconfig -o /boot/efi/EFI/grub/grub.cfg
       
- 14. Set root permissions:
+ 14. Configure Grub Linux defaults:
+          
+          nano /etc/default/grub
+	
+	        GRUB_CMDLINE_LINUX_DEFAULT="nomodeset loglevel=4 arm-smmu.disable_bypass=0 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=1"
+ 
+ 15. Set root permissions:
  
           chmod 755 /
           chmod 755 /bin
           chmod 755 /lib
       
- 15. Reboot LX2K and boot intoyour new install using the BIOS.
- 16. Log into your new install with root/root.
- 17. Set new root password:
+ 16. Reboot LX2K and boot intoyour new install using the BIOS.
+ 17. Log into your new install with root/root.
+ 18. Set new root password:
  
           passwd root
  
- 18. Edit resolv.conf:
+ 19. Edit resolv.conf:
  
           nano /etc/resolv.conf
       
           nameserver 8.8.8.8
       
- 19. Update system:
+ 20. Update system:
  
           pacman -Syyu
       
- 20. Install Gnome:   [At time of writing, still working on Mesa GNOME driver patch]
+ 21. Install Gnome:   [At time of writing, still working on Mesa GNOME driver patch]
  
           pacman -Sy gnome-desktop
           sytemctl enable gdm
@@ -103,3 +109,4 @@
  NOTES:
  
  1. If Terminal doesnt launch under Gnome, install Terminator, it works fine. Currently troubleshooting.
+ 2. Graphical issues abound. Currently troubleshooting.
