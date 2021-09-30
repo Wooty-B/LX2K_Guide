@@ -125,9 +125,9 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 
 3. [Void Linux](Install-Void-glibc.md)
 
-3. [Windows 10](Install-Windows.md)
+4. [Windows 10](Install-Windows.md)
 
-4. [Windows 10/QEMU](Install-Windows-Qemu.md)
+5. [Windows 10/QEMU](Install-Windows-Qemu.md)
 	
 <a name="reccomend"/>
 
