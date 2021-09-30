@@ -2,7 +2,7 @@
 
 NOTE: For simplicity I will be focusing/referencing Ubuntu 21.04, however this can be easily applied to Debian 10 & 11 installs. Ubuntu was chosen for newer kernel, package repositories, and beginner friendliness.
 
-   1. Download the Ubuntu 21.04 from the Ubuntu Server for ARM page. (https://ubuntu.com/download/server/arm)
+   1. Download the Ubuntu 21.04 ISO from the Ubuntu Server for ARM page. (https://ubuntu.com/download/server/arm)
 
 NOTE (1): (20.04 and 20.10 will work; but may need kernel patches/update for less buggy experience on 20.04 and lower.
 
