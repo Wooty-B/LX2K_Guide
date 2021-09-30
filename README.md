@@ -2,31 +2,30 @@
 A guide for fully setting up the SolidRun LX2K with novice users in mind.
 
 ## Table of Contents:
-[Headers](#headers)  
-[Emphasis](#emphasis)
 
-A. Specs
+A. [Specs](#specs)
 
-B. Introduction
+B. [Introduction](#introduction)
 
-C. Important Notes
+C. [Important Notes](#notes)
 
-D. Prerequisites
+D. [Prerequisites](#prereq)
 
-E. Console Connection
+E. [Console Connection](#console)
 
-F. Configuring LX2K
+F. [Configuring LX2K](#config)
 
-G. Installing an Operating System
+G. [Installing an Operating System](#os)
 
-H. Post-Install Recommendations
+H. [Post-Install Recommendations](#reccomend)
 
-I. Steam Install
+I. [Steam Install](#steam)
 
-J. BIOS Navigation
+J. [BIOS Navigation](#bios)
 
-K. Overclocking & Timings
+K. [Overclocking & Timings](#timings)
 
+<a name="specs"/>
 ## A. Specs
 
 **CPU** - NXP Layerscape LX2160A 16-core ARM Cortex-A72; 2Ghz (Overclockable to 2.5Ghz+ all-core)
