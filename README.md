@@ -178,7 +178,7 @@ As mentioned above, Pi-Apps can automatically set up Box64 and Box86 (with auto 
 		1. Standard English
 		2. Standard French
 		3. English
-		4. Fench
+		4. French
 	B. Device Manager
 		1. Device List
 			a. Tls Auth Configuration
