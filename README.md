@@ -138,32 +138,36 @@ NOTE: Make sure to connect Micro USB cable to the Console port (the one closer t
 
 ## H. Post-Install Recommendations
 
-- Possbile Crash on Sleep/Suspend
-	
+### Possible Crash on Sleep/Suspend
+
 If the system crashes constantly on sleep/suspend event, use this command to disable:
-	  
-	  	"sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
-	 	
-- Install Newer Mesa, Improve GPU Performance/Issues
-	
+
+```
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
+```
+
+### Install Newer Mesa, Improve GPU Performance/Issues
+
 Over the course of this boards life its recieved various Mesa patches to help fix quirks related to GPU/PCIe issues. Ubuntu and most systems Mesa packages are a little out of date for stability reasons. I use Oibaf's repository which contains up to date aarch64 builds, and can be added by doing the following:
-	  
-		"sudo add-apt-repository ppa:oibaf/graphics-drivers && sudo apt update"
-	 
-- Install Pi-Apps (Minecraft Java, Box86 & Box64 setup)
+
+```
+sudo add-apt-repository ppa:oibaf/graphics-drivers && sudo apt update
+```
+
+### Install Pi-Apps (Minecraft Java, Box86 & Box64 setup)
 	
 Pi-Apps contains a few games such as full Minecraft Java, and some quality of life apps like Box86/64. I recommend this route to save time manually installing and figuring out the quirks. Pi-Apps can be installed from Github or by using:
- 
-		"wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash"
+```
+wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
+```
 
-- Enable x86_32 and x86_64 Compatability
-	
+### Enable x86_32 and x86_64 Compatibility
+
 As mentioned above, Pi-Apps can automatically set up Box64 and Box86 (with auto armhf chroot). This means just enabling these will allow you to execute many x86 based linux programs, including Wine. A few things to note:
-	 	
-   1. Running Wine with Box86 should work for many passive apps such as Notepad++ or DosBox, but because it's translating AND emulating don't expect any miracles.
-	 	
-   2. I recommend installing just Box86, then installing Box64 if needed. I have run into issues where, for example, launching AssaultCube with Box64 installed hangs when trying to connect to GL. Uninstalling Box64 let AssaultCube load 32bit libraries under Box86, booting the game properly.
-	 
+
+1. Running Wine with Box86 should work for many passive apps such as Notepad++ or DosBox, but because it's translating AND emulating don't expect any miracles.
+2. I recommend installing just Box86, then installing Box64 if needed. I have run into issues where, for example, launching AssaultCube with Box64 installed hangs when trying to connect to GL. Uninstalling Box64 let AssaultCube load 32bit libraries under Box86, booting the game properly.
+
 
 <a name="steam"/>
 
