@@ -155,9 +155,12 @@ Install Pi-Apps (Minecraft Java, Box86 & Box64 setup)
 Enable x86_32 and x86_64 Compatability
 	
 - As mentioned above, Pi-Apps can automatically set up Box64 and Box86 (with auto armhf chroot). This means just enabling these will allow you to execute many x86 based linux programs, including Wine. A few things to note:
-	 	1. Running Wine should work for many passive apps such as Notepad++ or DosBox, but because it's translating AND emulating don't expect any miracles.
-	 	2. I recommend installing just Box86, then installing Box64 if needed. I have run into issues where, for example, launching AssaultCube with Box64 installed hangs when trying to connect to GL. Uninstalling Box64 let AssaultCube load 32bit libraries under Box86, booting the game properly.
-	 	3. If you have any x86 applications scripted to run natively on aarch64. Box86 may try and take over, possibly breaking things.
+	 	
+	1. Running Wine should work for many passive apps such as Notepad++ or DosBox, but because it's translating AND emulating don't expect any miracles.
+	 	
+	2. I recommend installing just Box86, then installing Box64 if needed. I have run into issues where, for example, launching AssaultCube with Box64 installed hangs when trying to connect to GL. Uninstalling Box64 let AssaultCube load 32bit libraries under Box86, booting the game properly.
+	 	
+	3. If you have any x86 applications scripted to run natively on aarch64. Box86 may try and take over, possibly breaking things.
 
 <a name="steam"/>
 
