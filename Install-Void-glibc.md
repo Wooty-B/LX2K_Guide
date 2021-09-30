@@ -107,3 +107,5 @@
 	xbps-install dracut
 	dracut --host-only --kver 5.14.8_1
 	update-grub
+
+  21. Reboot into your new system.
