@@ -157,7 +157,7 @@ Pi-Apps contains a few games such as full Minecraft Java, and some quality of li
 	
 As mentioned above, Pi-Apps can automatically set up Box64 and Box86 (with auto armhf chroot). This means just enabling these will allow you to execute many x86 based linux programs, including Wine. A few things to note:
 	 	
-   1. Running Wine should work for many passive apps such as Notepad++ or DosBox, but because it's translating AND emulating don't expect any miracles.
+   1. Running Wine with Box86 should work for many passive apps such as Notepad++ or DosBox, but because it's translating AND emulating don't expect any miracles.
 	 	
    2. I recommend installing just Box86, then installing Box64 if needed. I have run into issues where, for example, launching AssaultCube with Box64 installed hangs when trying to connect to GL. Uninstalling Box64 let AssaultCube load 32bit libraries under Box86, booting the game properly.
 	 
