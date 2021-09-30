@@ -17,23 +17,39 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 
 <a name="specs"/>
 
-## A. Specs
+## A. Specifications
 
-**CPU** - NXP Layerscape LX2160A 16-core ARM Cortex-A72; 2Ghz (Overclockable to 2.5Ghz+ all-core)
+- Board form factor
+  - Mini-ITX
+- CPU
+  - NXP Layerscape LX2160A 16-core ARM Cortex-A72; 2Ghz (overclockable to 2.5Ghz+ all-core)
+- RAM
+  - 2x DDR4 SODIMM slots @ up to 3200Mhz
+    - if you have one module then use top slot
+  - XMP profiles are supported
+  - ECC supported
+  - Up to 64GB
+  - Supports only 1.2v modules
+- Storage
+  - m.2 slot for PCI Express Gen3 x4 NVME
+  - 4 Serial ATA III ports
+  - Onboard eMMC 64GB
+  - MicroSD Slot
+  - SPI Flash for firmware
+- Network
+  - 1x Gigabit Ethernet with RJ-45 connector
+  - 4x 10GbE ports (40Gb support) with SFP+ connectors
+- PCI Express
+  - x8 half-slot (open-ended, x16 card support), PCI Express Gen3
+- USB
+  - 2 USB 3 ports
+  - 1 USB 3 header (2 ports)
+  - 1 USB 2 header (2 ports)
+- Interface
+  - 1 micro USB port for serial console
+  - 1 micro USB port for management
+  - 1 JTAG header
 
-**RAM** - 2x DDR4 SODIMM slots @ up to 3200Mhz; ECC Compatable; Up to 64GB supported (Only supports 1.2v modules)
-
-**Storage** - 1x PCIe Gen. 3 x4 m.2; 4x SATA III ports; 1x 64GB Onboard eMMC; 1x SPI Flash, 1x UHS-1 MicroSD Slot
-
-**Network** - 1x Gigabit Ethernet; 4x SFP+ 10Gb (40Gb support)
-
-**PCIe** - 1x PCIe Gen. 3 x8 half-slot (open-ended, x16 card support)
-
-**USB** - 2x USB3 ports; 1x USB3 header (2 ports); 1x USB2 header (2 ports)
-
-**Interface** - 1x micro USB-OTG Console port; 1x micro USB-OTG Management port; 1x JTAG header
-
-**Form Factor** - Mini ITX
 
 <a name="intro"/>
 
