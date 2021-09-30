@@ -119,6 +119,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 
 ## G. Installing an Operating System
 
+
 1. [Debian/Ubuntu](Install-Ubuntu.md)
 
 2. [Arch Linux](Install-ArchLinux.md)
@@ -136,18 +137,20 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 Possbile Crash on Sleep/Suspend
 	
 - If the system crashes constantly on sleep/suspend event, use this command to disable:
-	 	"sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
+	  
+	  	"sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target"
 	 	
 Install Newer Mesa, Improve GPU Performance/Issues
 	
 - Over the course of this boards life its recieved various Mesa patches to help fix quirks related to GPU/PCIe issues. Ubuntu and most systems Mesa packages are a little out of date for stability reasons. I use Oibaf's repository which contains up to date aarch64 builds, and can be added by doing the following:
-	 	"sudo add-apt-repository ppa:oibaf/graphics-drivers && sudo apt update"
+	  
+		"sudo add-apt-repository ppa:oibaf/graphics-drivers && sudo apt update"
 	 
 Install Pi-Apps (Minecraft Java, Box86 & Box64 setup)
 	
 - Pi-Apps contains a few games such as full Minecraft Java, and some quality of life apps like Box86/64. I recommend this route to save time manually installing and figuring out the quirks. Pi-Apps can be installed from Github or by using:
  
-	"wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash"
+		"wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash"
 
 Enable x86_32 and x86_64 Compatability
 	
