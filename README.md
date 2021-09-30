@@ -123,9 +123,9 @@ NOTE: Make sure to connect Micro USB cable to the Console port and not the MGMT 
 
 2.[Fedora](Install-Fedora.md)
 
-3.[Arch Linux](Install-ArchLinux.md)
+3.[Arch](Install-ArchLinux.md)
 
-4.[Void Linux](Install-Void-glibc.md)
+4.[Void](Install-Void-glibc.md)
 
 5.[Windows 10](Install-Windows.md)
 
