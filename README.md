@@ -26,6 +26,7 @@ J. [BIOS Navigation](#bios)
 K. [Overclocking & Timings](#timings)
 
 <a name="specs"/>
+
 ## A. Specs
 
 **CPU** - NXP Layerscape LX2160A 16-core ARM Cortex-A72; 2Ghz (Overclockable to 2.5Ghz+ all-core)
