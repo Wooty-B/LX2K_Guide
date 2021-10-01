@@ -21,7 +21,7 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 - Board form factor
   - Mini-ITX
 - CPU
-  - NXP Layerscape LX2160A 16-core ARM Cortex-A72; 2Ghz (overclockable to 2.5Ghz+ all-core)
+  - NXP Layerscape LX2160A 16-core ARM Cortex-A72; 2Ghz (stable overclock to 2.2Ghz+ all-core)
 - RAM
   - 2x DDR4 SODIMM slots @ up to 3200Mhz
     - if you have one module then use top slot or use 202105 firmware (or newer)
