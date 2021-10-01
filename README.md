@@ -65,12 +65,12 @@ The guide below is a WIP, and I greatly appreciate any comments regarding how I 
 ## Important Notes
 
 - Onboard Gigabit Ethernet may not work out-of-the-box, must apply kernel patches or use USB (or PCIe) Ethernet adaptor.
- - Using Linux kernel 5.14 (or newer) all on-board ports work.
- - You can build an older kernel with SolidRun patches from the [SolidRun GitHub page](https://github.com/SolidRun/linux-stable).
+  - Using Linux kernel 5.14 (or newer) all on-board ports work.
+  - You can build an older kernel with SolidRun patches from the [SolidRun GitHub page](https://github.com/SolidRun/linux-stable).
 - nVidia GPU's only support framebuffer at time of writing (no hardware acceleration)
 - SolidRun firmware images can be downloaded as [UEFI](https://images.solid-run.com/LX2k/lx2160a_uefi) or [U-Boot](https://images.solid-run.com/LX2k/lx2160a_build) (like on Rasperry/Pi or other popular SBC).
 - The EDKII UEFI BIOS will sometimes hang at splash under certain reboot conditions.
- - simply wait a few seconds and boot again
+  - simply wait a few seconds and boot again
 - If you experience frequent crashing, no wake from sleep, etc., make sure GRUB Linux Defaults are set as well as disabling sleep/hybernate services.
 - At time of writing there appears to be minor window boarder and text artifacting on occasion; shouldn't affect overall experience.
 - Booting with some keyboards (usually gaming ones) may not register during POST and will not respond to input. Once booted into Linux drivers will pick up any non-standard keyboards. I.e.: You may need a 2nd generic USB keyboard to highlight BIOS options.
