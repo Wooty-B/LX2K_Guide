@@ -11,13 +11,12 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 1. [Configuring LX2K](#config)
 1. [Installing an Operating System](#os)
 1. [Post-Install Recommendations](#reccomend)
-1. [Steam Install](#steam)
 1. [BIOS Navigation](#bios)
 1. [Overclocking & Timings](#timings)
 
 <a name="specs"/>
 
-## A. Specifications
+## Specifications
 
 - Board form factor
   - Mini-ITX
@@ -25,7 +24,7 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
   - NXP Layerscape LX2160A 16-core ARM Cortex-A72; 2Ghz (overclockable to 2.5Ghz+ all-core)
 - RAM
   - 2x DDR4 SODIMM slots @ up to 3200Mhz
-    - if you have one module then use top slot
+    - if you have one module then use top slot or use 202105 firmware (or newer)
   - XMP profiles are supported
   - ECC supported
   - Up to 64GB
@@ -53,7 +52,7 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 
 <a name="intro"/>
 
-## B. Introduction
+## Introduction
 
 The SolidRun HoneyComb LX2K (ClearFog) is a Mini-ITX form-factor ARM64 development board. Can be used for enterprise networking, security, automotive, server applications, and as a developer workstation. Over the last year there has been much development to bring a stable desktop experience with AMD GPU support and it has finally reached a point where it is now viable as an ARM64 Desktop. Over the last few months the bugs have settled down, so I decided to write up some guides on how to get this set up for various use cases.
 	
@@ -63,23 +62,24 @@ The guide below is a WIP, and I greatly appreciate any comments regarding how I 
 
 <a name="notes"/>
 
-## C. Important Notes
+## Important Notes
 
 - Onboard Gigabit Ethernet may not work out-of-the-box, must apply kernel patches or use USB (or PCIe) Ethernet adaptor.
- - Using Linux kernel 5.14 (or newer) all on-board ports work.
- - You can build an older kernel with SolidRun patches from the [SolidRun GitHub page](https://github.com/SolidRun/linux-stable).
+  - Using Linux kernel 5.14 (or newer) all on-board ports work.
+  - You can build an older kernel with SolidRun patches from the [SolidRun GitHub page](https://github.com/SolidRun/linux-stable).
 - nVidia GPU's only support framebuffer at time of writing (no hardware acceleration)
 - SolidRun firmware images can be downloaded as [UEFI](https://images.solid-run.com/LX2k/lx2160a_uefi) or [U-Boot](https://images.solid-run.com/LX2k/lx2160a_build) (like on Rasperry/Pi or other popular SBC).
+  - UEFI one is highly recommended
 - The EDKII UEFI BIOS will sometimes hang at splash under certain reboot conditions.
- - simply wait a few seconds and boot again
+  - simply wait a few seconds and boot again
 - If you experience frequent crashing, no wake from sleep, etc., make sure GRUB Linux Defaults are set as well as disabling sleep/hybernate services.
 - At time of writing there appears to be minor window boarder and text artifacting on occasion; shouldn't affect overall experience.
 - Booting with some keyboards (usually gaming ones) may not register during POST and will not respond to input. Once booted into Linux drivers will pick up any non-standard keyboards. I.e.: You may need a 2nd generic USB keyboard to highlight BIOS options.
 - Use Wayland over X11 if at all possible, X has much more bugs with GPU acceleration and Wayland has the ability to launch X windows anyways.
 
  <a name="prereq"/>
- 
-## D. Prerequisites
+
+## Prerequisites
 
 You will need the following items:
  - 512MB+ MicroSD card
@@ -92,7 +92,7 @@ You will need the following items:
 
 <a name="console"/>
 
-## E. Console Connection
+## Console Connection
 
  - Serial (COM#)
  - Speed: 115200
@@ -105,7 +105,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port (the one closer t
 
 <a name="config"/>
 
-## F. Configuring LX2K
+## Configuring LX2K
 
 1. Assuming your board has USB Ethernet adaptor, RAM, Storage, PSU and GPU (optional) installed, head here on your build computer [https://images.solid-run.com/LX2k] to download the Tianocore EDKII UEFI firmware.
 
@@ -125,7 +125,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port (the one closer t
 
 <a name="os"/>
 
-## G. Installing an Operating System
+## Installing an Operating System
 
 1. [Debian/Ubuntu](Install-Ubuntu.md)
 2. [Fedora](Install-Fedora.md)
@@ -136,7 +136,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port (the one closer t
 	
 <a name="reccomend"/>
 
-## H. Post-Install Recommendations
+## Post-Install Recommendations
 
 ### Possible Crash on Sleep/Suspend
 
@@ -169,15 +169,13 @@ As mentioned above, Pi-Apps can automatically set up Box64 and Box86 (with auto 
 2. I recommend installing just Box86, then installing Box64 if needed. I have run into issues where, for example, launching AssaultCube with Box64 installed hangs when trying to connect to GL. Uninstalling Box64 let AssaultCube load 32bit libraries under Box86, booting the game properly.
 
 
-<a name="steam"/>
-
-## I. Install Steam
+### Install Steam
 	
 [Setup Pi-Apps, Box86, and Steam](Setup-Armhf-Chroot.md)
 
 <a name="bios"/>
 
-## J. BIOS Navigation
+## BIOS Navigation
 
 	NOTE: Upon powering up, press ESC at the splash to enter the BIOS menu.
 
@@ -229,27 +227,53 @@ As mentioned above, Pi-Apps can automatically set up Box64 and Box86 (with auto 
 
 <a name="timings"/>
 
-## K. Overclocking & Timings
+## Overclocking & Timings
 
-	1. Insert your MicroSD card into your build PC or LX2K.
-	2. Run "sudo apt install device-tree-compiler acpica-tools" to install the dtc dependency we will need for building our BIOS.
-	3. Navigate to a directory you want to use for building and run "git clone https://github.com/SolidRun/lx2160a_uefi.git"
-	4. Enter the newly created "lx2160a_uefi" folder.
-	5. Now we can build the Tianocore EDKII UEFI BIOS:
-		a. To check dependencies and prepare build, run:
-			"INITIALIZE=1 ./runme.sh"
-		b. Below is a list of parameters that can be used after running the command above:
-			- "SOC_SPEED=xxxx" / Sets the CPU Clock Speed (ex. SOC_SPEED=2200 sets CPU frequency to 2.2Ghz) (Default SOC_SPEED=2000)
-			- "BUS_SPEED=xxx"  / Sets Bus frequency (ex. BUS_SPEED=800 sets Bus speed to 800Mhz) (Default BUS_SPEED=700)
-			- "DDR_SPEED=xxxx" / Sets the DDR4 RAM timings (ex. DDR_SPEED=3000 locks your RAM to 3000Mhz) (Adjust according to your memory's factory speed)
-			- "XMP_PROFILE=x"  / Enables or Disables XMP Profile (ex. XMP_PROFILE=1 enables XMP, XMP_PROFILE=0 disables XMP) (Default XMP_PROFILE=0)
-			- "INITIALIZE=x"   / Used prior to building image to check dependencies are installed
-		c. Select from the first four parameters above followed by "./runme.sh" to build your BIOS image.
-			EXAMPLE: "SOC_SPEED=2400 DDR_SPEED=3200 XMP_PROFILE=0 ./runme.sh"
-			Outputs an image with CPU Speed of 2.2Ghz, Bus @ 700Mhz, DDR4 SODIMM Speed @ 3.2Ghz w/ XMP Disabled named:
-				"lx2160acex7_2200_700_3200_8_5_2_sd_xxxxxxx.img"
-		d. There will be a newly created "images" folder in your current directory, open it to find an img file ready to flash!
-		e. Simply flash the image with dd or BalenaEtcher to a MicroSD card of your choice, and insert it into the LX2K.
-		f. Boot and test!
-	
-	
+Remember that playing with overclocking requires properly working cooling
+solution. LX2160A cpu used in HoneyComb will shutdown at around 95°C.
+
+Contrary to x86-64 you do not get any options in firmware setup to do
+overclocking. Instead you have to build UEFI firmware with other clock values.
+
+### Fetch sources
+
+Clone git repository with firmware source:
+```
+git clone https://github.com/SolidRun/lx2160a_uefi.git
+```
+
+### Check for required dependencies
+
+Enter the newly created "lx2160a_uefi" folder and run:
+```
+INITIALIZE=1 ./runme.sh
+```
+
+### Build parameters
+
+There are few parameters that can be used to control firmware build:
+
+parameter | default value | description
+--|--|--
+SOC_SPEED | 2000 | Sets the CPU Clock Speed (in MHz)
+BUS_SPEED | 700 | Sets Bus frequency (in MHz)
+DDR_SPEED | 2400 | Sets the DDR4 RAM timings (needs to be rounded to 100s)
+XMP_PROFILE | 0 | Enables XMP Profile (ex. XMP_PROFILE=1 enables XMP, XMP_PROFILE=0 disables XMP)
+X86EMU | 0 | Enables x86 emulator for Option ROMs (enable only if plan to use NVidia graphics)
+AMDGOP | 1 | Add graphics driver for AMD Radeon cards
+SERDES | 8_5_2 | SERDES configuration (do not touch if you do not know what it is)
+BOOT_MODE | sd | are you building firmware for loading from MicroSD (sd) or for on-board SPI (flexspi_nor)
+INITIALIZE | 1|  Used to check are dependencies installed
+
+### Build firmware
+
+Select from the parameters above and build your firmware image:
+```
+SOC_SPEED=2200 DDR_SPEED=3200 XMP_PROFILE=0 ./runme.sh
+```
+
+Will build an image with CPU speed of 2.2GHz, bus @ 700MHz, DDR4 memory speed @ 3.2GHz with XMP disabled.
+
+Resulting file will be stored in "images/" directory and named "lx2160acex7_2200_700_3200_8_5_2_sd_xxxxxxx.img".
+
+Write firmware image to MicroSD card (use dd or other similar tool). Insert into into LX2K and reboot.
