@@ -11,7 +11,6 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 1. [Configuring LX2K](#config)
 1. [Installing an Operating System](#os)
 1. [Post-Install Recommendations](#reccomend)
-1. [Steam Install](#steam)
 1. [BIOS Navigation](#bios)
 1. [Overclocking & Timings](#timings)
 
@@ -169,9 +168,7 @@ As mentioned above, Pi-Apps can automatically set up Box64 and Box86 (with auto 
 2. I recommend installing just Box86, then installing Box64 if needed. I have run into issues where, for example, launching AssaultCube with Box64 installed hangs when trying to connect to GL. Uninstalling Box64 let AssaultCube load 32bit libraries under Box86, booting the game properly.
 
 
-<a name="steam"/>
-
-## Install Steam
+### Install Steam
 	
 [Setup Pi-Apps, Box86, and Steam](Setup-Armhf-Chroot.md)
 
@@ -251,5 +248,3 @@ As mentioned above, Pi-Apps can automatically set up Box64 and Box86 (with auto 
 		d. There will be a newly created "images" folder in your current directory, open it to find an img file ready to flash!
 		e. Simply flash the image with dd or BalenaEtcher to a MicroSD card of your choice, and insert it into the LX2K.
 		f. Boot and test!
-	
-	
