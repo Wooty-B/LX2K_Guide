@@ -17,7 +17,7 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 
 <a name="specs"/>
 
-## A. Specifications
+## Specifications
 
 - Board form factor
   - Mini-ITX
@@ -53,7 +53,7 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 
 <a name="intro"/>
 
-## B. Introduction
+## Introduction
 
 The SolidRun HoneyComb LX2K (ClearFog) is a Mini-ITX form-factor ARM64 development board. Can be used for enterprise networking, security, automotive, server applications, and as a developer workstation. Over the last year there has been much development to bring a stable desktop experience with AMD GPU support and it has finally reached a point where it is now viable as an ARM64 Desktop. Over the last few months the bugs have settled down, so I decided to write up some guides on how to get this set up for various use cases.
 	
@@ -63,7 +63,7 @@ The guide below is a WIP, and I greatly appreciate any comments regarding how I 
 
 <a name="notes"/>
 
-## C. Important Notes
+## Important Notes
 
 - Onboard Gigabit Ethernet may not work out-of-the-box, must apply kernel patches or use USB (or PCIe) Ethernet adaptor.
  - Using Linux kernel 5.14 (or newer) all on-board ports work.
@@ -78,8 +78,8 @@ The guide below is a WIP, and I greatly appreciate any comments regarding how I 
 - Use Wayland over X11 if at all possible, X has much more bugs with GPU acceleration and Wayland has the ability to launch X windows anyways.
 
  <a name="prereq"/>
- 
-## D. Prerequisites
+
+## Prerequisites
 
 You will need the following items:
  - 512MB+ MicroSD card
@@ -92,7 +92,7 @@ You will need the following items:
 
 <a name="console"/>
 
-## E. Console Connection
+## Console Connection
 
  - Serial (COM#)
  - Speed: 115200
@@ -105,7 +105,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port (the one closer t
 
 <a name="config"/>
 
-## F. Configuring LX2K
+## Configuring LX2K
 
 1. Assuming your board has USB Ethernet adaptor, RAM, Storage, PSU and GPU (optional) installed, head here on your build computer [https://images.solid-run.com/LX2k] to download the Tianocore EDKII UEFI firmware.
 
@@ -125,7 +125,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port (the one closer t
 
 <a name="os"/>
 
-## G. Installing an Operating System
+## Installing an Operating System
 
 1. [Debian/Ubuntu](Install-Ubuntu.md)
 2. [Fedora](Install-Fedora.md)
@@ -136,7 +136,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port (the one closer t
 	
 <a name="reccomend"/>
 
-## H. Post-Install Recommendations
+## Post-Install Recommendations
 
 ### Possible Crash on Sleep/Suspend
 
@@ -171,13 +171,13 @@ As mentioned above, Pi-Apps can automatically set up Box64 and Box86 (with auto 
 
 <a name="steam"/>
 
-## I. Install Steam
+## Install Steam
 	
 [Setup Pi-Apps, Box86, and Steam](Setup-Armhf-Chroot.md)
 
 <a name="bios"/>
 
-## J. BIOS Navigation
+## BIOS Navigation
 
 	NOTE: Upon powering up, press ESC at the splash to enter the BIOS menu.
 
@@ -229,7 +229,7 @@ As mentioned above, Pi-Apps can automatically set up Box64 and Box86 (with auto 
 
 <a name="timings"/>
 
-## K. Overclocking & Timings
+## Overclocking & Timings
 
 	1. Insert your MicroSD card into your build PC or LX2K.
 	2. Run "sudo apt install device-tree-compiler acpica-tools" to install the dtc dependency we will need for building our BIOS.
