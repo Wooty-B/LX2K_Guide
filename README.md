@@ -229,23 +229,51 @@ As mentioned above, Pi-Apps can automatically set up Box64 and Box86 (with auto 
 
 ## Overclocking & Timings
 
-	1. Insert your MicroSD card into your build PC or LX2K.
-	2. Run "sudo apt install device-tree-compiler acpica-tools" to install the dtc dependency we will need for building our BIOS.
-	3. Navigate to a directory you want to use for building and run "git clone https://github.com/SolidRun/lx2160a_uefi.git"
-	4. Enter the newly created "lx2160a_uefi" folder.
-	5. Now we can build the Tianocore EDKII UEFI BIOS:
-		a. To check dependencies and prepare build, run:
-			"INITIALIZE=1 ./runme.sh"
-		b. Below is a list of parameters that can be used after running the command above:
-			- "SOC_SPEED=xxxx" / Sets the CPU Clock Speed (ex. SOC_SPEED=2200 sets CPU frequency to 2.2Ghz) (Default SOC_SPEED=2000)
-			- "BUS_SPEED=xxx"  / Sets Bus frequency (ex. BUS_SPEED=800 sets Bus speed to 800Mhz) (Default BUS_SPEED=700)
-			- "DDR_SPEED=xxxx" / Sets the DDR4 RAM timings (ex. DDR_SPEED=3000 locks your RAM to 3000Mhz) (Adjust according to your memory's factory speed)
-			- "XMP_PROFILE=x"  / Enables or Disables XMP Profile (ex. XMP_PROFILE=1 enables XMP, XMP_PROFILE=0 disables XMP) (Default XMP_PROFILE=0)
-			- "INITIALIZE=x"   / Used prior to building image to check dependencies are installed
-		c. Select from the first four parameters above followed by "./runme.sh" to build your BIOS image.
-			EXAMPLE: "SOC_SPEED=2400 DDR_SPEED=3200 XMP_PROFILE=0 ./runme.sh"
-			Outputs an image with CPU Speed of 2.2Ghz, Bus @ 700Mhz, DDR4 SODIMM Speed @ 3.2Ghz w/ XMP Disabled named:
-				"lx2160acex7_2200_700_3200_8_5_2_sd_xxxxxxx.img"
-		d. There will be a newly created "images" folder in your current directory, open it to find an img file ready to flash!
-		e. Simply flash the image with dd or BalenaEtcher to a MicroSD card of your choice, and insert it into the LX2K.
-		f. Boot and test!
+Remember that playing with overclocking requires properly working cooling
+solution. LX2160A cpu used in HoneyComb will shutdown at around 95°C.
+
+Contrary to x86-64 you do not get any options in firmware setup to do
+overclocking. Instead you have to build UEFI firmware with other clock values.
+
+### Fetch sources
+
+Clone git repository with firmware source:
+```
+git clone https://github.com/SolidRun/lx2160a_uefi.git
+```
+
+### Check for required dependencies
+
+Enter the newly created "lx2160a_uefi" folder and run:
+```
+INITIALIZE=1 ./runme.sh
+```
+
+### Build parameters
+
+There are few parameters that can be used to control firmware build:
+
+parameter | default value | description
+--|--|--
+SOC_SPEED | 2000 | Sets the CPU Clock Speed (in MHz)
+BUS_SPEED | 700 | Sets Bus frequency (in MHz)
+DDR_SPEED | 2400 | Sets the DDR4 RAM timings (needs to be rounded to 100s)
+XMP_PROFILE | 0 | Enables XMP Profile (ex. XMP_PROFILE=1 enables XMP, XMP_PROFILE=0 disables XMP)
+X86EMU | 0 | Enables x86 emulator for Option ROMs (enable only if plan to use NVidia graphics)
+AMDGOP | 1 | Add graphics driver for AMD Radeon cards
+SERDES | 8_5_2 | SERDES configuration (do not touch if you do not know what it is)
+BOOT_MODE | sd | are you building firmware for loading from MicroSD (sd) or for on-board SPI (flexspi_nor)
+INITIALIZE | 1|  Used to check are dependencies installed
+
+### Build firmware
+
+Select from the parameters above and build your firmware image:
+```
+SOC_SPEED=2200 DDR_SPEED=3200 XMP_PROFILE=0 ./runme.sh
+```
+
+Will build an image with CPU speed of 2.2GHz, bus @ 700MHz, DDR4 memory speed @ 3.2GHz with XMP disabled.
+
+Resulting file will be stored in "images/" directory and named "lx2160acex7_2200_700_3200_8_5_2_sd_xxxxxxx.img".
+
+Write firmware image to MicroSD card (use dd or other similar tool). Insert into into LX2K and reboot.
