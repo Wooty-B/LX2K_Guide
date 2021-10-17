@@ -1,0 +1,118 @@
+Running Steam on ubuntu 21.04 64-bit
+STEAM_RUNTIME is enabled by the user
+Steam runtime environment up-to-date!
+/home/wooty/.local/share/Steam/steam.sh: line 414: /home/wooty/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/bin/steam-runtime-check-requirements: No such file or directory
+steam-runtime-check-requirements failed with an unexpected nonzero exit status. Trying to continue
+WARNING: Using default/fallback debugger launch
+/home/wooty/.local/share/Steam/ubuntu12_32/steam
+Box86 with Dynarec v0.2.3 389927dc built on Aug 30 2021 21:06:02
+WARNING: setlocale('en_US.UTF-8') failed, using locale: 'C'. International characters may not work.
+[2021-10-17 21:24:51] Startup - updater built Oct 13 2021 19:47:06
+Looks like steam didn't shutdown cleanly, scheduling immediate update check
+[2021-10-17 21:24:51] Loading cached metrics from disk (/home/wooty/.local/share/Steam/package/steam_client_metrics.bin)
+[2021-10-17 21:24:51] Using the following download hosts for Public, Realm steamglobal
+[2021-10-17 21:24:51] 1. https://cdn.akamai.steamstatic.com, /client/, Realm 'steamglobal', weight was 100, source = 'update_hosts_cached.vdf'
+[2021-10-17 21:24:51] 2. https://cdn.cloudflare.steamstatic.com, /client/, Realm 'steamglobal', weight was 100, source = 'update_hosts_cached.vdf'
+[2021-10-17 21:24:51] 3. http://media.steampowered.com, /client/, Realm 'steamglobal', weight was 1, source = 'baked in'
+[2021-10-17 21:24:51] Checking for update on startup
+[2021-10-17 21:24:51] Checking for available updates...
+[2021-10-17 21:24:51] Downloading manifest: https://cdn.akamai.steamstatic.com/client/steam_client_ubuntu12
+[2021-10-17 21:24:52] Download skipped: /client/steam_client_ubuntu12 version 1634158817, installed version 1634158817, existing pending version 0
+[2021-10-17 21:24:52] Nothing to do
+[2021-10-17 21:24:52] Verifying installation...
+[2021-10-17 21:24:52] Performing checksum verification of executable files
+[2021-10-17 21:24:54] Verification complete
+Error initializing native libappindicator.so.1 (last dlerror is (null))
+Error initializing native libdbusmenu-gtk.so.4 (last dlerror is (null))
+Error initializing native libdbusmenu-glib.so.4 (last dlerror is (null))
+Error initializing native libgtk-x11-2.0.so.0 (last dlerror is (null))
+Error initializing native libgio-2.0.so.0 (last dlerror is (null))
+Error initializing native libgobject-2.0.so.0 (last dlerror is (null))
+Error initializing native libglib-2.0.so.0 (last dlerror is (null))
+Error initializing native libgdk_pixbuf-2.0.so.0 (last dlerror is (null))
+Error initializing native libgmodule-2.0.so.0 (last dlerror is (null))
+Error initializing native libgdk-x11-2.0.so.0 (last dlerror is (null))
+Error initializing native libpangocairo-1.0.so.0 (last dlerror is (null))
+Error initializing native libatk-1.0.so.0 (last dlerror is (null))
+Error initializing native libpango-1.0.so.0 (last dlerror is (null))
+Error initializing native libpng12.so.0 (last dlerror is libpng12.so.0: wrong ELF class: ELFCLASS64)
+Loaded SDL version 2.0.14-hg-14525:e52d96ea04fc
+Process 11362 failed to shm_open /u1000-ValveIPCSharedObj-Steam
+src/common/friendsuihelpers.cpp (54) : Is64BitOS()
+src/common/friendsuihelpers.cpp (54) : Is64BitOS()
+Error initializing native libopenal.so.1 (last dlerror is libopenal.so.1: wrong ELF class: ELFCLASS64)
+Gtk-Message: Failed to load module "gail"
+Gtk-Message: Failed to load module "atk-bridge"
+src/common/html/chrome_ipc_client.cpp (278) : Is64BitOS()
+src/common/html/chrome_ipc_client.cpp (278) : Is64BitOS()
+src/common/html/chrome_ipc_client.cpp (278) : Is64BitOS()
+src/common/html/chrome_ipc_client.cpp (278) : Is64BitOS()
+src/common/html/chrome_ipc_client.cpp (278) : Is64BitOS()
+src/common/html/chrome_ipc_client.cpp (278) : Is64BitOS()
+Could not connect to X session manager: None of the authentication protocols specified are supported
+Error initializing native libnm.so.0 (last dlerror is (null))
+Error initializing native libgudev-1.0.so.0 (last dlerror is (null))
+CAppInfoCacheReadFromDiskThread took 213 milliseconds to initialize
+Process 11362 failed to shm_open /u1000-ValveIPCSharedObj-Steam
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Master_mem
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Master_mem
+Process 11362 failed to shm_open /u1000-ValveIPCSharedObj-Steam
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Fast_Master_mem
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Fast_Master_mem
+Process 11362 failed to shm_open /u1000-ValveIPCSharedObj-Steam
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Slow_Master_mem
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Slow_Master_mem
+Process 11362 failed to shm_open /u1000-ValveIPCSharedObj-Steam
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Master_Cursor_mem
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Master_Cursor_mem
+Process 11362 failed to shm_open /u1000-ValveIPCSharedObj-Steam
+Process 11362 failed to shm_open /u1000-ValveIPCSharedObj-Steam
+Process 11362 failed to shm_open /u1000-ValveIPCSharedObj-Steam
+Warning: failed to set thread priority: set failed for 8: -1: setpriority() failed
+Warning: failed to set thread priority: set failed for priority 8
+Warning: support for elevated priorities is most likely unavailable, suppressing future warnings
+Warning: failed to set thread priority: set failed for 8: -1: setpriority() failed
+
+(box86:11362): GLib-GObject-CRITICAL **: g_object_unref: assertion `G_IS_OBJECT (object)' failed
+Init: failed to create a NetworkManager client
+(box86:11362): GLib-GObject-CRITICAL **: g_object_unref: assertion `G_IS_OBJECT (object)' failed
+
+(box86:11362): GLib-GIO-CRITICAL **: g_dbus_proxy_call_internal: assertion `G_IS_DBUS_PROXY (proxy)' failed
+
+(box86:11362): GLib-GObject-WARNING **: invalid (NULL) pointer instance
+
+(box86:11362): GLib-GObject-CRITICAL **: g_signal_connect_data: assertion `G_TYPE_CHECK_INSTANCE (instance)' failed
+Failed to create secure directory (/run/user/1000/pulse): No such file or directory
+PulseAudio connect failed (used only for Mic Volume Control) with error: Access denied
+Process 11362 failed to shm_open /u1000-ValveIPCSharedObj-Steam
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Master_mem
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Master_mem
+Process 11362 failed to shm_open /u1000-ValveIPCSharedObj-Steam
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Fast_Master_mem
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Fast_Master_mem
+Process 11362 failed to shm_open /u1000-ValveIPCSharedObj-Steam
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Slow_Master_mem
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Slow_Master_mem
+Process 11362 failed to shm_open /u1000-ValveIPCSharedObj-Steam
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Master_Cursor_mem
+src/overlay/common/shmemdrop.h (150) : Assertion Failed: Failed creating file mapping SteamController_Master_Cursor_mem
+Process 11362 failed to shm_open /u1000-ValveIPCSharedObj-Steam
+Process 11362 failed to shm_open /u1000-ValveIPCSharedObj-Steam
+Process 11362 failed to shm_open /u1000-ValveIPCSharedObj-Steam
+sh: 1: /home/wooty/.local/share/Steam/ubuntu12_32/../ubuntu12_64/gldriverquery: not found
+Local Device Found
+  type: 0079 187b
+  path: sdl://0
+  serial_number:  - 0
+  Manufacturer: 
+  Product:      XInput Controller
+  Release:      101
+  Interface:    -1
+
+!! Steam controller device opened for index 0.
+Steam Controller reserving XInput slot 0
+Box86 with Dynarec v0.2.3 389927dc built on Aug 30 2021 21:06:02
+src/tier1/fileio.cpp (5059) : m_vecRegisteredWriters.Count() == 0
+src/tier1/fileio.cpp (5059) : m_vecRegisteredWriters.Count() == 0
+src/common/html/chrome_ipc_client.cpp (278) : Is64BitOS()
+src/common/html/chrome_ipc_client.cpp (278) : Is64BitOS()
