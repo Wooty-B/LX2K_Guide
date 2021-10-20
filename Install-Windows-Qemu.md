@@ -77,7 +77,7 @@
           -device usb-mouse \
           -device usb-tablet \
           -device usb-storage,drive=install \
-          -drive if=none,id=install,format=raw,media=cdrom,file=image_name.ISO
+          -drive if=none,id=install,format=raw,media=cdrom,file=*image name*.ISO
           -device virtio-blk,drive=system \
           -drive if=none,id=system,format=raw,file=system.img \
           -device usb-storage,drive=drivers \
