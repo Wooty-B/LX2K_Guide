@@ -281,6 +281,8 @@ Write firmware image to MicroSD card (use dd or other similar tool). Insert into
 
 <a name="thanks"/>
 
+## Credits
+
 Diving into the setup of this board was daunting given my previous experience, however this guide would not be possible without the assistance from the following:
 
 @hrw - Helping with this guide and giving me tips along the way
