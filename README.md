@@ -13,6 +13,7 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 1. [Post-Install Recommendations](#reccomend)
 1. [BIOS Navigation](#bios)
 1. [Overclocking & Timings](#timings)
+1. [Credits](#thanks)
 
 <a name="specs"/>
 
@@ -277,3 +278,12 @@ Will build an image with CPU speed of 2.2GHz, bus @ 700MHz, DDR4 memory speed @ 
 Resulting file will be stored in "images/" directory and named "lx2160acex7_2200_700_3200_8_5_2_sd_xxxxxxx.img".
 
 Write firmware image to MicroSD card (use dd or other similar tool). Insert into into LX2K and reboot.
+
+<a name="thanks"/>
+
+Diving into the setup of this board was daunting given my previous experience, however this guide would not be possible without the assistance from the following:
+
+@hrw - Helping with this guide and giving me tips along the way
+@jnettlet - For being patient and helping me thoroughly understand the LX2K, all while providing major development for this board
+
+rna (Armbian Forums) - For writing the ARM 32-bit chroot guide which became a template for part of this guide
