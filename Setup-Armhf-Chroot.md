@@ -57,7 +57,6 @@
 	    	export CPU_MHZ=2000
 
     	adduser <username>
-    	passwd <username>
     	usermod -a -G sudo <username>
     	su - <username>
     	nano ~/.bashrc
