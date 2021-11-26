@@ -286,6 +286,7 @@ Write firmware image to MicroSD card (use dd or other similar tool). Insert into
 Diving into the setup of this board was daunting given my previous experience, however this guide would not be possible without the assistance from the following:
 
 @hrw - Helping with this guide and giving me tips along the way
+
 @jnettlet - For being patient and helping me thoroughly understand the LX2K, all while providing major development for this board
 
 rna (Armbian Forums) - For writing the ARM 32-bit chroot guide which became a template for part of this guide
