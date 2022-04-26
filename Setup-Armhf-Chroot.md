@@ -1,26 +1,26 @@
 # Installing Box86, Box64 & Steam
 
 1. Enable Multiarch (32-bit Support)
-
+	```
 	sudo dpkg --add-architecture armhf
 	sudo apt update && sudo apt upgrade
-	
+	```
 2. Install Box86
-
+	```
 	mkdir x86; cd x86
 	sudo apt install gcc-arm-linux-gnueabihf
 	git clone https://github.com/ptitSeb/box86.git; cd box86
 	mkdir build; cd build; cmake .. -DRK3399=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo; make -j16
 	sudo make install; cd ../..
-
+	```
 3. Install Box64
-
+	```
 	git clone https://github.com/ptitSeb/box64.git; cd box64
 	mkdir build; cd build; cmake .. -DLX2160A=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo; make -j16
 	sudo make install; cd ../..
-
+	```
 4. Configure and Install Steam
-
+	```
 	sudo nano /etc/profile.d/steam.sh
 		export STEAMOS=1
 		export STEAM_RUNTIME=1
@@ -56,11 +56,12 @@
 		libgl1-mesa-dri:armhf \
 		libgl1:armhf
 	steam -no-browser
-
+	```
 For the best experience, after logging in, switch to "Small Mode" from the View tab.
 To run in 32-bit mode, use:
+	```
 	setarch -L linux32 steam -no-browser (32-bit)
-
+	```
 
 
 !!!THE FOLLOWING IS LEGACY/OLD INFO AND WILL BE REMOVED/REUSED!!!
