@@ -1,4 +1,69 @@
-# Installing Pi-Apps, Box86, and Steam
+# Installing Box86, Box64 & Steam
+
+1. Enable Multiarch (32-bit Support)
+
+	sudo dpkg --add-architecture armhf
+	sudo apt update && sudo apt upgrade
+	
+2. Install Box86
+
+	mkdir x86; cd x86
+	sudo apt install gcc-arm-linux-gnueabihf
+	git clone https://github.com/ptitSeb/box86.git; cd box86
+	mkdir build; cd build; cmake .. -DRK3399=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo; make -j16
+	sudo make install; cd ../..
+
+3. Install Box64
+
+	git clone https://github.com/ptitSeb/box64.git; cd box64
+	mkdir build; cd build; cmake .. -DLX2160A=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo; make -j16
+	sudo make install; cd ../..
+
+4. Configure and Install Steam
+
+	sudo nano /etc/profile.d/steam.sh
+		export STEAMOS=1
+		export STEAM_RUNTIME=1
+	source /etc/profile.d/steam.sh
+	wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
+	sudo dpkg -i steam.deb
+	sudo apt install libnm0 libtcmalloc-minimal4 \
+		libgmp10:armhf \
+		libgnutls30:armhf \
+		libvorbisfile3:armhf \
+		libsdl2-2.0-0:armhf \
+		libxtst6:armhf \
+		libbz2-1.0:armhf \
+		libselinux1:armhf \
+		libjpeg62-turbo:armhf \
+		libcairo2:armhf \
+		libfontconfig1:armhf \
+		libxrender1:armhf \
+		libxinerama1:armhf \
+		libxi6:armhf \
+		libxrandr2:armhf \
+		libxcursor1:armhf \
+		libxcomposite1:armhf \
+		libfreetype6:armhf \
+		libpng16-16:armhf \
+		libopenal1:armhf \
+		libsm6:armhf \
+		libice6:armhf \
+		libuuid1:armhf \
+		libc6:armhf \
+		libegl1:armhf \
+		libgbm1:armhf \
+		libgl1-mesa-dri:armhf \
+		libgl1:armhf
+	steam -no-browser
+
+For the best experience, after logging in, switch to "Small Mode" from the View tab.
+To run in 32-bit mode, use:
+	setarch -L linux32 steam -no-browser (32-bit)
+
+
+
+!!!THE FOLLOWING IS LEGACY/OLD INFO AND WILL BE REMOVED/REUSED!!!
 
 1. The following commands will setup a 32-Bit ARM Chroot Environment:
     
