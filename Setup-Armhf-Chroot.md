@@ -55,12 +55,12 @@
 		libgbm1:armhf \
 		libgl1-mesa-dri:armhf \
 		libgl1:armhf
-	steam -no-browser
+	steam -no-browser .
 	```
 For the best experience, after logging in, switch to "Small Mode" from the View tab.
 To run in 32-bit mode, use:
 	```
-	setarch -L linux32 steam -no-browser (32-bit)
+	setarch -L linux32 steam -no-browser . (32-bit)
 	```
 
 
