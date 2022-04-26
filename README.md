@@ -157,22 +157,16 @@ sudo add-apt-repository ppa:oibaf/graphics-drivers && sudo apt update
 
 ### Install Pi-Apps (Minecraft Java, Box86 & Box64 setup)
 	
-Pi-Apps contains a few games such as full Minecraft Java, and some quality of life apps like Box86/64. I recommend this route to save time manually installing and figuring out the quirks. Pi-Apps can be installed from Github or by using:
+Pi-Apps contains a few games such as full Minecraft Java, and some quality of life appsfor the Pi. Pi-Apps can be installed from Github or by using:
 ```
 wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 ```
 
-### Enable x86_32 and x86_64 Compatibility
+### Enable armhf, x86_32 and x86_64 Compatibility
 
-As mentioned above, Pi-Apps can automatically set up Box64 and Box86 (with auto armhf chroot). This means just enabling these will allow you to execute many x86 based linux programs, including Wine. A few things to note:
-
-1. Running Wine with Box86 should work for many passive apps such as Notepad++ or DosBox, but because it's translating AND emulating don't expect any miracles.
-2. I recommend installing just Box86, then installing Box64 if needed. I have run into issues where, for example, launching AssaultCube with Box64 installed hangs when trying to connect to GL. Uninstalling Box64 let AssaultCube load 32bit libraries under Box86, booting the game properly.
-
-
-### Install Steam
+Box86 has come a long way since it was introduced, and enabling multiarch plus x86 emulation is pretty straightforward on this platform. The guide below will help in enabling this as well as installing Steam if you so choose. Wine setup will be added soon!
 	
-[Setup Pi-Apps, Box86, and Steam](Setup-Armhf-Chroot.md)
+[Setup  Box86, Box64 & Steam](Setup-Armhf-Chroot.md)
 
 <a name="bios"/>
 
@@ -288,5 +282,7 @@ Diving into the setup of this board was daunting given my previous experience, h
 @hrw - Helping with this guide and giving me tips along the way
 
 @jnettlet - For being patient and helping me thoroughly understand the LX2K, all while providing major development for this board
+
+@pitseb - All his hard work with Box86 and  additionally adding LX2160A specific support
 
 rna (Armbian Forums) - For writing the ARM 32-bit chroot guide which became a template for part of this guide
