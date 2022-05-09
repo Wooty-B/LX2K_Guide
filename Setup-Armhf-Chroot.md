@@ -8,7 +8,7 @@
 2. Install Box86
 	```
 	mkdir x86; cd x86
-	sudo apt install gcc-arm-linux-gnueabihf
+	sudo apt install gcc-arm-linux-gnueabihf git build-essential cmake curl
 	git clone https://github.com/ptitSeb/box86.git; cd box86
 	mkdir build; cd build; cmake .. -DRK3399=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo; make -j16
 	sudo make install; cd ../..
@@ -60,7 +60,7 @@
 For the best experience, after logging in, switch to "Small Mode" from the View tab.
 To run in 32-bit mode, use:
 	```
-	setarch -L linux32 steam -no-browser . (32-bit)
+	setarch -L linux32 steam -no-browser .
 	```
 
 
