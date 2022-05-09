@@ -71,10 +71,12 @@
 	sudo ln -s ~/wine/bin/wineboot /usr/local/bin/wineboot
 	sudo ln -s ~/wine/bin/winecfg /usr/local/bin/winecfg
 	sudo ln -s ~/wine/bin/wineserver /usr/local/bin/wineserver
+	
 	sudo chmod +x /usr/local/bin/wine /usr/local/bin/wineboot /usr/local/bin/winecfg /usr/local/bin/wineserver
 	sudo apt-get install cabextract -y
 	wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
 	sudo chmod +x winetricks && sudo mv winetricks /usr/local/bin/
+	BOX86_NOBANNER=1 winetricks -q corefonts vcrun2010 dotnet20sp1 msvcrt40 quartz dxvk physx
 	```
 
 !!!THE FOLLOWING IS LEGACY/OLD INFO AND WILL BE REMOVED/REUSED!!!
