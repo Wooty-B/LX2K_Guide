@@ -283,6 +283,6 @@ Diving into the setup of this board was daunting given my previous experience, h
 
 @jnettlet - For being patient and helping me thoroughly understand the LX2K, all while providing major development for this board
 
-@pitseb - All his hard work with Box86 and  additionally adding LX2160A specific support
+@ptitSeb - All his hard work with Box86 and  additionally adding LX2160A specific support
 
 rna (Armbian Forums) - For writing the ARM 32-bit chroot guide which became a template for part of this guide
