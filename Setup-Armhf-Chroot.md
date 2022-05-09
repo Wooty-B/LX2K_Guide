@@ -73,7 +73,7 @@
 	sudo ln -s ~/wine/bin/wineserver /usr/local/bin/wineserver
 	sudo chmod +x /usr/local/bin/wine /usr/local/bin/wineboot /usr/local/bin/winecfg /usr/local/bin/wineserver
 	sudo apt-get install cabextract -y
-	cd ~/Downloads && wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+	wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
 	sudo chmod +x winetricks && sudo mv winetricks /usr/local/bin/
 	```
 
