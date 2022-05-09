@@ -18,6 +18,7 @@
 	git clone https://github.com/ptitSeb/box64.git; cd box64
 	mkdir build; cd build; cmake .. -DLX2160A=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo; make -j16
 	sudo make install; cd ../..
+	sudo systemctl restart systemd-binfmt
 	```
 4. Configure and Install Steam
 	```
