@@ -58,12 +58,13 @@
 		libgl1:armhf
 	steam -no-browser .
 	```
-5. Install Wine (32bit Windows Executables)
+5. Install Wine & Winetricks (32bit Windows Executables)
 	```
 	cd ~
 	wget https://dl.winehq.org/wine-builds/debian/dists/buster/main/binary-i386/wine-devel-i386_5.21~buster_i386.deb
 	wget https://dl.winehq.org/wine-builds/debian/dists/buster/main/binary-i386/wine-devel_5.21~buster_i386.deb
-	dpkg-deb -xv wine-devel-i386_5.21~buster_i386.deb wine-installer; dpkg-deb -xv wine-devel_5.21~buster_i386.deb wine-installer
+	dpkg-deb -xv wine-devel-i386_5.21~buster_i386.deb wine-installer
+	dpkg-deb -xv wine-devel_5.21~buster_i386.deb wine-installer
 	mv wine-installer/opt/wine* ~/wine
 	rm wine*.deb; rm -rf wine-installer
 	echo -e '#!/bin/bash\nsetarch linux32 -L '"$HOME/wine/bin/wine "'"$@"' | sudo tee -a /usr/local/bin/wine >/dev/null
@@ -71,6 +72,9 @@
 	sudo ln -s ~/wine/bin/winecfg /usr/local/bin/winecfg
 	sudo ln -s ~/wine/bin/wineserver /usr/local/bin/wineserver
 	sudo chmod +x /usr/local/bin/wine /usr/local/bin/wineboot /usr/local/bin/winecfg /usr/local/bin/wineserver
+	sudo apt-get install cabextract -y
+	cd ~/Downloads && wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+	sudo chmod +x winetricks && sudo mv winetricks /usr/local/bin/
 	```
 
 !!!THE FOLLOWING IS LEGACY/OLD INFO AND WILL BE REMOVED/REUSED!!!
