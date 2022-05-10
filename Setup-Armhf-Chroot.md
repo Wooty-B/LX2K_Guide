@@ -1,4 +1,4 @@
-# Installing Box86, Box64 & Steam
+# Installing Box86 & Box64 w/ Steam, Pi-Apps & Chroot Alternative
 
 1. Enable Multiarch (32-bit Support)
 	```
@@ -78,7 +78,21 @@
 	sudo chmod +x winetricks && sudo mv winetricks /usr/local/bin/
 	BOX86_NOBANNER=1 winetricks -q corefonts msxml3 vcrun2010 dotnet20sp1 msvcrt40 quartz dxvk physx
 	```
-6. 32bit ARM (armhf) Chroot Setup [Alernative/Addition to Multiarch]
+6. Install Pi-Apps
+    	```
+    	sudo schroot -c ubuntu-armhf
+    	su - <username>
+    	mkdir build32 && cd build32
+    	apt install git wget cmake build-essential python3 gcc-arm-linux-gnueabihf xterm libnss3 python3-apt zenity libappindicator1 libnm0 libtcmalloc-minimal4 libsdl2-2.0-0 libxss1
+    	git clone https://github.com/Botspot/pi-apps.git
+    	cd pi-apps && ./install
+    	mv ~/pi-apps/ ~/pi-apps.32
+    	sudo nano /usr/local/bin/pi-apps 
+	
+  	    	#!/bin/bash
+	    	/home/wooty/pi-apps.32/gui "$@"
+	```	```
+7. 32bit ARM (armhf) Chroot Setup [Alernative/Addition to Multiarch]
     	```
     	sudo apt install schroot debootstrap
     	sudo mkdir -p /srv/chroot/ubuntu-armhf
@@ -146,17 +160,4 @@
     	exit
     	exit
  	```
- 7. Install Pi-Apps
-    	```
-    	sudo schroot -c ubuntu-armhf
-    	su - <username>
-    	mkdir build32 && cd build32
-    	apt install git wget cmake build-essential python3 gcc-arm-linux-gnueabihf xterm libnss3 python3-apt zenity libappindicator1 libnm0 libtcmalloc-minimal4 libsdl2-2.0-0 libxss1
-    	git clone https://github.com/Botspot/pi-apps.git
-    	cd pi-apps && ./install
-    	mv ~/pi-apps/ ~/pi-apps.32
-    	sudo nano /usr/local/bin/pi-apps 
-	
-  	    	#!/bin/bash
-	    	/home/wooty/pi-apps.32/gui "$@"
-	```
+ 
