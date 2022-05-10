@@ -91,7 +91,7 @@
 	
   	    	#!/bin/bash
 	    	/home/wooty/pi-apps.32/gui "$@"
-	```	```
+	```
 7. 32bit ARM (armhf) Chroot Setup [Alernative/Addition to Multiarch]
     	```
     	sudo apt install schroot debootstrap
