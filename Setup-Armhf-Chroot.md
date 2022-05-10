@@ -78,11 +78,8 @@
 	sudo chmod +x winetricks && sudo mv winetricks /usr/local/bin/
 	BOX86_NOBANNER=1 winetricks -q corefonts msxml3 vcrun2010 dotnet20sp1 msvcrt40 quartz dxvk physx
 	```
-
-!!!THE FOLLOWING IS LEGACY/OLD INFO AND WILL BE REMOVED/REUSED!!!
-
-1. The following commands will setup a 32-Bit ARM Chroot Environment:
-    
+6. 32bit ARM (armhf) Chroot Setup [Alernative/Addition to Multiarch]
+    	```
     	sudo apt install schroot debootstrap
     	sudo mkdir -p /srv/chroot/ubuntu-armhf
     	sudo debootstrap --arch armhf --foreign hirsute /srv/chroot/ubuntu-armhf http://ports.ubuntu.com/ubuntu-ports
@@ -148,9 +145,9 @@
   
     	exit
     	exit
- 
- 2. Setup Pi-Apps
-    
+ 	```
+ 7. Install Pi-Apps
+    	```
     	sudo schroot -c ubuntu-armhf
     	su - <username>
     	mkdir build32 && cd build32
@@ -162,20 +159,4 @@
 	
   	    	#!/bin/bash
 	    	/home/wooty/pi-apps.32/gui "$@"
-  
-  3. Install Box86 & Steam
-    
-         pi-apps
-    	 [Install Box86]
-    	 cd ~
-    	 wget https://steamcdn-a.akamaihd.net/client/installer/steam.deb
-    	 sudo dpkg -i steam.deb
-    	 sudo nano /etc/profile.d/steam.sh
-	
-	       	export STEAMOS=1
-	       	export STEAM_RUNTIME=1
-      
-    sudo apt install mesa-va-drivers mesa-vulkan-drivers mesa-common-dev libglx-mesa0 libglu1-mesa linux-firmware
-    steam -no-browser
-    
-   NOTE: I am currently troubleshooting required packages and specifics to get a stable chroot working for Steam. Running the above on a fresh install usually works, howerver after a while it breaks for me and I cannot figure out if it is a dependancy or related to my chroot. Usually pertains to gl or vulkan.
+	```
