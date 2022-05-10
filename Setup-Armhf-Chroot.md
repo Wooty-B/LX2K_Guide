@@ -88,10 +88,10 @@
     	cd pi-apps && ./install
     	mv ~/pi-apps/ ~/pi-apps.32
     	sudo nano /usr/local/bin/pi-apps 
-	
+	```
   	    	#!/bin/bash
 	    	/home/wooty/pi-apps.32/gui "$@"
-	```
+
 7. 32bit ARM (armhf) Chroot Setup [Alernative/Addition to Multiarch]
     	```
     	sudo apt install schroot debootstrap
@@ -99,7 +99,7 @@
     	sudo debootstrap --arch armhf --foreign hirsute /srv/chroot/ubuntu-armhf http://ports.ubuntu.com/ubuntu-ports
     	sudo chroot "/srv/chroot/ubuntu-armhf" /debootstrap/debootstrap --second-stage
     	sudo nano /etc/schroot/chroot.d/ubuntu-armhf.conf
-    
+    	```
 	    	[ubuntu-armhf]
 	    	description=Ubuntu Armhf 32-Bit chroot
 	    	aliases=ubuntu-armhf
@@ -110,9 +110,10 @@
 	    	preserve-environment=true
 	    	root-users=<username>
 	    	users=<username>
-      
-    	sudo nano /etc/schroot/desktop/nssdatabases
-    
+      	
+	```
+	sudo nano /etc/schroot/desktop/nssdatabases
+	```
 	    	# System databases to copy into the chroot from the host system.
 	    	#
 	    	# <database name>
@@ -125,38 +126,38 @@
 	    	#networks
 	    	#hosts
 	    	#user
-      
+      	```
     	sudo nano /srv/chroot/ubuntu-armhf/var/lib/dpkg/statoverride
-	    
+	```    
    	   	root root 2755 /usr/bin/crontab
-
+	```
     	sudo schroot -c ubuntu-armhf
     	apt install nano
     	nano /etc/apt/sources.list
-	    
+	```    
    	    	deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute main restricted universe multiverse
 	    	deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute-updates main restricted universe multiverse
 	    	deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute-backports main restricted universe multiverse
 	    	deb http://us.ports.ubuntu.com/ubuntu-ports/ hirsute-security main restricted universe multiverse
-    
+    	```
     	apt update && apt upgrade
     	nano ~/.bashrc
-	    
+	```    
    	    	export LANGUAGE="C"
 	    	export LC_ALL="C"
 	    	export DISPLAY=:0
 	    	export CPU_MHZ=2000
-
+	```
     	adduser <username>
     	usermod -a -G sudo <username>
     	su - <username>
     	nano ~/.bashrc
-	
+	```
     	    	export LANGUAGE="C"
 	    	export LC_ALL="C"
 	    	export DISPLAY=:0
 	    	export CPU_MHZ=2000
-  
+  	```
     	exit
     	exit
  	```
