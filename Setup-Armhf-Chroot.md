@@ -93,21 +93,9 @@
 	sudo chmod +x /usr/local/bin/wine64 /usr/local/bin/wineboot64 /usr/local/bin/winecfg64 /usr/local/bin/wineserver64
 	wineboot64 --init
 	```
-7. Install Pi-Apps
+
 	```
-    	sudo schroot -c ubuntu-armhf
-    	su - <username>
-    	mkdir build32 && cd build32
-    	apt install git wget cmake build-essential python3 gcc-arm-linux-gnueabihf xterm libnss3 python3-apt zenity libappindicator1 libnm0 libtcmalloc-minimal4 libsdl2-2.0-0 libxss1
-    	git clone https://github.com/Botspot/pi-apps.git
-    	cd pi-apps && ./install
-    	mv ~/pi-apps/ ~/pi-apps.32
-    	sudo nano /usr/local/bin/pi-apps 
-	
-  	    	#!/bin/bash
-	    	/home/wooty/pi-apps.32/gui "$@"
-	```
-8. 32bit ARM (armhf) Chroot Setup [Alernative/Addition to Multiarch]
+7. 32bit ARM (armhf) Chroot Setup [Alernative/Addition to Multiarch]
    	```
     	sudo apt install schroot debootstrap
     	sudo mkdir -p /srv/chroot/ubuntu-armhf
