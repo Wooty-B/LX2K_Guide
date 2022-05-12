@@ -78,8 +78,23 @@
 	sudo chmod +x winetricks && sudo mv winetricks /usr/local/bin/
 	BOX86_NOBANNER=1 winetricks -q corefonts msxml3 vcrun2010 dotnet20sp1 msvcrt40 quartz dxvk physx
 	```
+6. Install Wine64 (64bit Windows Executables) [NOT TESTED!!!]
+	```
+	wget https://dl.winehq.org/wine-builds/debian/dists/buster/main/binary-amd64/wine-devel-amd64_5.21~buster_amd64.deb
+	wget https://dl.winehq.org/wine-builds/debian/dists/buster/main/binary-amd64/wine-devel_5.21~buster_amd64.deb
+	dpkg-deb -xv wine-devel-amd64_5.21~buster_amd64.deb wine-installer
+	dpkg-deb -xv wine-devel_5.21~buster_amd64.deb wine-installer
+	mv wine-installer/opt/wine* ~/wine64
+	rm wine*.deb; rm -rf wine-installer
+	sudo ln -s ~/wine64/bin/wine64 /usr/local/bin/wine64
+	sudo ln -s ~/wine64/bin/wineboot /usr/local/bin/wineboot64
+	sudo ln -s ~/wine64/bin/winecfg /usr/local/bin/winecfg64
+	sudo ln -s ~/wine64/bin/wineserver /usr/local/bin/wineserver64
+	sudo chmod +x /usr/local/bin/wine64 /usr/local/bin/wineboot64 /usr/local/bin/winecfg64 /usr/local/bin/wineserver64
+	wineboot64 --init
+	```
 6. Install Pi-Apps
-
+	```
     	sudo schroot -c ubuntu-armhf
     	su - <username>
     	mkdir build32 && cd build32
@@ -91,9 +106,9 @@
 	
   	    	#!/bin/bash
 	    	/home/wooty/pi-apps.32/gui "$@"
-
+	```
 7. 32bit ARM (armhf) Chroot Setup [Alernative/Addition to Multiarch]
-   
+   	```
     	sudo apt install schroot debootstrap
     	sudo mkdir -p /srv/chroot/ubuntu-armhf
     	sudo debootstrap --arch armhf --foreign hirsute /srv/chroot/ubuntu-armhf http://ports.ubuntu.com/ubuntu-ports
@@ -110,7 +125,7 @@
 	    	preserve-environment=true
 	    	root-users=<username>
 	    	users=<username>
-	```
+	
 	sudo nano /etc/schroot/desktop/nssdatabases
 	
 	    	# System databases to copy into the chroot from the host system.
@@ -159,4 +174,4 @@
   	
     	exit
     	exit
- 	
+ 	```
