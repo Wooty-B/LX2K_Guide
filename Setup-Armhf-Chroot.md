@@ -76,7 +76,7 @@
 	sudo apt-get install cabextract -y
 	wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
 	sudo chmod +x winetricks && sudo mv winetricks /usr/local/bin/
-	BOX86_NOBANNER=1 winetricks -q corefonts msxml3 vcrun2010 dotnet20sp1 msvcrt40 quartz dxvk physx
+	BOX86_NOBANNER=1 winetricks -q corefonts msxml3 vcrun2005 vcrun2008 vcrun2010 quartz
 	```
 6. Install Wine64 (64bit Windows Executables) [NOT TESTED!!!]
 	```
