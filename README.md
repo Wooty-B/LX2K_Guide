@@ -162,6 +162,8 @@ Pi-Apps contains a few games such as full Minecraft Java, and some quality of li
 ```
 wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 ```
+<a name="x86"/>
+
 
 ## BoxWine Setup Guide
 
