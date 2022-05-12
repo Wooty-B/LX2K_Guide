@@ -93,7 +93,7 @@
 	sudo chmod +x /usr/local/bin/wine64 /usr/local/bin/wineboot64 /usr/local/bin/winecfg64 /usr/local/bin/wineserver64
 	wineboot64 --init
 	```
-6. Install Pi-Apps
+7. Install Pi-Apps
 	```
     	sudo schroot -c ubuntu-armhf
     	su - <username>
@@ -107,7 +107,7 @@
   	    	#!/bin/bash
 	    	/home/wooty/pi-apps.32/gui "$@"
 	```
-7. 32bit ARM (armhf) Chroot Setup [Alernative/Addition to Multiarch]
+8. 32bit ARM (armhf) Chroot Setup [Alernative/Addition to Multiarch]
    	```
     	sudo apt install schroot debootstrap
     	sudo mkdir -p /srv/chroot/ubuntu-armhf
