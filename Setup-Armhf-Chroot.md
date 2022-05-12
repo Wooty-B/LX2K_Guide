@@ -1,4 +1,4 @@
-# Enabling x86 & x86_64 Support + Steam
+# Setup Multiarch, Box86/64, Wine and Steam
 
 1. Enable Multiarch (32-bit Support)
 	```
