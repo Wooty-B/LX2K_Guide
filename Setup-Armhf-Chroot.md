@@ -1,4 +1,4 @@
-# Installing Box86 & Box64 w/ Steam, Pi-Apps & Chroot Alternative
+# Enabling x86 & x86_64 Support + Steam
 
 1. Enable Multiarch (32-bit Support)
 	```
