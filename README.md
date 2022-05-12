@@ -11,9 +11,10 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 1. [Configuring LX2K](#config)
 1. [Installing an Operating System](#os)
 1. [Post-Install Recommendations](#reccomend)
-1. [BIOS Navigation](#bios)
-1. [Overclocking & Timings](#timings)
-1. [Credits](#thanks)
+2. [BoxWine (x86) Setup Guide](#x86)
+3. [BIOS Navigation](#bios)
+4. [Overclocking & Timings](#timings)
+5. [Credits](#thanks)
 
 <a name="specs"/>
 
@@ -162,11 +163,11 @@ Pi-Apps contains a few games such as full Minecraft Java, and some quality of li
 wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
 ```
 
-### Enable armhf, x86_32 and x86_64 Compatibility
+## BoxWine Setup Guide
 
-Box86 has come a long way since it was introduced, and enabling multiarch plus x86 emulation is pretty straightforward on this platform. The guide below will help in enabling this as well as installing Steam if you so choose. Wine setup will be added soon!
+With Box86 and Box64, you can enable a mostly native experience with a number of x86 Linux apps. Steam and many native Linux Games and 3D applications run very well depending on your GPU setup. Many libraries are still not fully wrapped, so you may get slowdowns for emulated libraries or segmentation faults and halts. To take all this a step further, 32bit Wine can even run some AAA titles such as Fallout 3/Oblivion and Crysis, and by run I mean mostly playable at high settings! Most of this relies on making sure you have the proper dependencies and runtimes installed.
 	
-[Setup  Box86, Box64 & Steam](Setup-Armhf-Chroot.md)
+[Setup Multiarch, Box86/64, Wine and Steam](Setup-Armhf-Chroot.md)
 
 <a name="bios"/>
 
