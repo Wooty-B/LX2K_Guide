@@ -69,7 +69,7 @@ _The guide below is a WIP, and I greatly appreciate any comments regarding how I
 - Onboard Gigabit Ethernet may not work out-of-the-box, must apply kernel patches or use USB (or PCIe) Ethernet adaptor.
   - Using Linux kernel 5.14 (or newer) all on-board ports work.
   - You can build an older kernel with SolidRun patches from the [SolidRun GitHub page](https://github.com/SolidRun/linux-stable).
-- nVidia GPU's only support framebuffer at time of writing (no hardware acceleration)
+- nVidia GPU's only support framebuffer on Linux 5.17(?) and below. Future nVidia OSS Kernel driver supposedly remedies. Currently have not tested.
 - SolidRun firmware images can be downloaded as [UEFI](https://images.solid-run.com/LX2k/lx2160a_uefi) or [U-Boot](https://images.solid-run.com/LX2k/lx2160a_build) (like on Rasperry/Pi or other popular SBC).
   - UEFI image is highly recommended
 - The EDKII UEFI BIOS will sometimes hang at splash under certain reboot conditions.
