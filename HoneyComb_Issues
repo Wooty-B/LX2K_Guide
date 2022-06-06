@@ -187,6 +187,8 @@ Start Waydroid.
 
 70. EFI varstore is getting overfilled: deactivate CONFIG_EFI_VARS_PSTORE in the kernel and reinstall the kernel.
 
+71. x86_64 emulation: guide: https://github.com/Wooty-B/LX2K_Guide/blob/main/Setup-Armhf-Chroot.md
+
 -------------
-|3,400 hours|
+|3,700 hours|
 -------------
