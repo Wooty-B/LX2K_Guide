@@ -269,7 +269,7 @@ INITIALIZE | 1|  Used to check are dependencies installed
 
 Select from the parameters above and build your firmware image:
 ```
-SOC_SPEED=2200 DDR_SPEED=3200 XMP_PROFILE=0 ./runme.sh
+SOC_SPEED=2200 DDR_SPEED=3200 BUS_SPEED=700 XMP_PROFILE=1 BOOT_MODE=sd ./runme.sh
 ```
 
 Will build an image with CPU speed of 2.2GHz, bus @ 700MHz, DDR4 memory speed @ 3.2GHz with XMP disabled.
