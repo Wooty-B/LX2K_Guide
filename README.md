@@ -148,13 +148,14 @@ Until Mesa gets upstreamed into the main Linux kernel branch, few distributions 
 sudo mkdir -p ~/build && cd ~/build
 sudo apt remove mesa-*
 git clone https://gitlab.freedesktop.org/mesa/mesa.git && cd mesa
-git pull && git checkout --track origin/20.3   (Or whichever branch you'd like to use; preferably matching the package version you had)
+git pull && git checkout --track origin/20.3
 wget https://github.com/Wooty-B/LX2K_Guide/blob/main/0001-radeonsi-On-Aarch64-force-persistent-buffers-to-GTT.patch
 patch -p1 < 0001-radeonsi-On-Aarch64-force-persistent-buffers-to-GTT.patch
 mkdir build && cd build
 meson .. --libdir /usr/lib/aarch64-linux-gnu/ --prefix /usr/ -Dgallium-drivers=radeonsi,swrast,zink -Dvulkan-drivers=amd -Dgallium-nine=true -Dbuildtype=release
 sudo ninja install
 ```
+NOTE: You can change the version of Mesa from 20.3 to whatever you'd prefer, however I recommend sticking to whatever version comes installed with your distribution unless you are using a rolling release. (Debian Sid, Void, etc.) Also, the above meson commands are tailored for AMD GPU's.
 
 ### Possible Crash on Sleep/Suspend
 
