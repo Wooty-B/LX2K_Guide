@@ -140,6 +140,22 @@ NOTE: Make sure to connect Micro USB cable to the Console port (the one closer t
 
 ## Post-Install Recommendations
 
+### Mesa Patch
+
+Until Mesa gets upstreamed into the main Linux kernel branch, few distributions provide this out-of-the-box. If you experfience UI graphical issues related to window boarders, text elements, and garbled artifacting in programs, please try out the patch below:
+
+```
+sudo mkdir -p ~/build && cd ~/build
+sudo apt remove mesa-*
+git clone https://gitlab.freedesktop.org/mesa/mesa.git && cd mesa
+git pull && git checkout --track origin/20.3   (Or whichever branch you'd like to use; preferably matching the package version you had)
+wget https://github.com/Wooty-B/LX2K_Guide/blob/main/0001-radeonsi-On-Aarch64-force-persistent-buffers-to-GTT.patch
+patch -p1 < 0001-radeonsi-On-Aarch64-force-persistent-buffers-to-GTT.patch
+mkdir build && cd build
+meson .. --libdir /usr/lib/aarch64-linux-gnu/ --prefix /usr/ -Dgallium-drivers=radeonsi,swrast,zink -Dvulkan-drivers=amd -Dgallium-nine=true -Dbuildtype=release
+sudo ninja install
+```
+
 ### Possible Crash on Sleep/Suspend
 
 If the system crashes constantly on sleep/suspend event, use this command to disable:
