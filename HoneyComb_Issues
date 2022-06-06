@@ -154,7 +154,7 @@ into the .zshrc and put "permit nopass jonah cmd ntpd" in the /etc/doas.conf
 
 60. Firefox get's "cut in half" due to opened tabs from last time: set privacy.resistFingerprinting in about:config to true
 
-61. Debian Systemd UNSUPP message: compile in CONFIG_AUTOFS4_FS in the Kernel and recompile.
+61. Debian Systemd UNSUPP message: compile in CONFIG_AUTOFS4_FS in the Kernel and reinstall.
 
 62. Debian Systemd FAILED readwrite service message: remove Restart=always from the Service file.
 
