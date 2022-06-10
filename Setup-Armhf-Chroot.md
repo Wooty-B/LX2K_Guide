@@ -80,9 +80,9 @@
 	WINEPREFIX=~/.wine WINEARCH=win32 wine winecfg
 	WINEPREFIX=~/.wine64 WINEARCH=win64 wine winecfg
 	nano ~/.bashrc
-	```
-	alias wine64="WINEPREFIX=~/.wine64 wine"
-	```
+	
+		alias wine64="WINEPREFIX=~/.wine64 wine"
+	
 	source ~/.bashrc
 	sudo apt-get install cabextract zenity -y
 	wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
