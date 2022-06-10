@@ -76,7 +76,6 @@
 	sudo ln -s ~/wine/bin/winecfg /usr/local/bin/winecfg
 	sudo ln -s ~/wine/bin/wineserver /usr/local/bin/wineserver
 	sudo chmod +x /usr/local/bin/wine /usr/local/bin/wineboot /usr/local/bin/winecfg /usr/local/bin/wineserver
-	
 	WINEPREFIX=~/.wine WINEARCH=win32 wine winecfg
 	WINEPREFIX=~/.wine64 WINEARCH=win64 wine winecfg
 	nano ~/.bashrc
