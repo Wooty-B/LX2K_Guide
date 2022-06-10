@@ -58,44 +58,38 @@
 		libgl1:armhf
 	steam -no-browser .
 	```
-5. Install Wine & Winetricks (32bit Windows Executables)
+5. Install Wine & Winetricks (32/64-bit Windows Executables)
 	```
 	cd ~
-	wget https://dl.winehq.org/wine-builds/debian/dists/buster/main/binary-i386/wine-devel-i386_5.21~buster_i386.deb
-	wget https://dl.winehq.org/wine-builds/debian/dists/buster/main/binary-i386/wine-devel_5.21~buster_i386.deb
-	dpkg-deb -xv wine-devel-i386_5.21~buster_i386.deb wine-installer
-	dpkg-deb -xv wine-devel_5.21~buster_i386.deb wine-installer
+	wget https://dl.winehq.org/wine-builds/debian/dists/buster/main/binary-i386/wine-stable-i386_6.0.2~buster-1_i386.deb
+	wget https://dl.winehq.org/wine-builds/debian/dists/buster/main/binary-i386/wine-stable_6.0.2~buster-1_i386.deb
+	wget https://dl.winehq.org/wine-builds/debian/dists/buster/main/binary-amd64/wine-stable-amd64_6.0.2~buster-1_amd64.deb
+	wget https://dl.winehq.org/wine-builds/debian/dists/buster/main/binary-amd64/wine-stable_6.0.2~buster-1_amd64.deb
+	dpkg-deb -xv wine-stable-i386_6.0.2~buster-1_i386.deb wine-installer
+	dpkg-deb -xv wine-stable_6.0.2~buster-1_i386.deb wine-installer
+	dpkg-deb -xv wine-stable-amd64_6.0.2~buster-1_amd64.deb wine-installer
+	dpkg-deb -xv wine-stable_6.0.2~buster-1_amd64.deb wine-installer
 	mv wine-installer/opt/wine* ~/wine
 	rm wine*.deb; rm -rf wine-installer
-	echo -e '#!/bin/bash\nsetarch linux32 -L '"$HOME/wine/bin/wine "'"$@"' | sudo tee -a /usr/local/bin/wine >/dev/null
+	sudo ln -s ~/wine/bin/wine /usr/local/bin/wine
 	sudo ln -s ~/wine/bin/wineboot /usr/local/bin/wineboot
 	sudo ln -s ~/wine/bin/winecfg /usr/local/bin/winecfg
 	sudo ln -s ~/wine/bin/wineserver /usr/local/bin/wineserver
-	
 	sudo chmod +x /usr/local/bin/wine /usr/local/bin/wineboot /usr/local/bin/winecfg /usr/local/bin/wineserver
+	
+	WINEPREFIX=~/.wine WINEARCH=win32 wine winecfg
+	WINEPREFIX=~/.wine64 WINEARCH=win64 wine winecfg
+	nano ~/.bashrc
+	```
+	alias wine64="WINEPREFIX=~/.wine64 wine"
+	```
+	source ~/.bashrc
 	sudo apt-get install cabextract zenity -y
 	wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
 	sudo chmod +x winetricks && sudo mv winetricks /usr/local/bin/
 	BOX86_NOBANNER=1 winetricks -q corefonts msxml3 vcrun2005 vcrun2008 vcrun2010
 	```
-6. Install Wine64 (64bit Windows Executables) [NOT TESTED!!!]
-	```
-	wget https://dl.winehq.org/wine-builds/debian/dists/buster/main/binary-amd64/wine-devel-amd64_5.21~buster_amd64.deb
-	wget https://dl.winehq.org/wine-builds/debian/dists/buster/main/binary-amd64/wine-devel_5.21~buster_amd64.deb
-	dpkg-deb -xv wine-devel-amd64_5.21~buster_amd64.deb wine-installer
-	dpkg-deb -xv wine-devel_5.21~buster_amd64.deb wine-installer
-	mv wine-installer/opt/wine* ~/wine64
-	rm wine*.deb; rm -rf wine-installer
-	sudo ln -s ~/wine64/bin/wine64 /usr/local/bin/wine64
-	sudo ln -s ~/wine64/bin/wineboot /usr/local/bin/wineboot64
-	sudo ln -s ~/wine64/bin/winecfg /usr/local/bin/winecfg64
-	sudo ln -s ~/wine64/bin/wineserver /usr/local/bin/wineserver64
-	sudo chmod +x /usr/local/bin/wine64 /usr/local/bin/wineboot64 /usr/local/bin/winecfg64 /usr/local/bin/wineserver64
-	wineboot64 --init
-	```
-
-	```
-7. 32bit ARM (armhf) Chroot Setup [Alernative/Addition to Multiarch]
+6. 32bit ARM (armhf) Chroot Setup [Alernative/Addition to Multiarch]
    	```
     	sudo apt install schroot debootstrap
     	sudo mkdir -p /srv/chroot/ubuntu-armhf
