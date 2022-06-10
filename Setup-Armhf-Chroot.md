@@ -73,7 +73,7 @@
 	sudo ln -s ~/wine/bin/wineserver /usr/local/bin/wineserver
 	
 	sudo chmod +x /usr/local/bin/wine /usr/local/bin/wineboot /usr/local/bin/winecfg /usr/local/bin/wineserver
-	sudo apt-get install cabextract -y
+	sudo apt-get install cabextract zenity -y
 	wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
 	sudo chmod +x winetricks && sudo mv winetricks /usr/local/bin/
 	BOX86_NOBANNER=1 winetricks -q corefonts msxml3 vcrun2005 vcrun2008 vcrun2010
