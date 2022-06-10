@@ -307,4 +307,4 @@ Diving into the setup of this board was daunting given my previous experience, h
 
 @ptitSeb - All his hard work with Box86 and  additionally adding LX2160A specific support
 
-rna (Armbian Forums) - For writing the ARM 32-bit chroot guide which became a template for part of this guide
+rna (Armbian Forums) - For writing the ARM 32-bit chroot guide I used as well as 64-bit wine info
