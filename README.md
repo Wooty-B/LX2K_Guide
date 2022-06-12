@@ -157,6 +157,19 @@ sudo ninja install
 ```
 NOTE: You can change the version of Mesa from 20.3 to whatever you'd prefer, however I recommend sticking to whatever version comes installed with your distribution unless you are using a rolling release. (Debian Sid, Void, etc.) Also, the above meson commands are tailored for AMD GPU's.
 
+### Buffer Overflow Fix
+
+This patch can fix crashes in some applications.
+
+```
+git clone https://github.com/jnettlet/cortex_a72_memcpy.git
+cd cortex_a72_memcpy; make
+cp libmemcpy.so /lib/aarch64-linux-gnu/libmemcpy.so
+nano /etc/ld.so.preload
+	/lib/aarch64-linux-gnu/libmemcpy.so
+sudo reboot
+```
+
 ### Possible Crash on Sleep/Suspend
 
 If the system crashes constantly on sleep/suspend event, use this command to disable:
