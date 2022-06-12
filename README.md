@@ -186,12 +186,6 @@ Over the course of this boards life its recieved various Mesa patches to help fi
 sudo add-apt-repository ppa:oibaf/graphics-drivers && sudo apt update
 ```
 
-### Install Pi-Apps
-	
-Pi-Apps contains a few games such as full Minecraft Java, and some quality of life appsfor the Pi. Pi-Apps can be installed from Github or by using:
-```
-wget -qO- https://raw.githubusercontent.com/Botspot/pi-apps/master/install | bash
-```
 <a name="x86"/>
 
 
