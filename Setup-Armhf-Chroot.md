@@ -59,6 +59,7 @@
 	steam -no-browser .
 	```
 5. Install Wine & Winetricks (32/64-bit Windows Executables)
+
 	Versions Tested: 5.18; 5.21; 6.0.2; 7.0.0.0
 	```
 	cd ~
