@@ -59,6 +59,7 @@
 	steam -no-browser .
 	```
 5. Install Wine & Winetricks (32/64-bit Windows Executables)
+	Versions Tested: 5.18; 5.21; 6.0.2; 7.0.0.0
 	```
 	cd ~
 	wget https://dl.winehq.org/wine-builds/debian/dists/buster/main/binary-i386/wine-stable-i386_6.0.2~buster-1_i386.deb
