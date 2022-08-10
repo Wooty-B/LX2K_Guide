@@ -33,7 +33,7 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
   - Supports only 1.2v modules
 - Storage
   - m.2 slot for PCI Express Gen3 x4 NVME
-  - 4 Serial ATA III ports
+  - 4x Serial ATA III ports
   - Onboard eMMC 64GB
   - MicroSD Slot
   - SPI Flash for firmware
@@ -43,13 +43,15 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 - PCI Express
   - x8 half-slot (open-ended, x16 card support), PCI Express Gen3
 - USB
-  - 2 USB 3 ports
-  - 1 USB 3 header (2 ports)
-  - 1 USB 2 header (2 ports)
+  - 2x USB 3 ports
+  - 1x USB 3 header (2 ports)
+  - 1x USB 2 header (2 ports)
 - Interface
-  - 1 micro USB port for serial console
-  - 1 micro USB port for management
-  - 1 JTAG header
+  - 1x micro USB port for serial console
+  - 1x micro USB port for management
+  - 1x JTAG header
+- Cooling
+  - 40mm Heatsink (standard on older GPU's)
 
 
 <a name="intro"/>
