@@ -12,10 +12,11 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 1. [Configuring LX2K](#config)
 1. [Installing an Operating System](#os)
 1. [Post-Install Recommendations](#reccomend)
-2. [BoxWine (x86) Setup Guide](#x86)
-3. [BIOS Navigation](#bios)
-4. [Overclocking & Timings](#timings)
-5. [Credits](#thanks)
+1. [BoxWine (x86) Setup Guide](#x86)
+1. [BIOS Navigation](#bios)
+1. [Overclocking & Timings](#timings)
+1. [Troubleshooting](#issues)
+1. [Credits](#thanks)
 
 <a name="specs"/>
 
@@ -331,6 +332,14 @@ Will build an image with CPU speed of 2.2GHz, bus @ 700MHz, DDR4 memory speed @ 
 Resulting file will be stored in "images/" directory and named "lx2160acex7_2200_700_3200_8_5_2_sd_xxxxxxx.img".
 
 Write firmware image to MicroSD card (use dd or other similar tool). Insert into into LX2K and reboot.
+
+<a name="issues"/>
+
+## Troubleshooting
+
+The HoneyComb LX2K is a powerful development platform for ARM, however there can be some quirks or misconceptions. If you run into a wall or an anomoly, please check the HoneyComb Issus documentation below for more information.
+
+[HoneyComb Issues](HoneyComb-Issues.md)
 
 <a name="thanks"/>
 
