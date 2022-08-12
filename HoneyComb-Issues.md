@@ -1,192 +1,60 @@
-1. Computer won’t boot: be sure that you have the right image: (SolidRun Images 1) pick the image for your RAM speed.
+1. Computer Won’t Boot: Be sure that you have the right image: [LX2K UEFI Images](https://images.solid-run.com/LX2k/lx2160a_uefi) Pick the image matching your RAM speed.
 
-2. Old graphicscard wasn’t compatible: take a newer graphicscard ( for example the AMD Radeon RX580)
+2. GPU: Make sure you are using an AMD Graphics Core Next (GCN1-5) or newer GPU, or nVidia 1K series and up w/ Linux Kernel 5.18+. Older GPU's aren't supported.
 
-3. The LED of the powerswitch won’t light up: be sure that pin PLED+ is put on port 2 and that pin PLED- is put on port 5. See the bottom of this picture:
+3. No Power LED: Make sure that connector PLED+ is connected to pin 2 and that connector PLED- is put on pin 5. See the bottom of this picture:
 https://marcin.juszkiewicz.com.pl/files/2021/02/honeycomb-layout.webp 4
 
-4. Computer turns off after a while:
+4. Computer Powers Off Randomly/Under Thermal Load:
 set “thermal.crt=-1” in /etc/default/grub in the GUB_CMDLINE_LINUX_DEFAULT like this: GRUB_CMDLINE_LINUX_DEFAULT=“loglevel=4 thermal.crt=-1”
 
-5. Graphic-glitches (in case of GPUs from AMD): like described in the 4th problem: “amdgpu.pcie_gen_cap=0x4” has to be set with a space between options in the GRUB_CMDLINE_LINUX_DEFAULT.
+5. GPU Power Issues (AMD): Set the value “amdgpu.pcie_gen_cap=0x4” for GRUB_CMDLINE_LINUX_DEFAULT in /etc/default/grub
 
-6. Keyboard gets unmounted at boot of distro: be sure that the keyboard is plugged into the lower USB-port and that the mouse is plugged into the upper USB-port.
+6. No Keyboard on Login: Make sure that the keyboard is plugged into the lower/bottom USB-port, and that the mouse is plugged into the upper USB-port.
 
-7. Audio over USB Headset: execute:
+7. USB Headset/Sound Card: Run the following from the terminal: 
 “touch /etc/modprobe.d/alsa.conf” "echo “options snd slots=snd-usb-audio,snd-hda-codec-hdmi” >> /etc/modprobe.d/alsa.conf
 
-8. I/O error of /dev/sda (bad cable): be sure to use a recent SATA cable. (mine was from 2005).
+8. I/O Error on /dev/sda: Make sure your SATA cable is rated for SATAIII speeds.
 
-9. Void Linux boots to the emergency shell: be sure that you have the newest tarball version of Void Linux (in my case 20210316 (Index of /live/20210316/))
+9. Void Linux Boots to Emergency Shell: Make sure that you have the newest tarball version of Void Linux (Ex. /live/20210316/))
 
-10. Void Linux has no wifi: execute:
+10. Void Linux Has No WiFi: Run the following from the terminal: 
 “wpa_passphrase SSID password /etc/wpa_supplicant/wpa_supplicant.conf” “wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf” “ln -s /etc/sv/wpa_supplicant /var/service/” “ln -s /etc/sv/dhcpcd /var/service/”
 
-11. Void Linux, operation not permitted at xbps-install:
-execute: “export SSL_NO_VERIFY_PEER=1”
+11. Void Linux "operation not permitted" during xbps-install: Run the following from the terminal: 
+“export SSL_NO_VERIFY_PEER=1”
 
-12. Void Linux, setting the time and sync it to hardwareclock:
-execute: “xbps-install ntp openntpd” “ntpdate pool.ntp.org” “openntpd -s” “hwclock -wl” “echo “openntpd-s; hwclock -wl” >> ~/.xinitrc”
+12. Void Linux Sync Time to Hardware Clock: Run the following from the terminal: 
+“xbps-install ntp openntpd” “ntpdate pool.ntp.org” “openntpd -s” “hwclock -wl” “echo “openntpd-s; hwclock -wl” >> ~/.xinitrc”
 
-13. no ethernet under Void Linux: a USB-wifi or a RJ-45 adapter must be used.
+13. Void Linux Ethernet: Make sure you are using a generic 5.14+ Linux Kernel or else Ethernet may not work.
 
-14. PSU did not have the right plug for the graphicscard : use a recent PSU (mine was from 2005).
+14. Void Linux VSync: Run the following from the terminal: 
+“xbps-install picom” “echo “picom --backend-glx --vsync” >> ~/.xinitrc”
 
-15. Vsync on Void: execute: “xbps-install picom” “echo “picom --backend-glx --vsync” >> ~/.xinitrc”
+15. Void Linux ntpd OpenRC: "-s" has to be taken out of NTPD_OPTS in /etc/conf.d/ntpd. "doas ntpd -s" is set in .xinitrc and "permit nopass user cmd ntpd" is set in /etc/doas.conf.
 
+16. Void Linux "momount" issue: The first 2 letters get output to the beginning of a command, Ex.: Trying to tab-autocomplete the command "mount" -> mou -> (TAB Key) -> momou. The letters "mo" do not interfere with the input command. Starship contains a foreign prompt-symbol ("❯").
+~/.config/starship.toml fixes this behaviour by configuring the prompt to have normal system-known symbols.
 
-16. Minetest freezes the whole Xorg server. Issue occurs on Gentoo (glibc), Issue doesn't occur on Void-musl.
-Occurs because of a rare drm-bug: 
+17. Sound crackling/popping/distortion: Run the following from the terminal: 
+"cd /usr/src/linux/ && doas make menuconfig" Device Drivers > Sound Card Support > ALSA: Pre-allocated buffer size for HD-audio driver = 0" (CONFIG_SND_HDA_PREALLOC_SIZE=0).
 
-[ 303.338109] [drm:amdgpu_dm_atomic_commit_tail [amdgpu]] ERROR Waiting for fences timed out!
-[ 308.202355] [drm:amdgpu_job_timedout [amdgpu]] ERROR ring gfx timeout, but soft recovered
+18. udev Incorrect Time Halts i2C Bus: CONFIG_FW_LOADER_USER_HELPER must be disabled in the Kernel
 
-17. Minecraft on ARM64? https://github.com/JJtech0130/MultiMC5
+19. PWM Fans Increase to Max: Set i2c-imx either as M or Y in the Kernel config. 
 
-18. ntpd as an OpenRC service: "-s" has to be taken out of the NTPD_OPTS in /etc/conf.d/ntpd. "doas ntpd -s" is set in the .xinitrc and "permit nopass user cmd ntpd" is set in the /etc/doas.conf.
+20. Audio Over DisplayPort With ALSA: "cat /proc/asound/cards" -> Card #; "cat /proc/asound/devices" -> Device #
 
-19. "momount" issue: The first 2 letters get putout to the very start of the command, e.g. trying to autocomplete the command "mount" -> mou -> autocompletion -> momou. the added letters ("mo") do not interfere with the input command. 
-Fix: Starship contains a foreign prompt-symbol ("❯"). ~/.config/starship.toml fixes this behaviour by configuring the prompt to have normal system-known symbols. 
-This does not happen on Void Linux (musl).
-
-20. Gentoo compile errors: configure /etc/portage/make.conf to have needed USE-flags.
-
-21. Overlays: Point to the Overlay's PATH, for instance: "/var/db/repos/overlay" in the /etc/make.conf. Make sure to download the Overlay to the desired location beforehand.
-
-22. dmenu lign up: Xresources + XYW patch. ~/.Xresources file is needed. It has to be reloaded using "xrdb .Xresources".
-
-23. Playing music via mpv shows an error message: error: lua bad userlightdata pointer.  The error does not prohibit playing the music.
-
-24. Mesa graphics-glitches/distortion: This patch has to be applied to Mesa: 
-https://github.com/void-linux/void-packages/blob/master/srcpkgs/LuaJIT/patches/e9af1abec542e6f9851ff2368e7f196b6382a44c.patch
-
-25. Freetype and Harfbuzz circular dependencies: fix: Command: "USE=-harfbuzz emerge --oneshot freetype"
-
-26. SuperTuxKart has to be compiled on Gentoo ARM64 using Angelscript-2.34.0. 2.35.0 and 2.35.1 will fail in a compilation error. 
-
-27. ricing: aesthetics:
-
-dwm: BAR_PADDING_PATCH; BAR_STATUSPADDING_PATCH; BAR_ALPHA_PATCH; CENTERWINDOWNAME_PATCH; VANITYGAPS_PATCH; VANITYGAPS_MONOCLE_PATCH; ROUNDED_CORNERS_PATCH; BAR_WINTITLE_PATCH; BAR_LTSYMBOL_PATCH; BAR_STATUS_PATCH; BAR_TAGS_PATCH
-
-st: ALPHA_PATCH;
-
-dmenu: ALPHA_PATCH; XRESOURCES_PATCH; XYW_PATCH
-
-function:
-
-st: SCROLLBACK_PATCH; SCROLLBACK_MOUSE_PATCH; SCROLLBACK_MOUSE_ALTSCREEN_PATCH
-dmenu: CTRL_V_TO_PASTE_PATCH; MOUSE_SUPPORT_PATCH
-
-28. Flashing a UEFI BIOS using a phone?: Connect a USB-OTG to micro USB adapter to the phone and a USB to microUSB cable to the Computer.
-The Computer Will not get recognized by the Phone if the cable is connected the other way around (USB-OTG cable connected to Computer and USB to microUSB cable to phone (cablecompany: JSAUX)).
-
-29. Sound crackling/popping/distortion: "cd /usr/src/linux/ && doas make menuconfig" Device Drivers > Sound Card Support > ALSA: Pre-allocated buffer size for HD-audio driver = 0" (CONFIG_SND_HDA_PREALLOC_SIZE=0).
-
-30. fixdep make error when trying to build the Kernel menuconfig: "doas make clean"
-
-31. .xbindkeysrc for louder/quieter/mute Keys for sound, needs package: xbindkeys.
-
-32. Discovery: Gentoo has the OpenNTPD OpenRC service disabled, "doas ntpd -s" is set in the .xinitrc to set the time correctly. Booting to Void Linux, setting the time to a wrong time and exporting that to the Hardwareclock ("doas hwclock -w") and rebooting to Gentoo shows that the time will not get set at the first start of Xorg, BUT: exiting Xorg and reentering it sets the time correctly. Enabling the Gentoo OpenNTPD OpenRC service fixes that: the time get's set at first start of Xorg using the same procedure done on Void Linux. Reason for occurance: ntpd was just running once, 2 ntpd services need to be ran.
-
-33. VScodium/VScode segfaulting is caused by a wrong Kernel CONFIG_LOCALVERSION! (5.15.0+) The name must contain a commitname e.g. (5.15.0-g50aac898777d. same goes for Minecraft.)
-
-34. udev doesn't set time correctly and locks-up i2C bus: CONFIG_FW_LOADER_USER_HELPER has to be disabled in the Kernel
-
-35. No sound after xset dpms force off: killall pulseaudio to reset the sound.
-
-36. Noctua turns off, if 2 Low-noise adapters are used
-
-37. Fans run at maximal RPM values if it's not PWM.
-
-38. System cannot be booted off of eMMC and nothing can be written to mmcblk1boot0/1: Operation not permitted (even as root).
-
-39. Nheko 0.9.0 won't work and throw error: install kwallet.
-
-40. VScodium/VScode "Build failed, do you want to continue?" delete or fix faulty files.
-
-41. graphical glitches in the UEFI: flash the GPU. switch to Stock VBIOS using a small switch near the powercable of the Graphicscard. switch, boot, execute "flashrom --programmer ati_spi --read stock.rom", switch to other VBIOS, and execute "flashrom --programmer ati_spi --write stock.rom".
-
-42. blk_update_request error on 120G Crucial BX120 drive: hardware issue or SMART issue, maybe replace drive or disable SMART.
-
-43. Pipewire on Gentoo, mask Pulseaudio and alsa-plugins and add USE flags to pipewire (pipewire-alsa).
-
-44. musllibc locales on Void Linux: https://github.com/rilian-la-te/musl-locales
-
-45. Securitysetup:
-iptables: policy management for firewalls.
-
-46. Minecraft 1.18 on ARM64? Compile MultiMC, specify path to openjdk-1.8, specify META_URL, fix Wunused variable build error.
-
-47. OptiFine for Minecraft: install Fabric in MultiMC, download optifine-fabric and optifine-$(minecraft-version) and specify them in MultiMC.
-
-48. VScodium C/C++ setup: install C/C++ Runner and Config. tweak tasks.json and launch.json.
-
-49. Security and minimalism: make the kernel smaller by only having compiled in what is needed and for what hardware.
-
-compile time: 4 minutes 34 seconds
-tree size: 1.7 gigabytes
-
-50. PWM fans spin up to fullspeed when they spin up: set i2c-imx either as M or Y in the Kernel config. 
-
-51. Audio over DisplayPort using only ALSA: "cat /proc/asound/cards" -> number of card, "cat /proc/asound/devices" -> number at "hardware dependent"
-
-.asoundrc:
+Edit one of the following files, ~/.asoundrc or /etc/asound.conf:
 
 defaults.pcm.!card 2
 defaults.pcm.!device 8
 
-52. 75hz refresh rate: put "xrandr -r 75" in .xinitrc. put "video=2560x1440@75" into GRUB_CMDLINE_LINUX_DEFAULT.
+21. Android Emulator; Waydroid for Debian 11+/Ubuntu 21.10+: Follow the Guide on https://docs.waydro.id/usage/install-on-desktops.
 
-53. Veloren no sound: Veloren needs alsa-plugins and pulseaudio or pipewire to put out sound.
-
-54. Hardwareclock is unreliable, fix for Gentoo: doas rc-update add swclock boot default, put "sleep 6 && doas ntpd -s &&" before startx
-into the .zshrc and put "permit nopass jonah cmd ntpd" in the /etc/doas.conf
-
-55. ata4.00: failed command: READ FPDMA QUEUED: removing errors at boot: set loglevels to minimum (1) in kernel, recompile and reinstall.
-
-56. Tutanota-desktop forgets login credentials: put "dbus-run-session --" between exec and dwm in .xinitrc
-
-57. Terminal changes main color to orange: only one font available in /usr/share/fonts/TTF/: compile suite with jetbrainsmono-bold and make sure it is present in /usr/share/fonts
-
-58. searx forgets settings: let Firefox create chronics
-
-59. Void Linux QT5 screen size is maximum: put "export QT_QPA_PLATFORM=xcb" into the .zshrc in the X11 part 
-
-60. Firefox get's "cut in half" due to opened tabs from last time: set privacy.resistFingerprinting in about:config to true
-
-61. Debian Systemd UNSUPP message: compile in CONFIG_AUTOFS4_FS in the Kernel and reinstall.
-
-62. Debian Systemd FAILED readwrite service message: remove Restart=always from the Service file.
-
-63. Debian cannot be booted from the within the UEFI: delete fbaa64.efi from EFI/BOOT/
-
-64. GRUB german locale: make sure that LANG is de_DE.UTF-8
-
-65. Saving time when syncing time: "sleep 5 && doas ntpd -s && disown %1 &" into .xinitrc
-
-66. INIT: ld "f0" respawning too fast, disabled for 5 minutes: f0:12345:once:/sbin/agetty 9600 ttyAMA0 vt100 in /etc/inittab
-
-67. Airshipper cannot update Veloren anymore: 404, retry: update and rebuild airshipper
-
-68. passwd: password too weak: edit /etc/pam.d/system-auth: "password required pam_unix.so nullok sha512 shadow"; comment the passwdqc line
-
-69. Waydroid on Debian:
-momentary requirements: Debian 11 Bullseye
-lxc, curl, python3
-
-=> Follow the Guide on https://docs.waydro.id/usage/install-on-desktops.
-
-/etc/gbinder.conf:
+Edit the file /etc/gbinder.conf:
 
 [General]
 ApiLevel = 29
-
-Modify the kernel if needed.
-
-Start Waydroid.
-
-70. EFI varstore is getting overfilled: deactivate CONFIG_EFI_VARS_PSTORE in the kernel and reinstall the kernel.
-
-71. x86_64 emulation: guide: https://github.com/Wooty-B/LX2K_Guide/blob/main/Setup-Armhf-Chroot.md
-Steam games that are working really well: Rocket League, Slime Rancher
-
