@@ -61,9 +61,9 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 ## Introduction
 
 The SolidRun HoneyComb LX2K (ClearFog) is a Mini-ITX form-factor ARM64 development board. Can be used for enterprise networking, security, automotive, server applications, and as a developer workstation. Over the last year there has been much development to bring a stable desktop experience with AMD GPU support and it has finally reached a point where it is now viable as an ARM64 Desktop.
-	
+
 Using a Radeon WX 4100, many applications such as Blender, RBDOOM-3, Portal 2 and console emulators run laps around the Raspberry Pi 4, RockPro64, and Odroid XU-4. Many games run at 3440x1440 @ 60fps as long as you aren't going ham on the render options, Minecraft running close to 60fps @ 12-16 chunks, and OpenMW running @ 60fps with everything turned to max. And with Box86 and Wine, there are many native and foreign x86 applications that run smoothly.
-	
+
 _The guide below is a WIP, and I greatly appreciate any comments regarding how I can improve this page, and will try to answer any questions thrown my way._
 
 <a name="notes"/>
@@ -78,36 +78,24 @@ _The guide below is a WIP, and I greatly appreciate any comments regarding how I
   - UEFI image is highly recommended
 - The EDKII UEFI BIOS will sometimes hang at splash under certain reboot conditions.
   - simply wait a few seconds and boot again
-- If you experience frequent crashing, no wake from sleep, etc., make sure GRUB Linux Defaults are set as well as disabling sleep/hybernate services.
+- If you experience frequent crashing, no wake from sleep, etc., make sure GRUB Linux Defaults are set as well as disabling sleep/hibernate services.
 - At time of writing there appears to be minor window boarder and text artifacting on occasion; shouldn't affect overall experience.
 - Booting with some keyboards (usually gaming ones) may not register during POST and will not respond to input. Once booted into Linux drivers will pick up any non-standard keyboards. I.e.: You may need a 2nd generic USB keyboard to highlight BIOS options.
-- Use Wayland over X11 if at all possible, X has much more bugs with GPU acceleration and Wayland has the ability to launch X windows anyways.
+- Use Wayland over X11 if at all possible, X has much more bugs with GPU acceleration and Wayland has the ability to launch X windows anyway.
 
 <a name="thermal"/>
 
 ## Thermal Management
 
-When you recieve your LX2K SoM, you may notice the rather modest heatsink. Under light operation this is no issue, however, if you use multithreaded compiling, play games or want to run performance benchmarks, you will want to upgrade the stock cooler. Below are some aftermarket products used by some LX2K users, and should help get better thermals out of your machine.
+When you receive your LX2K SoM, you may notice the rather modest heatsink. Under light operation this is no issue, however, if you use multithreaded compiling, play games or want to run performance benchmarks, you may want to upgrade the stock cooler. Below are some aftermarket products used by some LX2K users, and should help get better thermals out of your machine.
 
-- Enzotech: [coolerguys.com](https://www.coolerguys.com/products/enzotech-northbridge-heatsink-cnb-r1)
-- 
-	![Enzotech](img/enzotech.jpg "Enzotech")
-
-- Silenx: [amazon.com](https://www.amazon.com/dp/B002OHPKSY)
-- 
-	![Silenx](img/silenx.jpg "Silenx")
-	
-- PC Northbridge Cooler: [moddiy.com](https://www.moddiy.com/products/PC-Cooler-H.D.T-Technology-Northbridge-Cooler-)
-- 
-	![PCCooler](img/pccooler.jpg "PCCooler")
-	
-- Connectland: [amazon.com](https://www.amazon.com/-/en/gp/product/B004HO5D98)
-- 
-	![Connectland](img/connectland.jpg "Connectland")
-
-- Acrylic Mounts: [khayie.com](https://www.khayie.com/products/acrylic-cpu-water-cooling-waterblock-heatsink-buckles-screw-m2-5x35mm-for-northbridge-for-graphics-card?variant=32399047458916)
-- 
-	![Acrylic](img/acrylic.jpg "Acrylic")
+name | shop | image
+--|--|--
+Enzotech | [coolerguys.com](https://www.coolerguys.com/products/enzotech-northbridge-heatsink-cnb-r1) | ![Enzotech](img/enzotech.jpg "Enzotech")
+Silenx | [amazon.com](https://www.amazon.com/dp/B002OHPKSY) | ![Silenx](img/silenx.jpg "Silenx")
+PC Northbridge Cooler | [moddiy.com](https://www.moddiy.com/products/PC-Cooler-H.D.T-Technology-Northbridge-Cooler-) | ![PCCooler](img/pccooler.jpg "PCCooler")
+Connectland | [amazon.com](https://www.amazon.com/-/en/gp/product/B004HO5D98) | ![Connectland](img/connectland.jpg "Connectland")
+Acrylic Mounts | [khayie.com](https://www.khayie.com/products/acrylic-cpu-water-cooling-waterblock-heatsink-buckles-screw-m2-5x35mm-for-northbridge-for-graphics-card?variant=32399047458916) | ![Acrylic](img/acrylic.jpg "Acrylic")
 
 
  <a name="prereq"/>
@@ -117,7 +105,7 @@ When you recieve your LX2K SoM, you may notice the rather modest heatsink. Under
 You will need the following items:
  - 512MB+ MicroSD card
  - 2GB+ USB Thumb Drive
- - USB Ethernet Adaptor (try sticking with generic, Realtek based chips if possible)
+ - USB Ethernet Adapter (try sticking with generic, Realtek based chips if possible)
  - Build computer/SBC with an SD slot or adaptor
  - (recommended) Micro USB cable
  - (recommended) Radeon GCN 5th Gen or lower
@@ -166,7 +154,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port (the one closer t
 4. [Void](Install-Void-glibc.md)
 5. [Windows 10](Install-Windows.md)
 6. [Windows 10/QEMU](Install-Windows-Qemu.md)
-	
+
 <a name="reccomend"/>
 
 ## Post-Install Recommendations
@@ -223,7 +211,7 @@ sudo add-apt-repository ppa:oibaf/graphics-drivers && sudo apt update
 ## BoxWine Setup Guide
 
 With Box86 and Box64, you can enable a mostly native experience with a number of x86 Linux apps. Steam and many native Linux Games and 3D applications run very well depending on your GPU setup. Many libraries are still not fully wrapped, so you may get slowdowns for emulated libraries or segmentation faults and halts. To take all this a step further, 32bit Wine can even run some AAA titles such as Fallout 3, Skyrim and Crysis, and by run I mean mostly playable at high settings! Most of this relies on making sure you have the proper dependencies and runtimes installed.
-	
+
 [Setup Multiarch, Box86/64, Wine and Steam](Setup-Armhf-Chroot.md)
 
 [List of Tested Games/Productivity Applications](https://github.com/Wooty-B/RISC_Game_Guide)
