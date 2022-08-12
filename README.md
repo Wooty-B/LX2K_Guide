@@ -89,14 +89,19 @@ _The guide below is a WIP, and I greatly appreciate any comments regarding how I
 When you recieve your LX2K SoM, you may notice the rather modest heatsink. Under light operation this is no issue, however, if you use multithreaded compiling, play games or want to run performance benchmarks, you will want to upgrade the stock cooler. Below are some recommended aftermarket products to help get better thermals out of your machine.
 
 - Enzotech: [coolerguys.com](https://www.coolerguys.com/products/enzotech-northbridge-heatsink-cnb-r1)
+	[Enzotech](img/enzotech.jpg "Enzotech")
 
 - Silenx: [amazon.com](https://www.amazon.com/dp/B002OHPKSY)
-
+	[Silenx](img/silenx.jpg "Silenx")
+	
 - PC Northbridge Cooler: [moddiy.com](https://www.moddiy.com/products/PC-Cooler-H.D.T-Technology-Northbridge-Cooler-)
-
+	[PCCooler](img/pccooler.jpg "PCCooler")
+	
 - Connectland: [amazon.com](https://www.amazon.com/-/en/gp/product/B004HO5D98)
+	[Connectland](img/connectland.jpg "Connectland")
 
 - Acrylic Mounts: [khayie.com](https://www.khayie.com/products/acrylic-cpu-water-cooling-waterblock-heatsink-buckles-screw-m2-5x35mm-for-northbridge-for-graphics-card?variant=32399047458916)
+	[Acrylic](img/acrylic.jpg "Acrylic")
 
 
  <a name="prereq"/>
