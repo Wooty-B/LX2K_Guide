@@ -221,7 +221,7 @@ sudo add-apt-repository ppa:oibaf/graphics-drivers && sudo apt update
 
 ## BoxWine Setup Guide
 
-With Box86 and Box64, you can enable a mostly native experience with a number of x86 Linux apps. Steam and many native Linux Games and 3D applications run very well depending on your GPU setup. Many libraries are still not fully wrapped, so you may get slowdowns for emulated libraries or segmentation faults and halts. To take all this a step further, 32bit Wine can even run some AAA titles such as Fallout 3/Oblivion and Crysis, and by run I mean mostly playable at high settings! Most of this relies on making sure you have the proper dependencies and runtimes installed.
+With Box86 and Box64, you can enable a mostly native experience with a number of x86 Linux apps. Steam and many native Linux Games and 3D applications run very well depending on your GPU setup. Many libraries are still not fully wrapped, so you may get slowdowns for emulated libraries or segmentation faults and halts. To take all this a step further, 32bit Wine can even run some AAA titles such as Fallout 3, Skyrim and Crysis, and by run I mean mostly playable at high settings! Most of this relies on making sure you have the proper dependencies and runtimes installed.
 	
 [Setup Multiarch, Box86/64, Wine and Steam](Setup-Armhf-Chroot.md)
 
