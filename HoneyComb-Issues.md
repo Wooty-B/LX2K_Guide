@@ -190,6 +190,3 @@ Start Waydroid.
 71. x86_64 emulation: guide: https://github.com/Wooty-B/LX2K_Guide/blob/main/Setup-Armhf-Chroot.md
 Steam games that are working really well: Rocket League, Slime Rancher
 
--------------
-|3,700 hours|
--------------
