@@ -86,7 +86,7 @@ _The guide below is a WIP, and I greatly appreciate any comments regarding how I
 
 ## Thermal Management
 
-When you recieve your LX2K SoM, you may notice the rather modest heatsink. Under light operation this is no issue, however, if you use multithreaded compiling, play games or want to run performance benchmarks, you will want to upgrade the stock cooler. Below are some recommended aftermarket products to help get better thermals out of your machine.
+When you recieve your LX2K SoM, you may notice the rather modest heatsink. Under light operation this is no issue, however, if you use multithreaded compiling, play games or want to run performance benchmarks, you will want to upgrade the stock cooler. Below are some aftermarket products used by some LX2K users, and should help get better thermals out of your machine.
 
 - Enzotech: [coolerguys.com](https://www.coolerguys.com/products/enzotech-northbridge-heatsink-cnb-r1)
 - 
