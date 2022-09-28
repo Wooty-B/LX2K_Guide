@@ -323,6 +323,16 @@ Write firmware image to MicroSD card (use dd or other similar tool). Insert into
 
 <a name="issues"/>
 
+### Benchmarking
+
+Here are a few benchmarking resources with ARM compatability in mind.
+
+Geekbench 5: https://cdn.geekbench.com/Geekbench-5.4.0-LinuxARMPreview.tar.gz
+
+PassMark PerformanceTest: https://www.passmark.com/downloads/pt_linux_arm64.zip
+
+Phoronix Test Suite: https://www.phoronix-test-suite.com/?k=downloads (Works natively with armhf/aarch64)
+
 ## Troubleshooting
 
 The HoneyComb LX2K is a powerful development platform for ARM, however there can be some quirks or misconceptions. If you run into a wall or an anomoly, please check the HoneyComb Issus documentation below for more information.
