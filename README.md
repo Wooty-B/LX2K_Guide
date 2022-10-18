@@ -168,7 +168,7 @@ sudo apt install git build-essential bison flex bc meson pkg-config cmake libvdp
 sudo mkdir -p ~/build && cd ~/build
 sudo apt remove mesa-*
 git clone https://gitlab.freedesktop.org/mesa/mesa.git && cd mesa
-git pull && git checkout --track origin/20.3
+git pull && git checkout --track origin/21.0
 wget https://github.com/Wooty-B/LX2K_Guide/raw/main/0001-radeonsi-On-Aarch64-force-persistent-buffers-to-GTT.patch
 patch -p1 < 0001-radeonsi-On-Aarch64-force-persistent-buffers-to-GTT.patch
 mkdir build && cd build
