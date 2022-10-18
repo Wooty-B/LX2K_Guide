@@ -164,7 +164,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port (the one closer t
 Until Mesa gets upstreamed into the main Linux kernel branch, few distributions provide this out-of-the-box. If you experfience UI graphical issues related to window boarders, text elements, and garbled artifacting in programs, please try out the patch below:
 
 ```
-sudo apt install git build-essential bison flex bc meson pkg-config cmake libvdpau-dev glslang-tools libomxil-bellagio-dev libva-dev libvulkan-dev python3-pip libdrm-dev llvm-dev libeld-dev wayland-protocols libwayland-egl-backend-dev libxext-dev livxdamage-dev libxcb-glx0-dev libxcb-shm0-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libxshmfence-dev libxxf86vm-dev libxrandr-dev ninja-build
+sudo apt install git build-essential bison flex bc meson pkg-config cmake libvdpau-dev glslang-tools libomxil-bellagio-dev libva-dev libvulkan-dev python3-pip libdrm-dev llvm-dev libelf-dev wayland-protocols libwayland-egl-backend-dev libxext-dev libxdamage-dev libxcb-glx0-dev libxcb-shm0-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libxshmfence-dev libxxf86vm-dev libxrandr-dev ninja-build
 sudo mkdir -p ~/build && cd ~/build
 sudo apt remove mesa-*
 git clone https://gitlab.freedesktop.org/mesa/mesa.git && cd mesa
