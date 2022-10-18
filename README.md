@@ -205,6 +205,7 @@ Over the course of this boards life its recieved various Mesa patches to help fi
 ```
 sudo add-apt-repository ppa:oibaf/graphics-drivers && sudo apt update
 ```
+NOTE: After a testing a recent install, the above repository no longer works for me. Please let me know of another ARM64 friendly repo or let me know if anyone has better luck than I!
 
 <a name="x86"/>
 
