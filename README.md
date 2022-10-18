@@ -60,9 +60,9 @@ A guide for fully setting up the SolidRun LX2K with novice users in mind.
 
 ## Introduction
 
-The SolidRun HoneyComb LX2K (ClearFog) is a Mini-ITX form-factor ARM64 development board. Can be used for enterprise networking, security, automotive, server applications, and as a developer workstation. Over the last year there has been much development to bring a stable desktop experience with AMD GPU support and it has finally reached a point where it is now viable as an ARM64 Desktop.
+The SolidRun HoneyComb LX2K (ClearFog) is a Mini-ITX form-factor ARM64 development board. Can be used for enterprise networking, security, automotive, server applications, and as a developer workstation. The team at Solidrun as well as many freelance developers have really poured their hearts into working out all the small bugs that come with a niche product, and the SoM being mainly targeted for embedded use. That being said, I personally recommend the LX2K as a 64-bit ARM desktop for those that are seriously considering a capable RISC-based system to use as their daily driver.
 
-Using a Radeon WX 4100, many applications such as Blender, RBDOOM-3, Portal 2 and console emulators run laps around the Raspberry Pi 4, RockPro64, and Odroid XU-4. Many games run at 3440x1440 @ 60fps as long as you aren't going ham on the render options, Minecraft running close to 60fps @ 12-16 chunks, and OpenMW running @ 60fps with everything turned to max. And with Box86 and Wine, there are many native and foreign x86 applications that run smoothly.
+Using a Radeon WX 4100, many applications such as Blender, RBDOOM-3, Portal 2 and console emulators run laps around the Raspberry Pi 4, RockPro64, and Odroid XU-4. Many games run at 3440x1440 @ 60fps as long as you aren't going ham on the render options, Minecraft running at 60fps @ 18-22 chunks, and OpenMW running @ 60fps with everything turned to max. And with Box86 and Wine, there are many native and foreign x86 applications that run smoothly such as Fallout 3, Skyrim, and even Crysis 1 and 2.
 
 _The guide below is a WIP, and I greatly appreciate any comments regarding how I can improve this page, and will try to answer any questions thrown my way._
 
