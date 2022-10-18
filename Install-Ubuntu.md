@@ -38,13 +38,13 @@ NOTE (10): The former fixes issues with crashing on boot, the latter prevents cr
 
   11. Now run the following:
   
-            apt update && apt upgrade && apt install linux-firmware tasksel
+            apt update && apt upgrade && apt install firmware-linux tasksel
 
 NOTE (11a): "linux-firmware" installs the correct firmware for amdgpu and should not be skipped.
 
 NOTE (11b): If you are installing Debian, set up your user with "adduser", then "usermod -a -G username sudo". Logout and back in.
 
-  12. Run "sudo tasksel" and select Ubuntu Desktop, and any additional packages as well.
+  12. Run "sudo tasksel" and select Ubuntu/Debian Desktop, and any additional packages as well.
 
   13. Once completed, do a full system reboot/poweroff and then boot back into your new system.
 
