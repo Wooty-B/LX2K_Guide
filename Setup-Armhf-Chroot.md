@@ -10,7 +10,7 @@
 	mkdir x86; cd x86
 	sudo apt install gcc-arm-linux-gnueabihf git build-essential cmake curl
 	git clone https://github.com/ptitSeb/box86.git; cd box86
-	mkdir build; cd build; cmake .. -DRK3399=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo; make -j16
+	mkdir build; cd build; cmake .. -DLX2160A=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo; make -j16
 	sudo make install; cd ../..
 	```
 3. Install Box64
@@ -56,7 +56,7 @@
 		libgbm1:armhf \
 		libgl1-mesa-dri:armhf \
 		libgl1:armhf
-	steam -no-browser .
+	steam -no-browser -noreactlogin steam://open/minigameslist
 	```
 5. Install Wine & Winetricks (32/64-bit Windows Executables)
 
