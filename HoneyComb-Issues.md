@@ -23,7 +23,7 @@ set “thermal.crt=-1” in /etc/default/grub in the GUB_CMDLINE_LINUX_DEFAULT l
 
     Make sure that the keyboard is plugged into the lower/bottom USB-port, and that the mouse is plugged into the upper USB-port.
 
-7. USB Headset/Sound Card: Run the following from the terminal: 
+7. USB Headset/Sound Card:
 
     “touch /etc/modprobe.d/alsa.conf” "echo “options snd slots=snd-usb-audio,snd-hda-codec-hdmi” >> /etc/modprobe.d/alsa.conf
 
@@ -31,7 +31,7 @@ set “thermal.crt=-1” in /etc/default/grub in the GUB_CMDLINE_LINUX_DEFAULT l
 
     Make sure your SATA cable is rated for SATAIII speeds.
 
-9. Sound crackling/popping/distortion: Run the following from the terminal: 
+9. Sound crackling/popping/distortion:
 
     "cd /usr/src/linux/ && doas make menuconfig" Device Drivers > Sound Card Support > ALSA: Pre-allocated buffer size for HD-audio driver = 0"   (CONFIG_SND_HDA_PREALLOC_SIZE=0).
 
@@ -59,3 +59,22 @@ set “thermal.crt=-1” in /etc/default/grub in the GUB_CMDLINE_LINUX_DEFAULT l
 
     [General]
     ApiLevel = 29
+
+14. Computer won't boot external media:
+
+    - Download a U-Boot image for your configuration here: https://images.solid-run.com/LX2k/lx2160a_build
+    - Burn the downloaded image file to a MicroSD card and insert into your
+    - Connect a Micro-USB cable from the Console port on your LX2K to a USB port on a second computer.
+    - Use Putty, KiTTY or a TTY Client of your choice, and connect using the following settings:
+        Serial (COM#)
+        Speed: 115200
+        Data Bits: 8
+        Stop Bits: 1
+        Parity: NONE
+        Flow Control: XON/XOFF
+    - Power on your LX2K and press ENTER during the boot countdown.
+    - Type the following commands to clear the onboard SPI Flash:
+        sf probe
+        sf erase 0 0x4000000
+    - Reboot, and you should be able to boot external media again.
+    
