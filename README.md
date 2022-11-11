@@ -1,5 +1,8 @@
 # Using HoneyComb LX2K as a Desktop
-### A guide for fully setting up the SolidRun LX2K with novice users in mind.
+
+
+#### A guide for fully setting up the SolidRun LX2K with novice users in mind.
+
 
 ## Table of Contents:
 
