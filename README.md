@@ -354,6 +354,6 @@ Diving into the setup of this board was daunting given my previous experience, h
 
 @ptitSeb - All his hard work with Box86 and additionally adding LX2160A specific support
 
-@HanoJing - For documenting the entirity of the troubleshooting section
+@HanoJing - For documenting troubleshooting tips.
 
 rna (Armbian Forums) - For writing the ARM 32-bit chroot guide I used as well as 64-bit wine info
