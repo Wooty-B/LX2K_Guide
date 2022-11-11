@@ -216,8 +216,6 @@ With Box86 and Box64, you can enable a mostly native experience with a number of
 
 [Setup Multiarch, Box86/64, Wine, Steam and Android Emulator](Setup-Armhf-Chroot.md)
 
-[List of Tested Games/Productivity Applications](https://github.com/Wooty-B/RISC_Game_Guide)
-
 <a name="bios"/>
 
 ## BIOS Navigation
