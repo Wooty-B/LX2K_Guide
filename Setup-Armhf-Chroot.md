@@ -1,4 +1,4 @@
-# Setup Multiarch, Box86/64, Wine and Steam
+# Setup Multiarch, Box86/64, Wine, Steam and Android Emulator
 
 1. Enable Multiarch (32-bit Support)
 	```
