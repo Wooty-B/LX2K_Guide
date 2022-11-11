@@ -92,7 +92,7 @@
 	```
 6. Android Emulator - Waydroid for Debian 11+/Ubuntu 21.10+:
 
-    Follow the Guide on https://docs.waydro.id/usage/install-on-desktops.
+    Follow the guide here: https://docs.waydro.id/usage/install-on-desktops
 
     Edit the file /etc/gbinder.conf:
 
