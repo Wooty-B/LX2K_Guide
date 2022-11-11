@@ -333,7 +333,7 @@ Geekbench 5: https://cdn.geekbench.com/Geekbench-5.4.0-LinuxARMPreview.tar.gz
 
 PassMark PerformanceTest: https://www.passmark.com/downloads/pt_linux_arm64.zip
 
-Phoronix Test Suite: https://www.phoronix-test-suite.com/?k=downloads (Works natively with armhf/aarch64)
+Phoronix Test Suite: https://www.phoronix-test-suite.com/?k=downloads
 
 ## Troubleshooting
 
