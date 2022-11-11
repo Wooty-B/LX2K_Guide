@@ -90,7 +90,16 @@
 	sudo chmod +x winetricks && sudo mv winetricks /usr/local/bin/
 	BOX86_NOBANNER=1 winetricks -q corefonts msxml3 vcrun2005 vcrun2008 vcrun2010
 	```
-6. 32bit ARM (armhf) Chroot Setup [Alernative/Addition to Multiarch]
+6. 13. Android Emulator; Waydroid for Debian 11+/Ubuntu 21.10+:
+
+    Follow the Guide on https://docs.waydro.id/usage/install-on-desktops.
+
+    Edit the file /etc/gbinder.conf:
+
+    	[General]
+    	ApiLevel = 29
+
+7. 32bit ARM (armhf) Chroot Setup [Alernative/Addition to Multiarch]
    	```
     	sudo apt install schroot debootstrap
     	sudo mkdir -p /srv/chroot/ubuntu-armhf
