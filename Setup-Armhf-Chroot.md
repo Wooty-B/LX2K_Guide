@@ -90,7 +90,7 @@
 	sudo chmod +x winetricks && sudo mv winetricks /usr/local/bin/
 	BOX86_NOBANNER=1 winetricks -q corefonts msxml3 vcrun2005 vcrun2008 vcrun2010
 	```
-6. 13. Android Emulator; Waydroid for Debian 11+/Ubuntu 21.10+:
+6. Android Emulator - Waydroid for Debian 11+/Ubuntu 21.10+:
 
     Follow the Guide on https://docs.waydro.id/usage/install-on-desktops.
 
