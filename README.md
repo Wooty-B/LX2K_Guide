@@ -15,7 +15,7 @@
 1. [Configuring LX2K](#config)
 1. [Installing an Operating System](#os)
 1. [Post-Install Recommendations](#reccomend)
-1. [BoxWine (x86) Setup Guide](#x86)
+1. [BoxWine (x86 & x86_64) Setup Guide](#x86)
 1. [BIOS Navigation](#bios)
 1. [Overclocking & Timings](#timings)
 1. [Troubleshooting](#issues)
@@ -213,7 +213,7 @@ NOTE: After a testing a recent install, the above repository no longer works for
 <a name="x86"/>
 
 
-## BoxWine Setup Guide
+## BoxWine (x86 & x86_64) Setup Guide
 
 Project BoxWine is my guide for easily installing and configuring your system for running x86 Linux and Windows applications natively. It includes the Box86 and Box64 projects by ptitseb then layers Wine on top of that. The guide also includes instructions for Steam, Android container, chroot setup as well as an installer script used to do all of this for you automatically. Even better, the installer script includes a function to also automatically install and setup HoneyComb LX2K patches for users with AMD GPU's!
 
