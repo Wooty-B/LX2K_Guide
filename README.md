@@ -215,9 +215,9 @@ NOTE: After a testing a recent install, the above repository no longer works for
 
 ## BoxWine Setup Guide
 
-With Box86 and Box64, you can enable a mostly native experience with a number of x86 Linux apps. Steam and many native Linux Games and 3D applications run very well depending on your GPU setup. Many libraries are still not fully wrapped, so you may get slowdowns for emulated libraries or segmentation faults and halts. To take all this a step further, 32bit Wine can even run some AAA titles such as Fallout 3, Skyrim and Crysis, and by run I mean mostly playable at high settings! Most of this relies on making sure you have the proper dependencies and runtimes installed.
+Project BoxWine is my guide for easily installing and configuring your system for running x86 Linux and Windows applications natively. It includes the Box86 and Box64 projects by ptitseb then layers Wine on top of that. The guide also includes instructions for Steam, Android container, chroot setup as well as an installer script used to do all of this for you automatically. Even better, the installer script includes a function to also automatically install and setup HoneyComb LX2K patches for users with AMD GPU's!
 
-[Setup Multiarch, Box86/64, Wine, Steam and Android Emulator](Setup-Armhf-Chroot.md)
+[Project BoxWine - Native x86 Setup Guide](https://github.com/Wooty-B/Project_BoxWine)
 
 <a name="bios"/>
 
