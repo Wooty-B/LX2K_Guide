@@ -30,7 +30,7 @@
 5. Mount partitions
 	```
 	sudo mount /dev/sdX2 /mnt
-	mkdir /mnt/boot
+	sudo mkdir /mnt/boot
 	sudo mount /dev/sdX1 /mnt/boot
 	```
 6. Download the Void Tarball
