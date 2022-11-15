@@ -1,6 +1,6 @@
   # Installing Void Linux (glibc)
   
-1. Locate the disk you will be using.
+1. Locate the disk you will be using
 	```
 	sudo fdisk -l
 	```
