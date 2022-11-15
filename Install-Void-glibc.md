@@ -53,7 +53,7 @@
 	```
 10. Chroot into new Void root
 	```
-	PS1=’(void chroot)  # ’ sudo chroot /mnt /bin/bash
+	PS1="(void chroot)  # " sudo chroot /mnt /bin/bash
 	```
 11. Install the base system
 	```
