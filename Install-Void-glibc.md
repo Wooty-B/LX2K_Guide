@@ -84,7 +84,7 @@
 	nano /etc/default/libc-locales
 	```
 	```
-	En_US.UTF-8 UTF-8
+	en_US.UTF-8 UTF-8
 	```
 16. Re-generate locale files
 	```
