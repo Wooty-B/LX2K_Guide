@@ -10,7 +10,7 @@
 	```
 3. Type the following letters and numbers to partition the drive
 	```
-     	Command: n
+	Command: n
 	Partition number: 1
 	First sector: [ENTER]
 	Last sector: +512M
