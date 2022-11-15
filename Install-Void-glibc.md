@@ -1,114 +1,159 @@
   # Installing Void Linux (glibc)
-
-  1. Create disk partitions: (Modify X for your drive letter)
-	
+  
+1. Locate the disk you will be using.
+	```
+	sudo fdisk -l
+	```
+2. Select the drive we will be using for Void (Where X is your drive letter)
+	```
+	sudo fdisk /dev/sdX
+	```
+3. Type the following letters and numbers to partition the drive
+	```
+     	Command: n
+	Partition number: 1
+	First sector: [ENTER]
+	Last sector: +512M
+	Remove signature: Y
+	Command: n
+	Partition number: 2
+	First sector: [ENTER]
+	Last sector: [ENTER]
+	Remove signature: Y
+	Command: w
+	```
+4. Format the new partitions
+	```
 	sudo mkfs.vfat /dev/sdX1
 	sudo mkfs.ext4 /dev/sdX2
-	
-  2. Mount newly created partitions:
-	
-	sudo mount /dev/sdX2 /mnt/
-	mkdir -p /mnt/boot/efi/
-	sudo mount /dev/sdX1 /mnt/boot/efi/
-	
-  3. Download the aarch64 glibc rootfs tarball:
-	
-	wget https://alpha.de.repo.voidlinux.org/live/current/void-aarch64-ROOTFS-20210316.tar.xz
-	
-  4. Extract tarball to root of sdX2:
-	
-	tar xvf void-aarch64-ROOTFS-20210316.tar.xz -C /mnt
-	
-  5. Mount filesystems for chroot:
-	
-	sudo mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys
-	sudo mount --rbind /dev /mnt/dev && mount --make-rslave /mnt/dev
-	sudo mount --rbind /proc /mnt/proc && mount --make-rslave /mnt/proc
-	
-  6. Copy DNS Settings from host:
-	
-	sudo cp /etc/resolv.conf /mnt/etc/
-	
-  7. Chroot into Void root:
-	
-	PS1='(chroot) # ' chroot /mnt/ /bin/bash
-	
-  8. Install base system:
-	
+	```
+5. Mount partitions
+	```
+	sudo mount /dev/sdX2 /mnt
+	mkdir /mnt/boot
+	sudo mount /dev/sdX1 /mnt/boot
+	```
+6. Download the Void Tarball
+	```
+	wget https://repo-default.voidlinux.org/live/current/void-aarch64-ROOTFS-20221001.tar.xz
+	```
+7. Extract the tarball to the root of sdb2
+	```
+	sudo tar xvf void-aarch64-ROOTFS-20221001.tar.xz -C /mnt
+	```
+8. Mount host filesystems to prepare chroot
+	```
+	sudo mount –rbind /sys /mnt/sys && sudo mount –make-rslave /mnt/sys
+	sudo mount –rbind /dev /mnt/dev && sudo mount –make-rslave /mnt/dev
+	sudo mount –rbind /proc /mnt/proc && sudo mount –make-rslave /mnt/proc
+	```
+9. Copy Host DNS settings to chroot
+	```
+	sudo cp /etc/resolv.conf /mnt/etc/resolv.conf
+	```
+10. Chroot into new Void root
+	```
+	PS1=’(void chroot)  # ’ sudo chroot /mnt /bin/bash
+	```
+11. Install the base system
+	```
 	xbps-install -Su xbps
 	xbps-install -u
 	xbps-install base-system
 	xbps-remove base-voidstrap
-
-  9. Install text editor and video driver packages:
-	
-	xbps-install nano linux-firmware-amd mesa-dri vulkan-loader mesa-vulkan-radeon mesa-vaapi mesa-vdpau
-	
-  10. Set hostname:
-	
+	```
+12. Install a text editor, unless you prefer vi
+	```
+	xbps-install nano
+	```
+13. Set hostname
+	```
 	nano /etc/hostname
-	
-  11. Set rc.conf locale options:
-	
+	```
+14. Uncomment and set locale options in rc.conf
 	nano /etc/rc.conf
-	
-	Example:
-	HARDWARECLOCK="UTC"
-	TIMEZONE="US/Central"
-	KEYMAP="en"
-	
-  12. Uncomment lines in libc-locale:
-	
+ 	```
+	HARDWARECLOCK=”UTC”
+	TIMEZONE=”US/Central”
+	KEYMAP=”en”
+	```
+15. Uncomment lines in libc-locale
 	nano /etc/default/libc-locales
-	
-	Example:
-	en_US.UTF-8 UTF-8
-	
-  13. Generate locale files:
-	
+	```
+	En_US.UTF-8 UTF-8
+	```
+16. Re-generate locale files
+	```
 	xbps-reconfigure -f glibc-locales
-	
-  14. Change root password:
-	
+	```
+17. Change root password
+	```
 	passwd
+	```
+18. Add user, replacing *username* where necessary
+	```
+	useradd -d /home/*username* -G audio,video,wheel,storage,kvm,users *username*
+	passwd *username*
+	visudo
+	```
+	Scroll down and press “x” when next to the # on the following line
+	```
+	# %wheel ALL=(ALL:ALL) ALL
+	```
+	Then press [ESC], then [w], [q], [!]
 	
-  15. Get UUID of drives:
-	
+19. Get UUID of sdX1 and sdX2
+	```
 	blkid
-	
-  16. Configure fstab file:
-	
-	nano /etc/fstab
-	
-	Example:
-	UUID=XXX-XXX	/boot/efi	vfat	rw,relatime,errors=remount-ro	0 2
-	UUID=YYY-YYY	/		ext4	rw,relatime			0 1
-	tmpfs		/tmp		tmpfs	rw,relatime			0 0
-	
-  17. Install Grub:
-	
+	```
+20.	Configure /etc/fstab, using the UUID’s found in the previous command
+	```
+	sudo nano /etc/fstab
+	```
+	```
+	UUID=XXX-XXX		/boot	vfat	rw,relatime,errors=remount-ro  	0 2
+	UUID=YYY-YYY-YYY-YYY	/	ext4	rw,relatime			0 1
+	tmpfs			/tmp	tmpfs	rw,relatime			0 0
+	```
+21. Install Grub bootloader
+	```
 	xbps-install grub-arm64-efi
-	grub-install --target=arm64-efi --efi-directory=/boot/efi --bootloader-id="Void"
+	mkdir /boot/efi
+	grub-install –target=arm64-efi –efi-directory=/boot –bootloader-id=”Void”
 	xbps-reconfigure -fa
-
-  18. Configure Grub Linux defaults:
-	
+	```
+22. Configure Grub command line arguments
 	nano /etc/default/grub
-	
+	``` 
 	GRUB_CMDLINE_LINUX_DEFAULT="nomodeset loglevel=4 arm-smmu.disable_bypass=0 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=1"
-	
-  19. Install Kernel: (Query will show you all available kernels, modify to your needs)
-	
+	```
+23. Install the Kernel
+	```
 	xbps-query --regex -Rs '^linux[0-9.]+-[0-9._]+'
-	xbps-install linux5.14-5.14.8_1 linux5.14-headers-5.14.8_1
-	
-  20. Configure initramfs: (Replace kernel version with one  from /lib/modules)
-	
+	xbps-install linux6.0-6.0.8_1 linux6.0-headers-6.0.8_1
+	```
+24. Configure initramfs
+	```
 	xbps-install dracut
-	dracut --host-only --kver 5.14.8_1
+	dracut --host-only --kver 6.0.8_1
 	update-grub
+	```
+25. Reboot into your Void install
 
-  21. Reboot into your new system.
+26. Find your Ethernet/Wireless interface
+	```
+	ip addr
+	```
+27. Enable the network adapter using the network interface found above, and ip scheme of your network; Y is the subnet in slash notation (ex. /24 for 255.255.255.0)
+	```
+	sudo ip link set dev *net_interface* up
+	sudo ip addr add X.X.X.X/Y brd + dev *net_interface*
+	sudo ip route add default via X.X.X.Z
+	```
+28. Install optional packages if needed
+	```
+	sudo xbps-install linux-firmware-amd mesa-dri vulkan-loader mesa-vulkan-radeon mesa-vaapi mesa-vdpau
+	```
 
 # Troubleshooting
 
