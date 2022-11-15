@@ -122,8 +122,7 @@
 21. Install Grub bootloader
 	```
 	xbps-install grub-arm64-efi
-	mkdir /boot/efi
-	grub-install –target=arm64-efi –efi-directory=/boot –bootloader-id=”Void”
+	grub-install --target=arm64-efi --efi-directory=/boot --bootloader-id=”Void”
 	xbps-reconfigure -fa
 	```
 22. Configure Grub command line arguments
