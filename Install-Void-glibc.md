@@ -43,9 +43,9 @@
 	```
 8. Mount host filesystems to prepare chroot
 	```
-	sudo mount –rbind /sys /mnt/sys && sudo mount –make-rslave /mnt/sys
-	sudo mount –rbind /dev /mnt/dev && sudo mount –make-rslave /mnt/dev
-	sudo mount –rbind /proc /mnt/proc && sudo mount –make-rslave /mnt/proc
+	sudo mount --rbind /sys /mnt/sys && sudo mount --make-rslave /mnt/sys
+	sudo mount --rbind /dev /mnt/dev && sudo mount --make-rslave /mnt/dev
+	sudo mount --rbind /proc /mnt/proc && sudo mount --make-rslave /mnt/proc
 	```
 9. Copy Host DNS settings to chroot
 	```
