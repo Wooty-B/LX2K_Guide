@@ -112,7 +112,7 @@
 	```
 20.	Configure /etc/fstab, using the UUID’s found in the previous command
 	```
-	sudo nano /etc/fstab
+	nano /etc/fstab
 	```
 	```
 	UUID=XXX-XXX		/boot	vfat	rw,relatime,errors=remount-ro  	0 2
@@ -127,8 +127,10 @@
 	xbps-reconfigure -fa
 	```
 22. Configure Grub command line arguments
+	```
 	nano /etc/default/grub
-	``` 
+	```
+	```
 	GRUB_CMDLINE_LINUX_DEFAULT="nomodeset loglevel=4 arm-smmu.disable_bypass=0 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=1"
 	```
 23. Install the Kernel
