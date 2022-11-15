@@ -71,14 +71,18 @@
 	nano /etc/hostname
 	```
 14. Uncomment and set locale options in rc.conf
+	```
 	nano /etc/rc.conf
  	```
+	```
 	HARDWARECLOCK=”UTC”
 	TIMEZONE=”US/Central”
 	KEYMAP=”en”
 	```
 15. Uncomment lines in libc-locale
+	```
 	nano /etc/default/libc-locales
+	```
 	```
 	En_US.UTF-8 UTF-8
 	```
