@@ -37,7 +37,7 @@
 	```
 	wget https://repo-default.voidlinux.org/live/current/void-aarch64-ROOTFS-20221001.tar.xz
 	```
-7. Extract the tarball to the root of sdb2
+7. Extract the tarball to the root of sdX2
 	```
 	sudo tar xvf void-aarch64-ROOTFS-20221001.tar.xz -C /mnt
 	```
