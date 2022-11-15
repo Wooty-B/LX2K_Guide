@@ -10,17 +10,17 @@
 	```
 3. Type the following letters and numbers to partition the drive
 	```
-	Command: n
+	Command: 	  n
 	Partition number: 1
-	First sector: [ENTER]
-	Last sector: +512M
+	First sector: 	  [ENTER]
+	Last sector: 	  +512M
 	Remove signature: Y
-	Command: n
+	Command: 	  n
 	Partition number: 2
-	First sector: [ENTER]
-	Last sector: [ENTER]
+	First sector: 	  [ENTER]
+	Last sector: 	  [ENTER]
 	Remove signature: Y
-	Command: w
+	Command: 	  w
 	```
 4. Format the new partitions
 	```
