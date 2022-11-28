@@ -127,10 +127,17 @@
           pacman -Sy gnome-desktop gdm
           sytemctl enable gdm
 	  
-  24. Create a user
+  24. Create a uservisudo
 
           pacman -Sy sudo
           visudo
+	  
+          --Scroll down and press “x” when on the # to remove it--
+
+          # %wheel ALL=(ALL:ALL) ALL
+	
+          --Then press [ESC], then [w], [q], [!]--
+	  
           useradd -m -G audio,video,wheel,storage,kvm,users *username*
           passwd *username*
 	  
