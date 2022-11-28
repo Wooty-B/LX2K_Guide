@@ -5,7 +5,7 @@
           Debian/Ubuntu: sudo apt install libarchive-tools wget
           Fedora: sudo dnf install bsdtar wget
           Void: sudo xbps-install bsdtar wget
-          Arch: sudo pacman -Sy bsdtar wget
+          Arch: sudo pacman -Sy bsdtar wget python3
 
   
   2. Mount the target drive
