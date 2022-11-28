@@ -57,10 +57,10 @@
           pacman -Syu wget
           wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.0.10.tar.xz
           tar -xvf linux-6.0.10.tar.xz
+          exit
       
   10. Copy host linux running kernel config
     
-          exit
           cp /boot/config-<version> /mnt/chroot/root/kernelbuild/linux-6.0.10/.config   [Select the one reflecting current kernel (uname -a)]
           sudo chroot /mnt/chroot /bin/bash
           cd /root/kernelbuild
