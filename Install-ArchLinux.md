@@ -18,6 +18,7 @@
   3. Download and extract the tarball to the mounted drive as root [Do not use sudo]
   
           su -
+          pacman -Syu wget
           wget http://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
           bsdtar -xpf ArchLinuxARM-aarch64-latest.tar.gz -C /mnt/chroot
           exit
