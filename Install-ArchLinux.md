@@ -1,11 +1,11 @@
   # Installing Arch Linux ARM
    
-  1. Install bsdtar
+  1. Install bsdtar & wget
       
-          Debian/Ubuntu: sudo apt install libarchive-tools
-          Fedora: sudo dnf install bsdtar
-          Void: sudo xbps-install bsdtar
-          Arch: sudo pacman -Sy bsdtar
+          Debian/Ubuntu: sudo apt install libarchive-tools wget
+          Fedora: sudo dnf install bsdtar wget
+          Void: sudo xbps-install bsdtar wget
+          Arch: sudo pacman -Sy bsdtar wget
 
   
   2. Mount the target drive
