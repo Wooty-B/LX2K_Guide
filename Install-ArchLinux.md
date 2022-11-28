@@ -120,7 +120,7 @@
       
   22. Install Gnome
  
-          pacman -Sy gnome-desktop
+          pacman -Sy gnome-desktop gdm
           sytemctl enable gdm
  
  NOTES:
