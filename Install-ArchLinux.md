@@ -89,7 +89,7 @@
   15. Install Grub
  
           pacman -Sy grub
-          grub-install --target=arm64-efi --efi-directory=/boot --bootloader-id=ARCH
+          grub-install --target=arm64-efi --efi-directory=/boot/efi --bootloader-id=ARCH
           grub-mkconfig -o /boot/EFI/grub/grub.cfg
       
   16. Configure Grub Linux defaults
