@@ -12,8 +12,8 @@
   
           sudo mkdir /mnt/chroot
           sudo mount /dev/sdX1 /mnt/chroot
-          sudo mkdir -p /mnt/chroot/boot/efi
-          sudo mount /dev/sdX2 /mnt/chroot/boot/efi
+          sudo mkdir -p /mnt/chroot/boot
+          sudo mount /dev/sdX2 /mnt/chroot/boot
           
   3. Download and extract the tarball to the mounted drive as root [Do not use sudo]
   
@@ -88,8 +88,8 @@
       
   15. Install Grub
  
-          grub-install --target=arm64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
-          grub-mkconfig -o /boot/efi/EFI/grub/grub.cfg
+          grub-install --target=arm64-efi --efi-directory=/boot --bootloader-id=GRUB
+          grub-mkconfig -o /boot/EFI/grub/grub.cfg
       
   16. Configure Grub Linux defaults
           
