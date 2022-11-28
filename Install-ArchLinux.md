@@ -1,53 +1,71 @@
   # Installing Arch Linux ARM
-  
-  1. Download the Arch Linux ARM tarball:
-  
-          wget http://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
+   
+  1. Install bsdtar
       
-  2. Install Archive Tools:
-      
-          sudo apt install libarchive-tools
+          Debian/Ubuntu: sudo apt install libarchive-tools
+          Fedora: sudo dnf install bsdtar
+          Void: sudo xbps-install bsdtar
+          Arch: sudo pacman -Sy bsdtar
+
   
-  3. Mount the target drive:
+  2. Mount the target drive
   
           sudo mkdir /mnt/chroot
           sudo mount /dev/sdX1 /mnt/chroot
           sudo mkdir -p /mnt/chroot/boot/efi
           sudo mount /dev/sdX2 /mnt/chroot/boot/efi
-          cd /mnt/chroot/
+          
+  3. Download and extract the tarball to the mounted drive as root [Do not use sudo]
+  
+          su -
+          wget http://os.archlinuxarm.org/os/ArchLinuxARM-aarch64-latest.tar.gz
+          bsdtar -xpf ArchLinuxARM-aarch64-latest.tar.gz -C /mnt/chroot
+          exit
+      
+  4. Mount pseudo filesystems
+  
+          cd /mnt/chroot
           sudo mount -t proc /proc proc
           sudo mount --make-rslave --rbind /sys sys
           sudo mount --make-rslave --rbind /dev dev
           sudo mount --make-rslave --rbind /run run
-  
-  4. Extract the tarball to the mounted drive:
-  
-          bsdtar -xpf ArchLinuxARM-aarch64-latest.tar.gz -C /mnt/chroot
-      
-  5. Chroot into Arch Linux install:
+
+  5. Chroot into Arch Linux install
   
           sudo chroot /mnt/chroot /bin/bash
+	  
+  6. Set new root password
+ 
+          passwd root
+	  
+  7. Edit resolv.conf
+  
+          rm /etc/resolv.conf
+          nano /etc/resolv.conf
+	  
+          "nameserver 8.8.8.8"
       
-  6. Initiate Pacman:
+  8. Initiate Pacman
   
           pacman-key --init
           pacman-key --populate archlinuxarm
+          pacman -Syu
       
-  7. Download and extract the kernel:  [Non-SolidRun kernel; Need to Update] [Modify to your needs]
+  9. Download and extract the kernel [Modify to your needs]
   
-          mkdir /home/alarm/build/kernel && cd /home/alarm/build/kernel
-          wget https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-5.14.6.tar.xz
-          tar -xvf linux-5.14.6.tar.xz
-          cd linux-5.14.6.tar.xz
+          mkdir /root/kernelbuild && cd /root/kernelbuild
+          wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.0.10.tar.xz
+          tar -xvf linux-6.0.10.tar.xz
+          cd linux-6.0.10.tar.xz
       
-  8. Copy host linux running kernel config:
+  10. Copy host linux running kernel config
     
           exit
-          cp /boot/config-<version> /mnt/chroot/home/alarm/build/kernel/linux-5.14.6/.config   [Select the one reflecting current kernel (uname -a)]
+          cp /boot/config-<version> /mnt/chroot/root/kernelbuild/linux-6.0.10/.config   [Select the one reflecting current kernel (uname -a)]
           sudo chroot /mnt/chroot /bin/bash
-          cd /home/alarm/build/kernel
+          cd /root/kernelbuild
       
-  9. Modify .config file:   [Modify the following lines...]   [Use CTRL+W to search for values, CTRL+W again to find the next instance]
+  11. Modify .config file [Modify the following lines...]  [Use CTRL+W to search for values, CTRL+W again to find the next instance]
       
           nano .config
       
@@ -56,53 +74,45 @@
           #CONFIG_SYSTEM_TRUSTED_KEYS=""
           #CONFIG_CRYPTO_AEGIS128
       
- 10. Run the build:
+  12. Run the build
  
           make -j12 && make modules -j12 && make modules_install
       
- 11. Copy "bzImage/Image" to boot directory:
+  13. Copy "bzImage/Image" to boot directory
  
-          cp arch/arm64/boot/Image /boot/vmlinuz-linux514
+          cp arch/arm64/boot/Image /boot/vmlinuz-linux6
       
- 12. Generate initramfs:
+  14. Generate initramfs
       
           pacman -Sy cpio mkinitcpio-nfs-util mkinitcpio-archiso
-          mkinitcpio -k 5.14.6-1-ARCH -g /boot/initramfs-linux514.img
+          mkinitcpio -k 6.0.10-1-ARCH -g /boot/initramfs-linux6.img
       
- 13. Install Grub:
+  15. Install Grub
  
           grub-install --target=arm64-efi --efi-directory=/boot/efi --bootloader-id=GRUB
           grub-mkconfig -o /boot/efi/EFI/grub/grub.cfg
       
- 14. Configure Grub Linux defaults:
+  16. Configure Grub Linux defaults
           
           nano /etc/default/grub
 	
 	        GRUB_CMDLINE_LINUX_DEFAULT="nomodeset loglevel=4 arm-smmu.disable_bypass=0 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=1"
  
- 15. Set root permissions:
+  17. Set root permissions
  
           chmod 755 /
           chmod 755 /bin
           chmod 755 /lib
       
- 16. Reboot LX2K and boot into your new install using the BIOS.
- 17. Log into your new install with root/root.
- 18. Set new root password:
+  18. Reboot LX2K and boot into your new install using the BIOS
  
-          passwd root
- 
- 19. Edit resolv.conf:
- 
-          nano /etc/resolv.conf
+  19. Log into your new install with root/*password*
       
-          nameserver 8.8.8.8
-      
- 20. Update system:
+  20. Update system
  
           pacman -Syyu
       
- 21. Install Gnome:   [At time of writing, still working on Mesa GNOME driver patch]
+  21. Install Gnome
  
           pacman -Sy gnome-desktop
           sytemctl enable gdm
