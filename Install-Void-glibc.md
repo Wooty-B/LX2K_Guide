@@ -132,7 +132,7 @@
 	```
 	GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4 arm-smmu.disable_bypass=0 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=1"
 	```
-23. Install the Kernel
+23. Install the Kernel [Kernel numbers will vary from here on out]
 	```
 	xbps-query --regex -Rs '^linux[0-9.]+-[0-9._]+'
 	xbps-install linux6.0-6.0.8_1 linux6.0-headers-6.0.8_1
