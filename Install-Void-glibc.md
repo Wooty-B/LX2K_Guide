@@ -159,6 +159,13 @@
 	```
 	sudo xbps-install linux-firmware-amd mesa-dri vulkan-loader mesa-vulkan-radeon mesa-vaapi mesa-vdpau
 	```
+29. Optionally install Gnome (May require a reboot)
+	```
+	sudo xbps-install gnome gdm
+	ln -s /etc/sv/gdm /var/service
+	ln -s /etc/sv/NetworkManager /var/service
+	ln -s /etc/sv/dbus /var/service
+	```
 
 # Troubleshooting
 
