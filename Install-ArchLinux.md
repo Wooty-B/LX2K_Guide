@@ -11,8 +11,9 @@
   3. Mount the target drive:
   
           sudo mkdir /mnt/chroot
-          sudo mount /dev/sdXy /mnt/chroot
-          sudo mount /dev/sdXz /mnt/chroot/boot/efi
+          sudo mount /dev/sdX1 /mnt/chroot
+	  sudo mkdir -p /mnt/chroot/boot/efi
+          sudo mount /dev/sdX2 /mnt/chroot/boot/efi
           cd /mnt/chroot/
           sudo mount -t proc /proc proc
           sudo mount --make-rslave --rbind /sys sys
