@@ -32,7 +32,7 @@
 
   5. Chroot into Arch Linux install
   
-          sudo chroot /mnt/chroot /bin/bash
+          PS1="(arch chroot) # " sudo chroot /mnt/chroot /bin/bash
 	  
   6. Set new root password
  
@@ -61,7 +61,7 @@
   10. Copy host linux running kernel config
     
           cp /boot/config-<version> /mnt/chroot/root/kernelbuild/linux-6.0.10/.config
-          sudo chroot /mnt/chroot /bin/bash
+          PS1="(arch chroot) # " sudo chroot /mnt/chroot /bin/bash
           cd /root/kernelbuild/linux-6.0.10
       
   11. Modify .config file [Modify the following lines...]  [Use CTRL+W to search for values, CTRL+W again to find the next instance]
