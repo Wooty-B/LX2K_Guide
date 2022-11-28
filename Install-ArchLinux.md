@@ -45,16 +45,15 @@
 	  
           "nameserver 8.8.8.8"
       
-  8. Initiate Pacman
+  8. Initiate Pacman and needed packages 
   
           pacman-key --init
           pacman-key --populate archlinuxarm
-          pacman -Syu
+          pacman -Syu base-devel wget
       
   9. Download and extract the kernel [Modify to your needs]
   
           mkdir /root/kernelbuild && cd /root/kernelbuild
-          pacman -Syu wget
           wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.0.10.tar.xz
           tar -xvf linux-6.0.10.tar.xz
           exit
