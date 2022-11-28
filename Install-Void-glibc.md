@@ -100,7 +100,7 @@
 	passwd *username*
 	visudo
 	```
-	Scroll down and press “x” when next to the # on the following line
+	Scroll down and press “x” when on the # to remove it
 	```
 	# %wheel ALL=(ALL:ALL) ALL
 	```
