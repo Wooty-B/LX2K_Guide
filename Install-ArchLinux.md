@@ -122,7 +122,15 @@
  
           pacman -Sy gnome-desktop gdm
           sytemctl enable gdm
- 
+	  
+  23. Create a user
+
+          pacman -Sy sudo
+          visudo
+          useradd -m *username*
+          passwd *username*
+          usermod -a -G wheel *username*
+	  
  NOTES:
  
  1. If Terminal doesnt launch under Gnome, install Terminator, it works fine. Currently troubleshooting.
