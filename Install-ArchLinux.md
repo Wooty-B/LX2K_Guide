@@ -97,7 +97,7 @@
           
           nano /etc/default/grub
 	
-	        GRUB_CMDLINE_LINUX_DEFAULT="nomodeset loglevel=4 arm-smmu.disable_bypass=0 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=1"
+          GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4 arm-smmu.disable_bypass=1 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=1"
  
   17. Set root permissions
  
@@ -131,7 +131,4 @@
           passwd *username*
           usermod -a -G wheel *username*
 	  
- NOTES:
- 
- 1. If Terminal doesnt launch under Gnome, install Terminator, it works fine. Currently troubleshooting.
- 2. Graphical issues abound. Currently troubleshooting.
+  24. Final reboot!
