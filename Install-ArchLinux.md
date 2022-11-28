@@ -91,8 +91,7 @@
           pacman -Sy grub efibootmgr
           mkdir /boot/efi
           grub-install --target=arm64-efi --efi-directory=/boot/efi --bootloader-id=ARCH
-          mkdir /boot/efi/EFI/grub/
-          grub-mkconfig -o /boot/efi/EFI/grub/grub.cfg
+          grub-mkconfig -o /boot/grub/grub.cfg
       
   16. Configure Grub Linux defaults
           
