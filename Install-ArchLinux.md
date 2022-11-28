@@ -75,7 +75,7 @@
       
   12. Run the build
  
-          make -j12 && make modules -j12 && make modules_install
+          make -j$(nproc) && make modules -j$(nproc) && make modules_install
       
   13. Copy "bzImage/Image" to boot directory
  
