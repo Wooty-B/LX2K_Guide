@@ -96,7 +96,7 @@
 	```
 18. Add user, replacing *username* where necessary
 	```
-	useradd -d /home/*username* -G audio,video,wheel,storage,kvm,users *username*
+	useradd -m -G audio,video,wheel,storage,kvm,users *username*
 	passwd *username*
 	visudo
 	```
