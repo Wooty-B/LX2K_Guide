@@ -44,27 +44,31 @@
           nano /etc/resolv.conf
 	  
           "nameserver 8.8.8.8"
+	  
+  8. Set the hostname
+
+          nano /etc/hostname
       
-  8. Initiate Pacman and needed packages 
+  9. Initiate Pacman and needed packages 
   
           pacman-key --init
           pacman-key --populate archlinuxarm
           pacman -Sy base-devel wget python3 bc pahole
       
-  9. Download and extract the kernel [Modify to your needs]
+  10. Download and extract the kernel [Modify to your needs]
   
           mkdir /root/kernelbuild && cd /root/kernelbuild
           wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.0.10.tar.xz
           tar -xvf linux-6.0.10.tar.xz
           exit
       
-  10. Copy host linux running kernel config
+  11. Copy host linux running kernel config
     
           cp /boot/config-<version> /mnt/chroot/root/kernelbuild/linux-6.0.10/.config
           PS1="(arch chroot) # " sudo chroot /mnt/chroot /bin/bash
           cd /root/kernelbuild/linux-6.0.10
       
-  11. Modify .config file [Modify the following lines...]  [Use CTRL+W to search for values, CTRL+W again to find the next instance]
+  12. Modify .config file [Modify the following lines...]  [Use CTRL+W to search for values, CTRL+W again to find the next instance]
       
           nano .config
       
@@ -73,57 +77,57 @@
           #CONFIG_SYSTEM_TRUSTED_KEYS=""
           #CONFIG_CRYPTO_AEGIS128
       
-  12. Run the build
+  13. Run the build
  
           make -j$(nproc) && make modules -j$(nproc) && make modules_install
       
-  13. Copy "bzImage/Image" to boot directory
+  14. Copy "bzImage/Image" to boot directory
  
           cp arch/arm64/boot/Image /boot/vmlinuz-linux6
       
-  14. Generate initramfs
+  15. Generate initramfs
       
           pacman -Sy cpio mkinitcpio-nfs-utils mkinitcpio-archiso
           mkinitcpio -k 6.0.10-1-ARCH -g /boot/initramfs-linux6.img
       
-  15. Install Grub
+  16. Install Grub
  
           pacman -Sy grub efibootmgr
           mkdir /boot/efi
           grub-install --target=arm64-efi --efi-directory=/boot/efi --bootloader-id=ARCH
           grub-mkconfig -o /boot/grub/grub.cfg
       
-  16. Configure Grub Linux defaults
+  17. Configure Grub Linux defaults
           
           nano /etc/default/grub
 	
           GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4 arm-smmu.disable_bypass=1 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=1"
  
-  17. Set root permissions
+  18. Set root permissions
  
           chmod 755 /
           chmod 755 /bin
           chmod 755 /lib
       
-  18. Reboot LX2K and boot into your new install using the BIOS
+  19. Reboot LX2K and boot into your new install using the BIOS
  
-  19. Log into your new install with root/*password*
+  20. Log into your new install with root/*password*
       
-  20. Disable console syslog messages [Only if your console is flooded]
+  21. Disable console syslog messages [Only if your console is flooded]
 
           dmesg -n 1
           clear
   
-  21. Update system
+  22. Update system
  
           pacman -Syyu
       
-  22. Install Gnome
+  23. Install Gnome
  
           pacman -Sy gnome-desktop gdm
           sytemctl enable gdm
 	  
-  23. Create a user
+  24. Create a user
 
           pacman -Sy sudo
           visudo
@@ -131,4 +135,4 @@
           passwd *username*
           usermod -a -G wheel *username*
 	  
-  24. Final reboot!
+  25. Final reboot!
