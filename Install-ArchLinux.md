@@ -109,11 +109,16 @@
  
   19. Log into your new install with root/*password*
       
-  20. Update system
+  20. Disable console syslog messages [Only if your console is flooded]
+
+          dmesg -n 1
+          clear
+  
+  21. Update system
  
           pacman -Syyu
       
-  21. Install Gnome
+  22. Install Gnome
  
           pacman -Sy gnome-desktop
           sytemctl enable gdm
