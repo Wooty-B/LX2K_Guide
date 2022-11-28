@@ -5,7 +5,7 @@
           Debian/Ubuntu: sudo apt install libarchive-tools wget
           Fedora: sudo dnf install bsdtar wget
           Void: sudo xbps-install bsdtar wget
-          Arch: sudo pacman -Sy bsdtar wget python3
+          Arch: sudo pacman -Sy bsdtar wget
 
   
   2. Mount the target drive
@@ -49,7 +49,7 @@
   
           pacman-key --init
           pacman-key --populate archlinuxarm
-          pacman -Syu base-devel wget
+          pacman -Sy base-devel wget python3 bc
       
   9. Download and extract the kernel [Modify to your needs]
   
