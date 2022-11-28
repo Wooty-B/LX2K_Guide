@@ -131,8 +131,7 @@
 
           pacman -Sy sudo
           visudo
-          useradd -m *username*
+          useradd -m -G audio,video,wheel,storage,kvm,users *username*
           passwd *username*
-          usermod -a -G wheel *username*
 	  
   25. Final reboot!
