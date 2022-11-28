@@ -83,12 +83,13 @@
       
   14. Generate initramfs
       
-          pacman -Sy cpio mkinitcpio-nfs-util mkinitcpio-archiso
+          pacman -Sy cpio mkinitcpio-nfs-utils mkinitcpio-archiso
           mkinitcpio -k 6.0.10-1-ARCH -g /boot/initramfs-linux6.img
       
   15. Install Grub
  
-          grub-install --target=arm64-efi --efi-directory=/boot --bootloader-id=GRUB
+          pacman -Sy grub
+          grub-install --target=arm64-efi --efi-directory=/boot --bootloader-id=ARCH
           grub-mkconfig -o /boot/EFI/grub/grub.cfg
       
   16. Configure Grub Linux defaults
