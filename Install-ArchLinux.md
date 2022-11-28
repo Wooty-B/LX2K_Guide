@@ -49,7 +49,7 @@
   
           pacman-key --init
           pacman-key --populate archlinuxarm
-          pacman -Sy base-devel wget python3 bc
+          pacman -Sy base-devel wget python3 bc pahole
       
   9. Download and extract the kernel [Modify to your needs]
   
