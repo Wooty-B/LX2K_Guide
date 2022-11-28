@@ -61,7 +61,7 @@
       
   10. Copy host linux running kernel config
     
-          cp /boot/config-<version> /mnt/chroot/root/kernelbuild/linux-6.0.10/.config   [Select the one reflecting current kernel (uname -a)]
+          cp /boot/config-<version> /mnt/chroot/root/kernelbuild/linux-6.0.10/.config
           sudo chroot /mnt/chroot /bin/bash
           cd /root/kernelbuild
       
