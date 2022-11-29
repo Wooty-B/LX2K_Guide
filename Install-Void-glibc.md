@@ -130,9 +130,9 @@
 	nano /etc/default/grub
 	```
 	```
-	GRUB_CMDLINE_LINUX_DEFAULT="nomodeset loglevel=4 arm-smmu.disable_bypass=0 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=1"
+	GRUB_CMDLINE_LINUX_DEFAULT="modprobe.blacklist=amdgpu loglevel=4 arm-smmu.disable_bypass=0 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=1"
 	```
-23. Install the Kernel [Kernel numbers will vary from here on out]
+23. Install the Kernel [Kernel numbers will vary, replace where needed]
 	```
 	xbps-query --regex -Rs '^linux[0-9.]+-[0-9._]+'
 	xbps-install linux6.0-6.0.8_1 linux6.0-headers-6.0.8_1
@@ -162,9 +162,18 @@
 29. Optionally install Gnome (May require a reboot)
 	```
 	sudo xbps-install gnome gdm xorg mesa-dri mesa-vaapi mesa-vdpau
-	ln -s /etc/sv/gdm /var/service
-	ln -s /etc/sv/NetworkManager /var/service
-	ln -s /etc/sv/dbus /var/service
+	sudo ln -s /etc/sv/gdm /var/service
+	sudo ln -s /etc/sv/NetworkManager /var/service
+	sudo ln -s /etc/sv/dbus /var/service
+	```
+	
+30. Enable amdgpu driver on startup (place at end of file)
+	```
+	sudo nano /etc/rc.local
+	```
+	```
+	sudo modprobe amdgpu
+	exit 0
 	```
 
 # Troubleshooting
