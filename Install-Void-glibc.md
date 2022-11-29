@@ -159,7 +159,7 @@
 	```
 	sudo xbps-install linux-firmware-amd 
 	```
-29. Optionally install Gnome (May require a reboot)
+29. Install Gnome (Optional)
 	```
 	sudo xbps-install gnome gdm xorg mesa-dri mesa-vaapi mesa-vdpau
 	sudo ln -s /etc/sv/gdm /var/service
@@ -176,38 +176,10 @@
 	exit 0
 	```
 
-# Troubleshooting
-
-
-
-1. Void Linux Boots to Emergency Shell:
-
-	Make sure that you have the newest tarball version of Void Linux (Ex. /live/20210316/))
-
-2. Void Linux Has No WiFi: Run the following from the terminal:
-
-	“wpa_passphrase SSID password /etc/wpa_supplicant/wpa_supplicant.conf” “wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf” “ln -s /etc/sv/wpa_supplicant /var/service/” “ln -s /etc/sv/dhcpcd /var/service/”
-
-3. Void Linux "operation not permitted" during xbps-install: Run the following from the terminal:
-
-	“export SSL_NO_VERIFY_PEER=1”
-
-4. Void Linux Sync Time to Hardware Clock: Run the following from the terminal:
-
-	“xbps-install ntp openntpd” “ntpdate pool.ntp.org” “openntpd -s” “hwclock -wl” “echo “openntpd-s; hwclock -wl” >> ~/.xinitrc”
-
-5. Void Linux Ethernet:
-
-	Make sure you are using a generic 5.14+ Linux Kernel or else Ethernet may not work.
-
-6. Void Linux VSync: Run the following from the terminal:
-
-	“xbps-install picom” “echo “picom --backend-glx --vsync” >> ~/.xinitrc”
-
-7. Void Linux ntpd OpenRC:
-
-	"-s" has to be taken out of NTPD_OPTS in /etc/conf.d/ntpd. "doas ntpd -s" is set in .xinitrc and "permit nopass user cmd ntpd" is set in /etc/doas.conf.
-
-8. Void Linux "momount" issue:
-
-	The first 2 letters get output to the beginning of a command, Ex.: Trying to tab-autocomplete the command "mount" -> mou -> (TAB Key) -> momou. 	The letters "mo" do not interfere with the input command. Starship contains a foreign prompt-symbol ("❯"). ~/.config/starship.toml fixes this behaviour by configuring the prompt to have normal system-known symbols.
+31. Install and enable socklog (System logging)
+	```
+	xbps-install socklog-void
+	usermod -a -G socklog *username*
+	sudo ln -s /etc/sv/socklog-unix /var/service
+	sudo ln -s /etc/sv/nanoklogd /var/service
+	```
