@@ -155,13 +155,13 @@
 	sudo ip addr add X.X.X.X/Y brd + dev *net_interface*
 	sudo ip route add default via X.X.X.Z
 	```
-28. Install optional packages if needed
+28. Install linux firmware for AMD GPU
 	```
-	sudo xbps-install linux-firmware-amd mesa mesa-dri vulkan-loader mesa-vulkan-radeon mesa-vaapi mesa-vdpau
+	sudo xbps-install linux-firmware-amd 
 	```
 29. Optionally install Gnome (May require a reboot)
 	```
-	sudo xbps-install gnome gdm
+	sudo xbps-install gnome gdm xorg mesa-dri mesa-vaapi mesa-vdpau
 	ln -s /etc/sv/gdm /var/service
 	ln -s /etc/sv/NetworkManager /var/service
 	ln -s /etc/sv/dbus /var/service
