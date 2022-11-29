@@ -104,7 +104,7 @@
 	```
 	# %wheel ALL=(ALL:ALL) ALL
 	```
-	Then press [ESC], then [w], [q], [!]
+	Then press [ESC], then [:], [w], [q], [!]
 	
 19. Get UUID of sdX1 and sdX2
 	```
