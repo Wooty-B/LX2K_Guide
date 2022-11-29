@@ -169,11 +169,9 @@
 	
 30. Enable amdgpu driver on startup (place at end of file)
 	```
-	sudo nano /etc/rc.local
-	```
-	```
-	sudo modprobe amdgpu
-	exit 0
+	sudo -i
+	echo amdgpu > /etc/modules-load.d/amdgpu.conf
+	exit
 	```
 
 31. Install and enable socklog (System logging)
