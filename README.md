@@ -174,6 +174,10 @@ Void Linux Dependencies:
 ```
 sudo xbps-install wget git bison flex bc meson cmake pkg-config wayland-protocols python3-pip ninja patch gcc python3-Mako libdrm-devel llvm12 wayland-devel libX11-devel libXext-devel libXfixes-devel libxshmfence-devel libXxf86vm-devel libXrandr-devel elfutils-devel
 ```
+Arch Linux Dependencies:
+```
+sudo pacman -Sy base-devel cmake python-mako llvm wayland-protocols libdrm libx11 libxext libxfixes libxshmfence libxxf86vm libxrandr elfutils libvdpau compiler-rt libmicrohttpd glslang libclc
+```
 ```
 sudo mkdir -p ~/build && cd ~/build
 sudo apt remove mesa-*
