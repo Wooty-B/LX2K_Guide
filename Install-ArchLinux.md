@@ -136,7 +136,7 @@
 
           # %wheel ALL=(ALL:ALL) ALL
 	
-          --Then press [ESC], then [w], [q], [!]--
+          --Then press [ESC], then [:], [w], [q], [!]--
 	  
           useradd -m -G audio,video,wheel,storage,kvm,users *username*
           passwd *username*
