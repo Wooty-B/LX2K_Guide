@@ -157,7 +157,7 @@
 	```
 28. Install optional packages if needed
 	```
-	sudo xbps-install linux-firmware-amd mesa-dri vulkan-loader mesa-vulkan-radeon mesa-vaapi mesa-vdpau
+	sudo xbps-install linux-firmware-amd mesa mesa-dri vulkan-loader mesa-vulkan-radeon mesa-vaapi mesa-vdpau
 	```
 29. Optionally install Gnome (May require a reboot)
 	```
