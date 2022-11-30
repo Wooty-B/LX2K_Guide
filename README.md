@@ -178,6 +178,10 @@ Arch Linux Dependencies:
 ```
 sudo pacman -Sy base-devel cmake python-mako llvm wayland-protocols libdrm libx11 libxext libxfixes libxshmfence libxxf86vm libxrandr elfutils libvdpau compiler-rt libmicrohttpd glslang libclc
 ```
+Fedora Dependencies:
+```
+sudo dnf install make cmake automake gcc gcc-c++ kernel-devel meson ninja-build vulkan-devel libdrm-devel libvdpau-devel llvm-devel libX11-devel libxcb-devel libva-devel wayland-devel wayland-protocols-devel libXext-devel libXfixes-devel libxshmfence-devel libXxf86vm-devel libXrandr-devel
+```
 ```
 sudo mkdir -p ~/build && cd ~/build
 sudo apt remove mesa-*
