@@ -1,5 +1,3 @@
-WIP
-
 # Installing Fedora
 
    1. Download Fedora aarch64 Workstation or Server image
