@@ -178,9 +178,9 @@ Arch Linux Dependencies:
 ```
 sudo pacman -Sy base-devel cmake python-mako llvm wayland-protocols libdrm libx11 libxext libxfixes libxshmfence libxxf86vm libxrandr elfutils libvdpau compiler-rt libmicrohttpd glslang libclc
 ```
-Fedora Dependencies:
+Fedora Dependencies: (Not required; Fedora comes pre-patched!)
 ```
-sudo dnf install make cmake automake gcc gcc-c++ kernel-devel meson ninja-build vulkan-devel libdrm-devel libvdpau-devel llvm-devel libX11-devel libxcb-devel libva-devel wayland-devel wayland-protocols-devel libXext-devel libXfixes-devel libxshmfence-devel libXxf86vm-devel libXrandr-devel
+sudo dnf install flex bison make cmake automake gcc gcc-c++ kernel-devel meson ninja-build libdrm-devel libvdpau-devel llvm-devel libX11-devel libxcb-devel libva-devel wayland-devel wayland-protocols-devel libXext-devel libXfixes-devel libxshmfence-devel libXxf86vm-devel libXrandr-devel python3-mako libomxil-bellagio-devel libXdamage-devel lld-devel expat-devel libunwind-devel glslang libclc-devel libglvnd-core-devel clang-devel
 ```
 ```
 sudo mkdir -p ~/build && cd ~/build
