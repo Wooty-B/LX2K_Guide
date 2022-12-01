@@ -2,34 +2,34 @@ WIP
 
 # Installing Fedora
 
-   1. Download Fedora ISO from the Fedora ARM page. (https://arm.fedoraproject.org/)
+   1. Download Fedora aarch64 Workstation or Server image
+         
+         Fedora Main: https://getfedora.org/
+         Fedora ARM: https://arm.fedoraproject.org/
 
-   2. Flash the iso with dd, BalenaEtcher, etc. to your USB drive.
+   2. Flash the ISO to a USB drive
 
-   3. Insert the USB drive into a free USB slot on the LX2K and make sure a standard USB keyboard is plugged in.
+         dd if=~/Downloads/Fedora-*edition*-aarch64-*version*.iso of=/dev/sdX
+         
+         Alternatively, you can use Gnome Disks, balenaEtcher, or an imaging tool of your choice.
 
-NOTE (3): As mentioned previously, gaming keyboards may not register until Linux boots.
+   3. Insert and boot from the USB drive
 
-   4. Power on the LX2K and hit ESC when prompted to do so.
+         [ESC at Boot] > Boot Maintenance Manager > Boot From File > (USB Device ID) > EFI > AARCH64.EFI; [ENTER]
 
-   5. Navigate to Boot Manager > Boot Options > (USB Device ID) > Boot > AARCH64.EFI; Press Enter.
-
-   6. Press "e" at the GRUB boot menu and edit the Linux Defaults line to include the following:
+   4. Press "e" at Install Fedora GRUB menu and add the following to GRUB_CMDLINE_LINUX_DEFAULT:
    
-          arm-smmu.disable_bypass=0 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=0
+         iommu.passthrough=1 arm-smmu.disable_bypass=0 amdgpu.pcie_gen_cap=0x4
+          
+   5. Install Fedora and restart when prompted
 
-   7. Run through the Fedora installer, it prompts just as you would on an x86 machine, installing to storage of your choosing.
-
-   8. Once completed, reboot the machine and boot into your new Fedora install.
-
-   9. You should now be logged in and sitting at the terminal. Make sure Ethernet is active and set up "/etc/resolv.conf" if needed. (i.e. for me: nameserver 8.8.8.8)
-
-  10. First open "/etc/default/grub" with a text editor and make sure GRUB_CMDLINE_LINUX_DEFAULT has these values:
+   6. Once logged in, complete the following steps 
   
-            GRUB_CMDLINE_LINUX_DEFAULT="arm-smmu.disable_bypass=0 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=0"
+         nano /etc/default/grub
+            
+         GRUB_CMDLINE_LINUX_DEFAULT="iommu.passthrough=1 arm-smmu.disable_bypass=0 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=0"
+            
+         sudo grub2-mkconfig -o /etc/grub2-efi.cfg
 
-  11. Now run the following:
-  
-            sudo dnf update && sudo dnf upgrade && dnf install linux-firmware
+   7. Reboot, and the install is now complete!
 
-  12. Once completed, do a full system reboot/poweroff and then boot back into your new system.
