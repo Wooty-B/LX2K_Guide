@@ -11,9 +11,9 @@ WIP
          ```
          dd if=~/Downloads/Fedora-*edition*-aarch64-*version*.iso of=/dev/sdX
          ```
-         ```
+         
          Alternatively, you can use Gnome Disks, balenaEtcher, or an imaging tool of your choice.
-         ```
+         
    3. Insert and boot from the USB drive
          ```
          [ESC at Boot] > Boot Maintenance Manager > Boot From File > (USB Device ID) > EFI > AARCH64.EFI; [ENTER]
