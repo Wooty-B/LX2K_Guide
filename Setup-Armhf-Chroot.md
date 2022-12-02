@@ -1,4 +1,4 @@
-#LEGACY - TO BE REMOVED!!!!
+# LEGACY - TO BE REMOVED!!!!
 
 # Setup Multiarch, Box86/64, Wine, Steam and Android Emulator
 
