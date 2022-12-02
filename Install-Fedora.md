@@ -22,7 +22,7 @@
          ```
    5. Install Fedora and restart when prompted
          
-   6. Once logged in, complete the following steps 
+   6. Once logged in, complete the following steps to prevent crashing [AMD GPU's]
          ```
          nano /etc/default/grub
          ```
@@ -34,3 +34,4 @@
          ```
    7. Reboot, and the install is now complete!
 
+   NOTE: If you are using an AMD GPU, you will probably need to apply the Mesa patch on under "Post-Install Recommendations" on the main page.
