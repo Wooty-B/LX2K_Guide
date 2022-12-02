@@ -33,5 +33,3 @@
          sudo grub2-mkconfig -o /etc/grub2-efi.cfg
          ```
    7. Reboot, and the install is now complete!
-
-   NOTE: If you are using an AMD GPU, you will probably need to apply the Mesa patch on under "Post-Install Recommendations" on the main page.
