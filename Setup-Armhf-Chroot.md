@@ -1,3 +1,5 @@
+#LEGACY - TO BE REMOVED!!!!
+
 # Setup Multiarch, Box86/64, Wine, Steam and Android Emulator
 
 1. Enable Multiarch (32-bit Support)
