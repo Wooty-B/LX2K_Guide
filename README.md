@@ -182,11 +182,17 @@ Fedora Dependencies: (Not required; Fedora comes pre-patched!)
 ```
 sudo dnf install flex bison make cmake automake gcc gcc-c++ kernel-devel meson ninja-build libdrm-devel libvdpau-devel llvm-devel libX11-devel libxcb-devel libva-devel wayland-devel wayland-protocols-devel libXext-devel libXfixes-devel libxshmfence-devel libXxf86vm-devel libXrandr-devel python3-mako libomxil-bellagio-devel libXdamage-devel lld-devel expat-devel libunwind-devel glslang libclc-devel libglvnd-core-devel clang-devel
 ```
+openSUSE Dependencies:
+```
+sudo zypper source-install --build-deps-only Mesa
+sudo zypper install -t pattern devel_basis
+sudo zypper install clang-devel libunwind-devel libexpat-devel libclc libglvnd-devel lld glslang-devel vulkan-devel libvdpau-devel
+```
 ```
 sudo mkdir -p ~/build && cd ~/build
 sudo apt remove mesa-*
 git clone https://gitlab.freedesktop.org/mesa/mesa.git && cd mesa
-git pull && git checkout --track origin/21.0
+git pull && git checkout --track origin/21.0	**[Ignore this line in Arch, SUSE Tumbleweed, and rolling release distributions!]**
 wget https://github.com/Wooty-B/LX2K_Guide/raw/main/0001-radeonsi-On-Aarch64-force-persistent-buffers-to-GTT.patch
 patch -p1 < 0001-radeonsi-On-Aarch64-force-persistent-buffers-to-GTT.patch
 mkdir build && cd build
