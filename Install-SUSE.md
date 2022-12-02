@@ -15,7 +15,7 @@
          ```
          [ESC at Boot] > Boot Maintenance Manager > Boot From File > (USB Device ID) > EFI > AARCH64.EFI; [ENTER]
          ```
-   4. Press "e" at Install Fedora GRUB menu and add the following to GRUB_CMDLINE_LINUX_DEFAULT:
+   4. Press "e" at Install Fedora GRUB menu and add the following to the ```linux``` line:
          ```
          amdgpu.pcie_gen_cap=0x4
          ```
