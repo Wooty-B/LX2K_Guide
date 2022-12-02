@@ -151,13 +151,14 @@ NOTE: Make sure to connect Micro USB cable to the Console port (the one closer t
 
 ## Installing an Operating System
 
-1. [Debian/Ubuntu](Install-Ubuntu.md)
-2. [Fedora](Install-Fedora.md)
-3. [openSUSE](Install-SUSE.md)
-3. [Arch](Install-ArchLinux.md)
-4. [Void](Install-Void-glibc.md)
-5. [Windows 10](Install-Windows.md)
-6. [Windows 10/QEMU](Install-Windows-Qemu.md)
+1. [Debian](Install-Debian.md)
+2. [Ubuntu](Install-Ubuntu.md)
+3. [Fedora](Install-Fedora.md)
+4. [openSUSE](Install-SUSE.md)
+5. [Arch](Install-ArchLinux.md)
+6. [Void](Install-Void-glibc.md)
+7. [Windows 10](Install-Windows.md)
+8. [Windows 10/QEMU](Install-Windows-Qemu.md)
 
 <a name="reccomend"/>
 
