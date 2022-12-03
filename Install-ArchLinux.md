@@ -24,11 +24,11 @@
 	  ```
   4. Format the new partitions
 	  ```
-          sudo mkfs.vfat /dev/sdX1
+	  sudo mkfs.vfat /dev/sdX1
 	  sudo mkfs.ext4 /dev/sdX2
 	  ```  
   5. Install bsdtar & wget
-      	  ```
+	  ```
           Debian/Ubuntu: sudo apt install libarchive-tools wget
           Fedora: sudo dnf install bsdtar wget
           Void: sudo xbps-install bsdtar wget
