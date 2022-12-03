@@ -224,18 +224,6 @@ If the system crashes constantly on sleep/suspend event, use this command to dis
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 ```
 
-### Install Newer Mesa, Improve GPU Performance/Issues
-
-Over the course of this boards life its recieved various Mesa patches to help fix quirks related to GPU/PCIe issues. Ubuntu and most systems Mesa packages are a little out of date for stability reasons. I use Oibaf's repository which contains up to date aarch64 builds, and can be added by doing the following:
-
-```
-sudo add-apt-repository ppa:oibaf/graphics-drivers && sudo apt update
-```
-NOTE: After a testing a recent install, the above repository no longer works for me. Please let me know of another ARM64 friendly repo or let me know if anyone has better luck than I!
-
-<a name="x86"/>
-
-
 ## BoxWine (x86 & x86_64) Setup Guide
 
 Project BoxWine is my guide for easily installing and configuring your system for running x86 Linux and Windows applications natively. It includes the Box86 and Box64 projects by ptitseb then layers Wine on top of that. The guide also includes instructions for Steam, Android container, chroot setup as well as an installer script used to do all of this for you automatically. Even better, the installer script includes a function to also automatically install and setup HoneyComb LX2K patches for users with AMD GPU's!
