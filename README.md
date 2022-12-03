@@ -201,7 +201,6 @@ mkdir build && cd build
 meson .. --libdir /usr/lib/aarch64-linux-gnu/ --prefix /usr/ -Dgallium-drivers=radeonsi,swrast,zink -Dvulkan-drivers=amd -Dgallium-nine=true -Dbuildtype=release
 sudo ninja install
 ```
-NOTE: You can change the version of Mesa from 20.3 to whatever you'd prefer, however I recommend sticking to a version that is available in your distribution's package manager unless you are using a rolling release. (Debian Sid, Void, etc.) Also, the above meson commands are tailored for AMD GPU's.
 
 ### Buffer Overflow Fix
 
