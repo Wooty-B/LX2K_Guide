@@ -141,20 +141,20 @@
 		nano /etc/default/grub
 		```
 		```
-          GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4 arm-smmu.disable_bypass=1 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=1"
+          	GRUB_CMDLINE_LINUX_DEFAULT="loglevel=4 arm-smmu.disable_bypass=1 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=1"
 	  	```
   22. Set root permissions
 		```
 		chmod 755 /
 		chmod 755 /bin
 		chmod 755 /lib
-		 ```
+		```
   23. Reboot LX2K and boot into your new install using the BIOS
  
   24. Log into your new install with root/*password*
       
   25. Disable console syslog messages [Only if your console is flooded]
-		 ```
+		```
 		dmesg -n 1
 		clear
 		```
