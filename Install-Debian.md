@@ -22,7 +22,7 @@
          nano /etc/default/grub
          ```
          ```
-         GRUB_CMDLINE_LINUX_DEFAULT="iommu.passthrough=1 arm-smmu.disable_bypass=0 amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=0"
+         GRUB_CMDLINE_LINUX_DEFAULT="amdgpu.pcie_gen_cap=0x4 amdgpu.noretry=0"
          ```
          ```
          sudo update-grub
