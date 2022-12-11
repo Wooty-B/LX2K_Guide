@@ -149,7 +149,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port (the one closer t
 
 <a name="os"/>
 
-## Installing an Operating System
+## Installing an Operating System [UEFI only]
 
 1. [Debian](Install-Debian.md)
 2. [Ubuntu](Install-Ubuntu.md)
@@ -157,8 +157,9 @@ NOTE: Make sure to connect Micro USB cable to the Console port (the one closer t
 4. [openSUSE](Install-SUSE.md)
 5. [Arch](Install-ArchLinux.md)
 6. [Void](Install-Void-glibc.md)
-7. [Windows 10](Install-Windows.md)
-8. [Windows 10/QEMU](Install-Windows-Qemu.md)
+7. [Gentoo](Install-Gentoo.md)
+8. [Windows 10](Install-Windows.md)
+9. [Windows 10/QEMU](Install-Windows-Qemu.md)
 
 <a name="reccomend"/>
 
