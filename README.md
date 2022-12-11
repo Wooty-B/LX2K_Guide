@@ -158,7 +158,7 @@ NOTE: Make sure to connect Micro USB cable to the Console port (the one closer t
 5. [Arch](Install-ArchLinux.md)
 6. [Void](Install-Void-glibc.md)
 7. [Gentoo](Install-Gentoo.md)
-8. [Windows 10](Install-Windows.md) [Unofficial/Dev Preview]
+8. [Windows 10](Install-Windows.md)
 9. [Windows 10/QEMU](Install-Windows-Qemu.md)
 
 <a name="reccomend"/>
