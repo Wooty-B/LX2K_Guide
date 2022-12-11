@@ -1,6 +1,6 @@
   # Installing Gentoo (OpenRC)
   
-  ## WIP
+  ## Under construction
 
 1. Locate target Disk
     ```
