@@ -36,10 +36,10 @@
 	  sudo mount /dev/sdX1 /mnt/boot
 	  ```
 5. Install xz package if not already installed
-
+	
 6. Download and extract Gentoo tarball  (Guide covers OpenRC)
-
-Current stage3 tarballs here: http://distfiles.gentoo.org/releases/arm64/autobuilds/
+	  
+	  Current stage3 tarballs here: http://distfiles.gentoo.org/releases/arm64/autobuilds/
 	  ```
 	  wget http://distfiles.gentoo.org/releases/arm64/autobuilds/current-stage3-arm64-desktop-openrc/stage3-arm64-desktop-openrc-*date*.tar.xz
 	  sudo tar xvf stage3-arm64-desktop-openrc-*date*.tar.xz -C /mnt
