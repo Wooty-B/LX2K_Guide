@@ -126,7 +126,7 @@
     CHOST="aarch64-unknown-linux-gnu"
     FEATURES="buildpkg parallel-fetch parallel-install"
     USE="${USE} X wayland vulkan elogind dbus opengl gnome gtk grub -systemd  -tracker"
-    EMERGE_DEFAULT_OPTS="–ask --jobs 12 --keep-going=y --autounmask=y --autounmask-continue"
+    EMERGE_DEFAULT_OPTS="--ask --jobs 12 --keep-going=y --autounmask=y --autounmask-continue"
     MAKEOPTS="-j12"
     ACCEPT_KEYWORDS="~arm64"
     ACCEPT_LICENSE="*"
