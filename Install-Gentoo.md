@@ -159,7 +159,7 @@
 	  ```
 	  eselect profile set 5
 	  ```
-19. Install all packages from step 17 (USE=) [May take a long time]
+19. Fully install and configure base system [May take a long time]
 	  ```
 	  emerge --ask --verbose --update --deep --newuse @world
 	  ```
