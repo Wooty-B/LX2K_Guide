@@ -56,21 +56,21 @@
 	  ```
     sudo cp /etc/resolv.conf /mnt/etc
     ```
-10. Chroot into Gentoo mount
+9. Chroot into Gentoo mount
 	  ```
 	  PS1="(gentoo chroot) # " sudo chroot /mnt /bin/bash
 	  ```
-11. Configure Gentoo
+10. Configure Gentoo
 	  ```
 	  mkdir /var/db/repos/gentoo
 	  env-update && . /etc/profile
     emerge-webrsync
     ```
-12. Set root password
+11. Set root password
 	  ```
 	  passwd
 	  ```
-13. Create user account and setup sudo
+12. Create user account and setup sudo
 	  ```
 	  useradd -m -G users,wheel,audio,video -s /bin/bash *username*
 	  passwd *username*
@@ -81,12 +81,12 @@
     ```
     # %wheel ALL=(ALL:ALL) ALL
 	  ```
-14. Enable Networking
+13. Enable Networking
 	  ```
 	  ln -s /etc/init.d/net.{lo,eth0}
 	  rc-update add net.eth0 default
 	  ```
-15. Set Hostname
+14. Set Hostname
 	  ```
 	  nano /etc/conf.d/hostname
 	  nano /etc/hosts
@@ -95,7 +95,7 @@
     ```
     127.0.0.1	localhost	*hostname*
     ```
-16. Configure DHCP
+15. Configure DHCP
 	  ```
 	  emerge –ask net-misc/dhcpcd
 	  rc-update add dhcpcd default
@@ -108,7 +108,7 @@
 	  ```
 	  rc-service dhcpcd start
 	  ```
-17. Configure Portage makefile
+16. Configure Portage makefile
 	  ```
 	  nano /etc/portage/make.conf
 	  ```
@@ -134,7 +134,7 @@
     GENTOO_MIRRORS=https://mirror.leaseweb.com/gentoo/
     GRUB_PLATFORMS=”efi-64”
     ```
-18. Configure repositories
+17. Configure repositories
 	  ```
 	  mkdir /etc/portage/repos.conf
 	  nano /etc/portage/repos.conf/gentoo.conf
@@ -149,7 +149,7 @@
 	  sync-url = rsync://namerica.gentoo.org/gentoo-portage
 	  auto-sync = yes
 	  ```
-19. Cofigure Portage, system profile, and install packages
+18. Cofigure Portage, system profile, and install packages
 	  ```
 	  emerge –ask –oneshot sys-apps/portage
 	  emerge –sync
@@ -159,15 +159,15 @@
 	  ```
 	  eselect profile set 5
 	  ```
-20. Install all packages from step 17 (USE=) [May take a long time]
+19. Install all packages from step 17 (USE=) [May take a long time]
 	  ```
 	  emerge –ask –verbose –update –deep –newuse @world
 	  ```
-21. Get UUID of sdX1 and sdX2
+20. Get UUID of sdX1 and sdX2
 	  ```
 	  blkid
 	  ```
-22. Configure /etc/fstab, using the UUID’s found in the previous command
+21. Configure /etc/fstab, using the UUID’s found in the previous command
 	  ```
 	  nano /etc/fstab
 	  ```
@@ -176,11 +176,11 @@
 	  UUID=YYY-YYY-YYY-YYY	/	ext4	rw,relatime			0 1
 	  tmpfs			/tmp	tmpfs	rw,relatime			0 0
 	  ```
-23. Configure kernel system type
+22. Configure kernel system type
 	  ```
 	  emerge –ask sys-kernel/installkernel-gentoo
 	  ```
-24. Installing the Kernel
+23. Installing the Kernel
 	
 	  Pre-built kernel binary:
 	  ```
@@ -192,7 +192,7 @@
 	  emerge –ask sys-kernel/gentoo-kernel
 	  emerge --depclean
 	  ````	
-25. Loading modules
+24. Loading modules
 	
     Either find the modules you need to load here:
     ```
@@ -209,7 +209,7 @@
 	  mkdir -p /etc/modules-load.d
 	  nano -w /etc/modules-load.d/network.conf
 	  ```
-26. Set Keymap
+25. Set Keymap
 	  ```
 	  nano /etc/conf.d/keymaps
 	  ```
@@ -217,27 +217,27 @@
 	  ```
 	  keymap=XX
 	  ```
-27. Install and enable System Logger (sysklogd)
+26. Install and enable System Logger (sysklogd)
 	  ```
 	  emerge –ask app-admin/sysklogd
 	  rc-update add sysklogd default
 	  ```
-28. Set Time Syncronization
+27. Set Time Syncronization
 	  ```
 	  emerge –ask net-misc/chrony
 	  rc-update add chrony default
 	  ```
-29. Install Filesystem tools
+28. Install Filesystem tools
 	  ```
 	  emerge –ask sys-fs/e2fsprogs sys-fs/dosfstools
 	  ```
-30. Install and configure GRUB
+29. Install and configure GRUB
 	  ```
 	  emerge –ask –verbose sys-boot/grub
 	  grub-install --target=arm64-efi --efi-directory=/boot --bootloader-id=Gentoo
 	  grub-mkconfig -o /boot/grub/grub.cfg
 	  ```
-31. Reboot and enjoy!
+30. Reboot and enjoy!
 
     Optional: Installing GNOME (Can be done before reboot)
 	
