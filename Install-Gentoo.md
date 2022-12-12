@@ -74,7 +74,7 @@
 	  ```
 	  useradd -m -G users,wheel,audio,video -s /bin/bash *username*
 	  passwd *username*
-    emerge –ask –verbose app-admin/sudo
+    emerge --ask --verbose app-admin/sudo
     visudo
     ```
     Uncomment the following line:
@@ -97,7 +97,7 @@
     ```
 15. Configure DHCP
 	  ```
-	  emerge –ask net-misc/dhcpcd
+	  emerge --ask net-misc/dhcpcd
 	  rc-update add dhcpcd default
 	  nano /etc/conf.d/net
 	  ```
@@ -151,8 +151,8 @@
 	  ```
 18. Cofigure Portage, system profile, and install packages
 	  ```
-	  emerge –ask –oneshot sys-apps/portage
-	  emerge –sync
+	  emerge --ask --oneshot sys-apps/portage
+	  emerge --sync
 	  eselect profile list
 	  ```
 	  select the profile of your choice, example:
@@ -161,7 +161,7 @@
 	  ```
 19. Install all packages from step 17 (USE=) [May take a long time]
 	  ```
-	  emerge –ask –verbose –update –deep –newuse @world
+	  emerge --ask --verbose --update --deep --newuse @world
 	  ```
 20. Get UUID of sdX1 and sdX2
 	  ```
@@ -178,18 +178,18 @@
 	  ```
 22. Configure kernel system type
 	  ```
-	  emerge –ask sys-kernel/installkernel-gentoo
+	  emerge --ask sys-kernel/installkernel-gentoo
 	  ```
 23. Installing the Kernel
 	
 	  Pre-built kernel binary:
 	  ```
-	  emerge –ask sys-kernel/gentoo-kernel-bin
+	  emerge --ask sys-kernel/gentoo-kernel-bin
 	  emerge --depclean
 	  ```
 	  Source-built kernel:
 	  ```
-	  emerge –ask sys-kernel/gentoo-kernel
+	  emerge --ask sys-kernel/gentoo-kernel
 	  emerge --depclean
 	  ````	
 24. Loading modules
@@ -219,21 +219,21 @@
 	  ```
 26. Install and enable System Logger (sysklogd)
 	  ```
-	  emerge –ask app-admin/sysklogd
+	  emerge --ask app-admin/sysklogd
 	  rc-update add sysklogd default
 	  ```
 27. Set Time Syncronization
 	  ```
-	  emerge –ask net-misc/chrony
+	  emerge --ask net-misc/chrony
 	  rc-update add chrony default
 	  ```
 28. Install Filesystem tools
 	  ```
-	  emerge –ask sys-fs/e2fsprogs sys-fs/dosfstools
+	  emerge --ask sys-fs/e2fsprogs sys-fs/dosfstools
 	  ```
 29. Install and configure GRUB
 	  ```
-	  emerge –ask –verbose sys-boot/grub
+	  emerge --ask --verbose sys-boot/grub
 	  grub-install --target=arm64-efi --efi-directory=/boot --bootloader-id=Gentoo
 	  grub-mkconfig -o /boot/grub/grub.cfg
 	  ```
@@ -243,24 +243,24 @@
 	
 	  Update system:
     ```
-	  emerge –sync
-	  emerge –deep –with-bdeps=y –changed-use –update –ask –verbose @world
+	  emerge --sync
+	  emerge --deep --with-bdeps=y --changed-use --update --ask --verbose @world
 	  ```
 	  Set and update GNOME profile:
 	  ```
 	  eselect profile set “default/linux/arm64/17.0/desktop/gnome”
 	  eselect profile show
-	  emerge –ask –deep –changed-use –update –verbose @world
+	  emerge --ask --deep --changed-use --update --verbose @world
 	  ```
 	  Install and configure X11:
 	  ```
 	  echo -e “media-libs/mesa xa” >> /etc/portage/package.use/mesa
-	  emerge –ask –verbose –oneshot x11-base/xorg-server x11-base/xorg-drivers
+	  emerge --ask --verbose --oneshot x11-base/xorg-server x11-base/xorg-drivers
 	  usermod -a -G plugdev *username*
 	  ```
 	  Install GNOME:
 	  ```
-	  emerge –ask  --verbose –keep-going gnome-base/gnome gnome-base/gdm
+	  emerge --ask  --verbose --keep-going gnome-base/gnome gnome-base/gdm
 	  ```
 	  Change and configure Display Manager:
 	  ```
@@ -275,7 +275,7 @@
 	  ```
 	  Update OpenRC:
 	  ```
-    emerge –ask –verbose app-admin/openrc-settingsd 
+    	  emerge --ask --verbose app-admin/openrc-settingsd 
 	  rc-update add dbus default
 	  rc-update add display-manager default
 	  rc-update add openrc-settingsd default
