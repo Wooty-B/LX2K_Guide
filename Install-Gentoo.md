@@ -50,7 +50,7 @@
 	  sudo mount --rbind /sys /mnt/sys && sudo mount --make-rslave /mnt/sys
 	  sudo mount --rbind /dev /mnt/dev && sudo mount --make-rslave /mnt/dev
 	  sudo mount -t proc /proc /mnt/proc
-	  sudo mount –rbind /tmp /mnt/tmp
+	  sudo mount --rbind /tmp /mnt/tmp
 	  ```
 8. Copy DNS server settings from host
 	  ```
