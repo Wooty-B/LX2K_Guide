@@ -34,6 +34,7 @@
 	  sudo mount /dev/sdX2 /mnt
 	  sudo mkdir /mnt/boot
 	  sudo mount /dev/sdX1 /mnt/boot
+	  cd /mnt
 	  ```
 5. Install xz package if not already installed
 	
@@ -53,7 +54,7 @@
 	  ```
 8. Copy DNS server settings from host
 	  ```
-    cp /etc/resolv.conf etc
+    cp /etc/resolv.conf /mnt/etc
     ```
 10. Chroot into Gentoo mount
 	  ```
