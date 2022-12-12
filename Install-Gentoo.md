@@ -144,7 +144,7 @@
 	  main-repo = gentoo
 	  
 	  [gentoo]
-	  location = /usr/portage
+	  location = /var/db/repos/gentoo
 	  sync-type = rsync
 	  sync-url = rsync://namerica.gentoo.org/gentoo-portage
 	  auto-sync = yes
