@@ -65,7 +65,6 @@
 	  mkdir /var/db/repos/gentoo
 	  env-update && . /etc/profile
     emerge-webrsync
-    emerge superadduser
     ```
 12. Set root password
 	  ```
