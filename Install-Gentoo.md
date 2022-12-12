@@ -72,7 +72,7 @@
 	  ```
 13. Create user account and setup sudo
 	  ```
-	  useradd -m -G users,wheel,audio,video,plugdev -s /bin/bash *username*
+	  useradd -m -G users,wheel,audio,video -s /bin/bash *username*
 	  passwd *username*
     emerge –ask –verbose app-admin/sudo
     visudo
@@ -256,6 +256,7 @@
 	  ```
 	  echo -e “media-libs/mesa xa” >> /etc/portage/package.use/mesa
 	  emerge –ask –verbose –oneshot x11-base/xorg-server x11-base/xorg-drivers
+	  usermod -a -G plugdev *username*
 	  ```
 	  Install GNOME:
 	  ```
