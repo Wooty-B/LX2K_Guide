@@ -54,7 +54,7 @@
 	  ```
 8. Copy DNS server settings from host
 	  ```
-    cp /etc/resolv.conf /mnt/etc
+    sudo cp /etc/resolv.conf /mnt/etc
     ```
 10. Chroot into Gentoo mount
 	  ```
