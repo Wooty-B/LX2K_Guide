@@ -124,7 +124,7 @@
     CFLAGS="${COMMON_FLAGS}"
     CXXFLAGS="${COMMON_FLAGS}"
     CHOST="aarch64-unknown-linux-gnu"
-    FEATURES=“buildpkg parallel-fetch parallel-install”
+    FEATURES="buildpkg parallel-fetch parallel-install"
     USE="${USE} X wayland vulkan elogind dbus opengl gnome gtk grub -systemd  -tracker"
     EMERGE_DEFAULT_OPTS="–ask --jobs 12 --keep-going=y --autounmask=y --autounmask-continue"
     MAKEOPTS="-j12"
@@ -132,7 +132,7 @@
     ACCEPT_LICENSE="*"
     PORTAGE_NICENESS="16"
     GENTOO_MIRRORS=https://mirror.leaseweb.com/gentoo/
-    GRUB_PLATFORMS=”efi-64”
+    GRUB_PLATFORMS="efi-64"
     ```
 17. Configure repositories
 	  ```
