@@ -178,6 +178,7 @@
 	  ```
 22. Configure kernel system type
 	  ```
+	  emerge --ask sys-kernel/linux-firmware
 	  emerge --ask sys-kernel/installkernel-gentoo
 	  ```
 23. Installing the Kernel
