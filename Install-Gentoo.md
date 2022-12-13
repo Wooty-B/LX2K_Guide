@@ -178,14 +178,13 @@
 	  ```
 22. Configure kernel system type
 	  ```
-	  emerge --ask sys-kernel/linux-firmware
 	  emerge --ask sys-kernel/installkernel-gentoo
 	  ```
 23. Installing the Kernel
 	
 	  Pre-built kernel binary:
 	  ```
-	  emerge --ask sys-kernel/gentoo-kernel-bin
+	  emerge --ask sys-kernel/gentoo-kernel-bin sys-kernel/linux-firmware
 	  emerge --depclean
 	  ```
 	  Source-built kernel:
