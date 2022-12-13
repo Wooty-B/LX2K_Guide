@@ -207,7 +207,7 @@
 	  Then, run the following and add kernel modules to the conf file:
 	  ```
 	  mkdir -p /etc/modules-load.d
-	  nano -w /etc/modules-load.d/network.conf
+	  nano -w /etc/modules-load.d/modules.conf
 	  ```
 25. Set Keymap
 	  ```
