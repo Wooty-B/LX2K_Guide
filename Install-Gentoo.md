@@ -246,12 +246,6 @@
 	  emerge --sync
 	  emerge --deep --with-bdeps=y --changed-use --update --ask --verbose @world
 	  ```
-	  Set and update GNOME profile:
-	  ```
-	  eselect profile set “default/linux/arm64/17.0/desktop/gnome”
-	  eselect profile show
-	  emerge --ask --deep --changed-use --update --verbose @world
-	  ```
 	  Install and configure X11:
 	  ```
 	  echo -e “media-libs/mesa xa” >> /etc/portage/package.use/mesa
