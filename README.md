@@ -172,28 +172,32 @@ Mesa should be working out-of-the-box in newer or rolling release distributions.
 Debian/Ubuntu Dependencies:
 ```
 sudo apt install git build-essential bison flex bc meson pkg-config cmake libvdpau-dev glslang-tools libomxil-bellagio-dev libva-dev libvulkan-dev python3-pip libdrm-dev llvm-dev libelf-dev wayland-protocols libwayland-egl-backend-dev libxext-dev libxdamage-dev libxcb-glx0-dev libxcb-shm0-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-dri3-dev libxcb-present-dev libxshmfence-dev libxxf86vm-dev libxrandr-dev ninja-build
+sudo apt remove mesa-*
 ```
 Void Linux Dependencies:
 ```
 sudo xbps-install wget git bison flex bc meson cmake pkg-config wayland-protocols python3-pip ninja patch gcc python3-Mako libdrm-devel llvm12 wayland-devel libX11-devel libXext-devel libXfixes-devel libxshmfence-devel libXxf86vm-devel libXrandr-devel elfutils-devel
+sudo xbps-remove mesa-*
 ```
 Arch Linux Dependencies:
 ```
 sudo pacman -Sy base-devel cmake python-mako llvm wayland-protocols libdrm libx11 libxext libxfixes libxshmfence libxxf86vm libxrandr elfutils libvdpau compiler-rt libmicrohttpd glslang libclc
+sudo pacman -R mesa-*
 ```
 Fedora Dependencies: (Not required; Fedora comes pre-patched!)
 ```
 sudo dnf install flex bison make cmake automake gcc gcc-c++ kernel-devel meson ninja-build libdrm-devel libvdpau-devel llvm-devel libX11-devel libxcb-devel libva-devel wayland-devel wayland-protocols-devel libXext-devel libXfixes-devel libxshmfence-devel libXxf86vm-devel libXrandr-devel python3-mako libomxil-bellagio-devel libXdamage-devel lld-devel expat-devel libunwind-devel glslang libclc-devel libglvnd-core-devel clang-devel
+sudo dnf remove mesa-*
 ```
 openSUSE Dependencies:
 ```
 sudo zypper source-install --build-deps-only Mesa
 sudo zypper install -t pattern devel_basis
 sudo zypper install clang-devel libunwind-devel libexpat-devel libclc libglvnd-devel lld glslang-devel vulkan-devel libvdpau-devel
+sudo zypper remove mesa-*
 ```
 ```
 sudo mkdir -p ~/build && cd ~/build
-sudo apt remove mesa-*
 git clone https://gitlab.freedesktop.org/mesa/mesa.git && cd mesa
 git pull && git checkout --track origin/21.0	[Only run this command on Debian 11!]
 wget https://github.com/Wooty-B/LX2K_Guide/raw/main/0001-radeonsi-On-Aarch64-force-persistent-buffers-to-GTT.patch
