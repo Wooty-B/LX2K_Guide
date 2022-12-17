@@ -47,6 +47,9 @@
          ```
          sudo update-grub
          ```
-   9. Restart to complete install!
+   9. Start GNOME Display Manager
+         ```
+         sudo systemctl start gdm3
+         ```
 
    NOTE: If you are using an AMD GPU, you will probably need to apply the Mesa patch on under "Post-Install Recommendations" on the main page.
