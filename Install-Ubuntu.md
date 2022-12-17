@@ -33,10 +33,9 @@
          sudo apt update && sudo apt upgrade
          ```
          
-   7. Run the following to install a graphical desktop automatically [Gnome, KDE, XFCE, etc]
+   7. Run the following to install Ubuntu's default desktop
          ```
-         sudo apt install tasksel
-         sudo tasksel
+         sudo apt install ubuntu-desktop gdm3
          ```
    8. Complete the following steps to prevent crashing [AMD GPU's]
          ```
