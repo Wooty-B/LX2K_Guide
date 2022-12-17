@@ -35,7 +35,7 @@
          
    7. Run the following to install Ubuntu's default desktop
          ```
-         sudo apt install ubuntu-desktop gdm3
+         sudo apt install ubuntu-desktop gdm3 firefox
          ```
    8. Complete the following steps to prevent crashing [AMD GPU's]
          ```
