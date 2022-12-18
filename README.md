@@ -199,7 +199,7 @@ sudo zypper remove mesa-*
 ```
 sudo mkdir -p ~/build && cd ~/build
 git clone https://gitlab.freedesktop.org/mesa/mesa.git && cd mesa
-git pull && git checkout --track origin/21.0	[Only run this command on Debian 11!]
+git pull && git checkout --track origin/21.0	[Only run this command on Debian 11 and ubuntu 20.04!]
 wget https://github.com/Wooty-B/LX2K_Guide/raw/main/0001-radeonsi-On-Aarch64-force-persistent-buffers-to-GTT.patch
 patch -p1 < 0001-radeonsi-On-Aarch64-force-persistent-buffers-to-GTT.patch
 mkdir build && cd build
