@@ -2,7 +2,7 @@
 
    1. Download Ubuntu Server aarch64
          ```
-         Ubuntu Server for ARM: https://cdimage.debian.org/debian-cd/current/arm64/iso-cd/
+         Ubuntu Server for ARM: https://ubuntu.com/download/server/arm
          ```
    2. Flash the ISO to a USB drive
          ```
