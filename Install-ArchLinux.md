@@ -106,7 +106,7 @@
 		```
   15. Copy host linux running kernel config
 		```
-		cp /boot/config-<version> /mnt/chroot/root/kernelbuild/linux-6.2.2/.config
+		sudo cp /boot/config-<version> /mnt/chroot/root/kernelbuild/linux-6.2.2/.config
 		PS1="(arch chroot) # " sudo chroot /mnt/chroot /bin/bash
 		cd /root/kernelbuild/linux-6.2.2
 		```
