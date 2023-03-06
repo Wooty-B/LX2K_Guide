@@ -53,9 +53,9 @@
   6. Mount the target drive
 		```
 		sudo mkdir /mnt/chroot
-		sudo mount /dev/sdX1 /mnt/chroot
+		sudo mount /dev/sdX2 /mnt/chroot
 		sudo mkdir -p /mnt/chroot/boot
-		sudo mount /dev/sdX2 /mnt/chroot/boot
+		sudo mount /dev/sdX1 /mnt/chroot/boot
 		```
   7. Download and extract the tarball to the mounted drive as root [Do not use sudo]
 		```
