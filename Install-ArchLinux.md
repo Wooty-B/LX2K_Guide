@@ -20,6 +20,7 @@
 		First sector:		[ENTER]
 		Last sector:		[ENTER]
 		Remove signature:	Y
+		Exit:			q
 		```
   4. Format the new partitions
 		```
