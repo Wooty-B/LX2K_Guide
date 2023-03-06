@@ -130,7 +130,7 @@
   19. Generate initramfs
 		```
 		pacman -Sy cpio mkinitcpio-nfs-utils mkinitcpio-archiso
-		mkinitcpio -k 6.2.2-1-ARCH -g /boot/initramfs-linux6.img
+		mkinitcpio -k 6.2.2 -g /boot/initramfs-linux6.img
 		```
   20. Install Grub
 		```
