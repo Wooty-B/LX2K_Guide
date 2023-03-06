@@ -100,15 +100,15 @@
   14. Download and extract the kernel [Modify to your needs]
 		```
 		mkdir /root/kernelbuild && cd /root/kernelbuild
-		wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.0.10.tar.xz
-		tar -xvf linux-6.0.10.tar.xz
+		wget https://cdn.kernel.org/pub/linux/kernel/v6.x/linux-6.2.2.tar.xz
+		tar -xvf linux-6.2.2.tar.xz
 		exit
 		```
   15. Copy host linux running kernel config
 		```
-		cp /boot/config-<version> /mnt/chroot/root/kernelbuild/linux-6.0.10/.config
+		cp /boot/config-<version> /mnt/chroot/root/kernelbuild/linux-6.2.2/.config
 		PS1="(arch chroot) # " sudo chroot /mnt/chroot /bin/bash
-		cd /root/kernelbuild/linux-6.0.10
+		cd /root/kernelbuild/linux-6.2.2
 		```
   16. Modify .config file [Modify the following lines...]  [Use CTRL+W to search for values, CTRL+W again to find the next instance]
 		```
@@ -130,7 +130,7 @@
   19. Generate initramfs
 		```
 		pacman -Sy cpio mkinitcpio-nfs-utils mkinitcpio-archiso
-		mkinitcpio -k 6.0.10-1-ARCH -g /boot/initramfs-linux6.img
+		mkinitcpio -k 6.2.2-1-ARCH -g /boot/initramfs-linux6.img
 		```
   20. Install Grub
 		```
