@@ -16,6 +16,7 @@
 		Last sector:		+512M
 		Remove signature:	Y
 		Command:		n
+		Partition number:	[ENTER]
 		First sector:		[ENTER]
 		Last sector:		[ENTER]
 		Remove signature:	Y
