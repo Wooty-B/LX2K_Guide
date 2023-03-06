@@ -121,7 +121,7 @@
 		```
   17. Run the build
 		```
-		make -j$(nproc) && make modules -j$(nproc) && make modules_install
+		make -j$(nproc) && make modules -j$(nproc) && make modules_install && make headers_install
 		```
   18. Copy "bzImage/Image" to boot directory
 		```
