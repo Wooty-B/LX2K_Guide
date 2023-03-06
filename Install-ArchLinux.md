@@ -78,7 +78,7 @@
 		```
   10. Set new root password
 		```
-		passwd root
+		passwd
 		```
   11. Edit resolv.conf
 		```
