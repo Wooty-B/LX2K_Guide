@@ -153,7 +153,7 @@
 27. Enable the network adapter using the network interface found above, and ip scheme of your network; Y is the subnet in slash notation (ex. /24 for 255.255.255.0)
 	```
 	sudo ip link set dev *net_interface* up
-	sudo ip addr add X.X.X.X/Y brd + dev *net_interface*
+	sudo ip addr add X.X.X.X/YY brd + dev *net_interface*
 	sudo ip route add default via X.X.X.Z
 	```
 28. Install linux firmware for AMD GPU
