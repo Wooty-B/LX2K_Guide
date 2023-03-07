@@ -21,6 +21,7 @@
 	Last sector: 	  [ENTER]
 	Remove signature: Y
 	Command: 	  w
+	Exit:		  q
 	```
 4. Format the new partitions
 	```
