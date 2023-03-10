@@ -11,7 +11,7 @@
   3. Type the following letters and numbers to partition the drive
 		```
 		Command:		n
-		Partition number:	1
+		Partition number:	[ENTER]
 		First sector:		[ENTER]
 		Last sector:		+512M
 		Remove signature:	Y
@@ -54,7 +54,7 @@
 		```
 		sudo mkdir /mnt/chroot
 		sudo mount /dev/sdX2 /mnt/chroot
-		sudo mkdir -p /mnt/chroot/boot
+		sudo mkdir /mnt/chroot/boot
 		sudo mount /dev/sdX1 /mnt/chroot/boot
 		```
   7. Download and extract the tarball to the mounted drive as root [Do not use sudo]
