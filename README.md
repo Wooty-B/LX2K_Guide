@@ -151,13 +151,47 @@ NOTE: Make sure to connect Micro USB cable to the Console port (the one closer t
 
 ## Installing an Operating System [UEFI only]
 
-1. [Debian](Install-Debian.md)
-2. [Ubuntu](Install-Ubuntu.md)
-3. [Fedora](Install-Fedora.md)
-4. [openSUSE](Install-SUSE.md)
-5. [Arch](Install-ArchLinux.md)
-6. [Void](Install-Void-glibc.md)
-7. [Gentoo](Install-Gentoo.md)
+Debian based Linux
+
+ 1. [Debian](Install-Debian.md)
+ 2. [Ubuntu](Install-Ubuntu.md)
+ 3. [Armbian](Install-Armbian.md)
+
+Devuan/Debian based Linux
+
+ 4. [PeppermintOS](Install-PeppermintOS)
+
+RedHat based Linux
+
+ 5. [Fedora](Install-Fedora.md)
+ 6. [Red Hat Enterprise Linux](Install-RHEL.md)
+ 7. [CentOS Stream](Install-CentOS-Stream.md)
+ 8. [AlmaLinux](Install-AlmaLinux.md)
+ 9. [Rocky Linux](Install-Rocky.md)
+
+SUSE based Linux
+
+10. [openSUSE](Install-SUSE.md)
+
+Arch based Linux
+
+11. [Arch Linux ARM](Install-ArchLinux.md)
+
+Void based Linux
+
+12. [Void](Install-Void-glibc.md)
+
+Gentoo based Linux
+
+13. [Gentoo](Install-Gentoo.md)
+
+BSD-like
+
+14. [FreeBSD](Install-FreeBSD.md)
+15. [NetBSD](Install-NetBSD.md)
+
+Windows 10/11 ARM
+
 8. [Windows 10](Install-Windows.md)
 9. [Windows 10/QEMU](Install-Windows-Qemu.md)
 
@@ -240,7 +274,7 @@ Project BoxWine is my guide for easily installing and configuring your system fo
 
 ## BIOS Navigation
 
-	NOTE: Upon powering up, press ESC at the splash to enter the BIOS menu.
+The below tree is a representation of the BIOS menu options for your reference.
 
 	A. Select Language
 		1. Standard English
@@ -287,6 +321,11 @@ Project BoxWine is my guide for easily installing and configuring your system fo
 		- Continue booting the system as normal
 	F. Reset
 		- Immediately reboot the system
+
+NOTE 1: Upon powering up, press ESC at the splash to enter the BIOS menu.
+NOTE 2: You can boot/load an EFI file two ways:
+	a. Select the USB drive from the 'Boot Manager' list
+        b. Select 'Boot Maintenance Manager', 'Boot From File', then navigate through the device tree and select the '.EFI' file
 
 <a name="timings"/>
 
