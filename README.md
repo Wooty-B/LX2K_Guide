@@ -192,8 +192,8 @@ BSD-like
 
 Windows 10/11 ARM
 
-8. [Windows 10](Install-Windows.md)
-9. [Windows 10/QEMU](Install-Windows-Qemu.md)
+16. [Windows 10](Install-Windows.md)
+17. [Windows 10/QEMU](Install-Windows-Qemu.md)
 
 <a name="reccomend"/>
 
